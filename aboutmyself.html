@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<style>
+html {
+    background-image: url(img/backneuneu.jpg);
+    !background-color:blue;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    zoom: 100%;
+}
+@media all and (max-width: 920px){
+html {
+zoom:40%;
+}
+}
+@media all and (max-width: 320px){
+html {
+zoom:30%;
+}
+}
+html, body { 
+height: 100%; width: 100%; margin: 0; 
+display:flex;
+align-items:center;
+flex-wrap: wrap;
+!justify-content:center;
+!font-family: "Quicksand", sans-serif;
+}
+
+.topneu{
+
+height:25px;
+
+}
+
+.top{
+width: 100%;
+height:45px;
+!background:blue;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:0px;
+!border: black 1.5px solid;
+position: absolute; 
+top: 0; 
+left: 0; 
+}
+
+.start-container{
+width: 450px;
+height:45px;
+margin:0px;
+background-color:#dadada;
+}
+
+.start-container a{
+!margin-left:3%;
+color:black;
+font-size:13pt;
+}
+
+.impressum-container{
+width: 450px;
+height:45px;
+!margin:0px;
+background-color:#dadada;
+}
+
+.impressum-container a{
+color:black;
+font-size:13pt;
+}
+
+.impressum-container a:hover{
+font-size:15pt;
+color:black;
+}
+
+.start-container a:hover{
+font-size:15pt;
+color:black;}
+
+
+
+.startbutton{
+background-color:white;
+width:110px;
+height:22px;
+margin-top:10.5px;
+margin-left:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+!border-radius:50%;
+border: black 1.5px solid
+}
+.startbutton:hover{
+border: black 1.5px dashed;
+}
+
+.impressumbutton{
+float:right;
+background-color:white;
+margin-top:10.5px;
+margin-right:20px;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+!border-radius:50%;
+border: black 1.5px solid
+}
+
+.button{
+float:right;
+background-color:white;
+width:110px;
+height:22px;
+display:block;
+justify-content:center;
+align-items:center;
+!border-radius:50%;
+border: black 1.5px solid
+}
+.codebesch{
+float:left;
+!font-size:13pt;
+}
+
+.codebesch:hover{
+font-size:15pt;
+}
+
+.button:hover{
+border: black 1.5px dashed;
+font-size:15pt;
+color:black;
+}
+
+.impressumbutton:hover{
+border: black 1.5px dashed;
+}
+
+
+a {
+text-decoration:none;
+color:black;
+}
+
+
+
+.bottom{
+width:100%;
+height:1080px;
+display:flex;
+justify-content:center;
+align-items:center;
+!background:yellow;
+position: relative;
+}
+
+
+
+.box{
+width:900px;
+height:1035px; 
+background:white;
+!margin-left:17.5%;
+!border: black 1.5px solid;
+display:flex;
+justify-content:space-between;
+font-size:13pt; 
+padding:0px;
+margin-top:45px;
+position: relative;
+}
+
+.box2{
+!height:990px;
+width:900px;
+position: absolute; 
+top: 530px; 
+left: 0; 
+!background:green;
+margin-top:20px;
+!padding-bottom:2.5px;
+}
+.textbox{
+!background:blue;
+width:610px;
+height:395px;
+}
+
+.codebox {
+width:860px;
+padding-left:20px;
+padding-bottom:2.5px;
+}
+
+
+
+.textbox h1{
+margin-top:20px;
+margin-left:20px;
+font-size:30pt;
+display: inline-block;
+margin-bottom:10px;
+}
+
+.imgbox{
+!margin-top:20px;
+margin-bottom:20px;
+!margin-right:20px;
+margin-left:5px;
+width:320px;
+height:360px;
+background:#dadada;
+float:right;
+!padding:7.5px;
+}
+
+.imgbox img{
+!margin-top:10px;
+width:320px;
+!border-radius:10px;
+!border-radius:15px;
+!border: black 1.5px solid
+
+}
+
+.text{
+margin-top:0px;
+margin-right:0px;
+margin-left:0px;
+width:520px;
+height:405px;
+!background:green;
+float:left;
+}
+
+
+.boxbox{
+width:900px;}
+
+
+.absatz1{
+margin-right:20px;
+margin-left:20px;
+height:415px;
+!background:blue;
+width:860px;
+
+}
+
+.absatz2{
+margin-right:20px;
+margin-left:20px;
+height:560px;
+!background:red;
+width:860px;
+}
+.links{
+float:left;
+!background:red;
+width:430px;
+height:245px;
+line-height:25px;}
+
+.rechts{
+float:right;
+!background:red;
+width:430px;
+height:245px;
+line-height:25px;}
+
+.ganz{
+!background:green;
+width:860px;}
+
+.head{
+width:900px;
+background-color:#dadada;
+display:flex;}
+
+@media all and (max-width: 920px){
+.imgbox h4{
+font-size:93%;
+}
+}
+
+
+
+@media all and (max-width: 920px){
+.start-container a {
+font-size:93%;
+}
+}
+
+@media all and (max-width: 920px){
+.impressum-container a {
+font-size:93%;
+}
+}
+
+@media all and (max-width: 920px){
+.impressum-container a:hover {
+font-size:93.5%;
+}
+}
+
+@media all and (max-width: 920px){
+.start-container a:hover {
+font-size:93.5%;
+}
+}
+
+@media all and (max-width: 920px){
+.box {
+font-size:93%;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="topneu">\(\:\)</div>
+<div class="bottom">
+<div class="top">
+<div class="head">
+<div class="start-container"><div class="startbutton"><a href="https://dianantz.github.io">Overview</a></div></div>
+<div class="impressum-container"><div class="impressumbutton"><a href="https://github.com/DianaNtz">My GitHub</a></div></div>
+</div></div>
+<div class="box">
+
+<div class="textbox">
+<h1>About myself</h1>
+<div class="absatz1">
+
+<div class="text">
+Hey there, my name is Diana and I am an almost finished major physics student. I have written my bachelor thesis about some cool quantum side band transitions in unconventional Penning traps. Unconventional in the sense that there where some additional magnetic fields involved. 
+If you want to find out more about Penning traps, please visit <a href="#">The Penning Trap</a>. During my bachelor years I had a lot of fun learning all kinds of stuff just like elementary quantum theory but my favorite lecture back then was general relativity where I could relate to differential geometry, a mathematical lecture I used to hear. In this lecture I also learned about black holes and was introduced to the Einstein equations that we used to derive the Tolman Oppenheimer Volkoff equation. 
+Besides math and physics, I also like programming. Some programming languages that I know are Fortran, C++ and Python. I also used to do some elementary stuff in C and Java, whereby in Java I focused on the subject of object oriented programming. But interesting for me is and always will be solving differential equations numerically, 
+especially when there is something to illustrate or animate. You want to create some cool gifs as well? Then check out my GitHub repository page <a href="https://github.com/DianaNtz/Animated-Heart-Curve">Animated-Heart-Curve</a> on how to create a heart gif in Python. During my studies, I had the awesome opportunity to work as a tutor for some elementary physics lectures such as electrodynamics and mathematical methods for physicists. A list of advanced lectures I visited is:
+</div>
+<div class="imgbox">
+<img src="docs/assets/img/me.jpg">
+</div>
+</div>
+
+<div class="absatz2">
+
+<br>
+<br>
+<div class="links">
+<b>Advanced physics courses:</b>
+<br>
+General Relativity (Bachelor)
+<br> 
+Theory of Black Holes
+<br>
+Introduction to Particle Physics
+<br>
+Special Topics in General Relativity
+<br>
+Quantum Optics
+<br>
+Quantum Field Theory
+<br>
+Theoretical Quantum Information Theory
+<br>
+Theoretical Quantum Optics
+<br>
+<br></div>
+<div class="rechts">
+<b>Seminar:</b>
+<br>
+Astronomy in the Copernican Revolution
+<br>
+<br>
+<br>
+<b>Mathematics courses:</b>
+<br>
+Complex Analysis
+<br>
+Functional Analysis (Bachelor)
+<br>
+Classical Differential Geometry (Bachelor) 
+<br>
+Partial Differential Equations
+<br>
+<br>
+</div>
+<div class="ganz">
+Again I have to say that although I like Quantum theory related topics, the lecture I enjoyed the most was the lecture about black holes. We learned not only about charged rotating black holes or their thermodynamics but also about stars. Even the Newtonian description and the Lane Emden equation were included. The topic of my master thesis is not yet public but it can be said that I worked with a more generalised 3 dimensional Split Operator method to solve a partial differential equation. This is also where I had to learn Fortran and improved my C++ skills. Other time integration methods apart from the Split Operator method are the Crank Nicolson and the Runge Kutta method. 
+These 2 methods rely on discretizations rather than on Fourier transforms. 
+If you are interested please check out my GitHub repository pages on the <a href="https://github.com/DianaNtz/1D-Crank-Nicolson-Method">1D</a> and <a href="https://github.com/DianaNtz/2D-Crank-Nicolson-Method">2D</a> solution of the Schrödinger equation derived from the Crank Nicolson and my GitHub repository page on the <a href="https://github.com/DianaNtz/Runge-Kutta-Method-Example">Runge Kutta algorithm</a>. My dream is to become a professor for numerical astro physics one day because I love to solve numerical differential equations as much as I love to inspire and teach people. So always keep your head in the stars and have fun scrolling around my GitHub repository pages and learning something new. Furthermore feel free to use code or figures from my pages you like for private purposes but keep in mind to give credit to the author. All was done by myself.
+</div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+<div class="bottom2">
+\(\:\)
+<div>
+
+</body>
+
+</html>
