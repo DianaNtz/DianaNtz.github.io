@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/monokai-sublime.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+<style>
+html {
+    background-image: url(docs/assets/img/backneuneu.jpg);
+    !background-color:blue;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    zoom: 100%;
+}
+@media all and (max-width: 920px){
+html {
+zoom:40%;
+}
+}
+
+@media all and (max-width: 320px){
+html {
+zoom:30%;
+}
+}
+
+html, body { 
+height: 100%; width: 100%; margin: 0; 
+display:flex;
+align-items:center;
+flex-wrap: wrap;
+!justify-content:center;
+!font-family: "Quicksand", sans-serif;
+}
+
+.topneu{
+
+height:25px;
+
+}
+
+.top{
+width: 100%;
+height:45px;
+!background:blue;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:0px;
+!border: black 1.5px solid;
+position: absolute; 
+top: 0; 
+left: 0; 
+}
+
+.start-container{
+width: 450px;
+height:45px;
+margin:0px;
+background-color:#dadada;
+}
+
+.start-container a{
+!margin-left:3%;
+color:black;
+font-size:13pt;
+}
+
+.impressum-container{
+width: 450px;
+height:45px;
+!margin:0px;
+background-color:#dadada;
+}
+
+.impressum-container a{
+color:black;
+font-size:13pt;
+}
+.impressum-container a:hover{
+font-size:15pt;
+color:black;
+}
+
+.start-container a:hover{
+font-size:15pt;
+color:black;}
+
+.startbutton{
+background-color:white;
+width:110px;
+height:22px;
+margin-top:10.5px;
+margin-left:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+!border-radius:50%;
+border: black 1.5px solid
+}
+.startbutton:hover{
+border: black 1.5px dashed;
+}
+
+.impressumbutton{
+float:right;
+background-color:white;
+margin-top:10.5px;
+margin-right:20px;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+!border-radius:50%;
+border: black 1.5px solid
+}
+
+.button{
+float:right;
+background-color:white;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+!border-radius:50%;
+border: black 1.5px solid
+}
+.codebesch{
+float:left;
+!font-size:13pt;
+}
+
+.codebesch:hover{
+font-size:13pt;
+}
+
+.button:hover{
+border: black 1.5px dashed;
+font-size:15pt;
+color:black;
+}
+
+.impressumbutton:hover{
+border: black 1.5px dashed;
+}
+
+
+a {
+text-decoration:none;
+color:black;
+}
+
+
+
+
+.bottom{
+width:100%;
+height:1640px;
+display:flex;
+justify-content:center;
+align-items:center;
+!background:yellow;
+padding-bottom:0px;
+position:relative;
+}
+
+
+
+.box{
+width:900px;
+height:1595px; 
+background:white;
+!margin-left:17.5%;
+!border: black 1.5px solid;
+display:flex;
+justify-content:space-between;
+font-size:13pt; 
+padding:0px;
+margin-top:45px;
+position: relative;
+}
+
+.box2{
+!height:990px;
+width:900px;
+position: absolute; 
+top: 530px; 
+left: 0; 
+!background:green;
+margin-top:20px;
+!padding-bottom:2.5px;
+}
+.textbox{
+!background:blue;
+width:900px;
+height:550px;
+}
+
+.codebox {
+width:860px;
+margin-left:20px;
+justify-content:center;
+align-items:center;
+background:blue;
+}
+
+
+
+.box h1{
+margin-top:20px;
+margin-left:20px;
+font-size:30pt;
+display: inline-block;
+margin-bottom:10px;
+}
+
+.imgbox{
+margin-top:20px;
+margin-right:20px;
+width:250px;
+height:300px;
+background:#dadada;
+float:right;
+}
+
+
+
+
+
+
+.absatz1{
+margin-right:20px;
+margin-left:20px;
+}
+
+.accordiontext {
+  max-width: 860px;
+  margin-left:20px;
+  overflow: hidden;
+  !font-family: "Quicksand", sans-serif;
+  !background:#dadada;!#009578;
+  !border-radius:10px;
+  !margin-top:10px;
+  !margin-bottom:10px;
+}
+
+.accordiontext__label {
+ !padding: 15px 15px;
+ height:20px;
+ margin-top:10px;
+}
+
+.accordiontext__content {
+  padding-top: 5px;
+  padding-bottom:5px;
+}
+
+.accordiontext__label {
+  display: block;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+  
+  position: relative;
+  
+  transition: background 0.1s;
+  !border: black 1.5px solid;
+  !margin-bottom:10px;
+}
+
+.accordiontext__label:hover {
+  !background: rgba(0, 0, 0, 0.1);
+  !border: black 1.5px dashed;
+  !font-size:15pt;
+  font-size:15pt;
+}
+
+
+
+.accordiontext__content {
+  background: #ffffff;
+  !line-height: 1.6;
+  
+  display: none;
+}
+
+.accordiontext__input {
+  display: none;
+}
+
+.accordiontext__input:checked ~ .accordiontext__content {
+  display: block;
+}
+
+.accordiontext__input:checked ~ .accordiontext__label::after {
+  transform: translateY(-50%) rotate(0.5turn);
+}
+.accordionbox{
+width:900px;
+background:white;
+!padding-bottom:25px;
+}
+
+.accordionboxneu{
+padding-bottom:25px;
+}
+
+.accordion {
+  max-width: 900px;
+  !box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  !border-radius: 10px;
+  overflow: hidden;
+  !margin-top:10px;
+  !font-family: "Quicksand", sans-serif;
+  !background: lightgray;!#009578;
+  font-size:13pt;
+  !margin-bottom:10px;
+}
+
+
+.accordion__label {
+  padding:14px 20px;}
+
+
+.accordion__label {
+  display: block;
+  !color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
+  margin-bottom:25px;
+}
+
+.accordion__label:hover {
+ ! background: rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+.accordion__content{
+  background: #ffffff;
+  !line-height: 1.6;
+  !font-size: 0.85em;
+  display:none;
+}
+
+.accordion__content h2{
+  margin-left:20px;
+}
+
+
+.accordion__input{
+  display: none;
+}
+
+
+
+
+
+.accordion__input:checked~ .accordion__content {
+  display: block;
+}
+
+.right{
+float:right;
+width:420px;
+height:615px;}
+
+.left{
+float:left;
+width:440px;
+height:615px;}
+
+.imgbox1{
+!margin-top:10px;
+!margin-right:20px;
+margin-bottom:0px;
+width:860px;
+!background:yellow;
+!border: black 1.0px dotted;
+}
+.imgbox2{
+!margin-top:10px;
+padding-right:10px;
+padding-left:10px;
+padding-top:0.01em;
+display:flex;
+align-items:center;
+width:860px;
+height:85px;
+background:#dadada;
+!border: black 1.0px dotted;
+}
+
+.imgbox2 h4{
+!margin-right:10px;
+}
+@media all and (max-width: 920px){
+.imgbox2 h4{
+font-size:93%;
+}
+}
+
+@media all and (max-width: 920px){
+.imgbox1 h4{
+font-size:93%;
+}
+}
+
+.imgbox1 img{
+width:660px;
+margin-left:100px;
+!border: black 1.5px solid
+}
+
+.ganz{
+width=860px;}
+
+.ganzneu{
+height:70px;
+!width:900px;
+margin-top:20px;
+margin-right:20px;
+margin-left:20px;
+line-height: 10px;}
+
+.head{
+width:900px;
+background-color:#dadada;
+display:flex;}
+
+@media all and (max-width: 900px){
+.start-container a {
+font-size:93%;
+}
+}
+
+@media all and (max-width: 900px){
+.impressum-container a {
+font-size:93%;
+}
+}
+
+@media all and (max-width: 900px){
+.impressum-container a:hover {
+font-size:93.5%;
+}
+}
+
+@media all and (max-width: 900px){
+.start-container a:hover {
+font-size:93.5%;
+}
+}
+
+@media all and (max-width: 900px){
+.button{
+font-size:93%;
+}
+}
+
+
+@media all and (max-width: 900px){
+.codebesch{
+font-size:93%;
+}
+}
+
+@media all and (max-width: 900px){
+.button:hover{
+font-size:93.5%;
+}
+}
+
+@media all and (max-width: 900px){
+.accordion{
+font-size:93%;
+}
+}
+
+@media all and (max-width: 900px){
+.box{
+font-size:93%;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="topneu">\(\:\)</div>
+<div class="bottom">
+<div class="top"><div class="head">
+<div class="start-container"><div class="startbutton"><a href="https://dianantz.github.io">Overview</a></div></div>
+<div class="impressum-container"><div class="impressumbutton"><a href="https://github.com/DianaNtz">My GitHub</a></div></div>
+</div></div>
+<div class="box">
+<div class="textbox">
+<h1>1D Crank Nicolson Method</h1>
+<br>
+
+<div class="absatz1">
+ The Crank Nicolson algorithm is a finite difference method and can be interpreted as a combination of the forward and backward Euler method.
+ It is famous for solving the heat equation numerically but basically any equation of the form:
+$$\dot{u}(z,t)=F(z,t,u(z,t),u'(z,t),u''(z,t))$$
+can be easily solved with the Crank Nicolson method. A well known example of this type is the Schrödinger equation:
+$$i\hbar\dfrac{\partial}{\partial t}\psi(z,t)=\Big(-\dfrac{\hbar^2}{2m}\dfrac{\partial^2}{\partial z^2}+V(z)\Big)\psi(z,t)$$
+The time evolution for a small amount of \(d t\) is:
+$$\Psi(z,t+d t)=\hat{U}\psi(z,t),\:\:\:\:\:\:\:\:\:\:\:\hat{U}:=e^{-i\hat{H}dt/\hbar},\:\:\:\:\:\:\:\:\:\:\:\hat{H}:=-\dfrac{\hbar^2}{2m}\dfrac{\partial^2}{\partial z^2}+V(z)$$
+that is equivalent to:
+$$e^{i\hat{H}d t/(2\hbar)}\Psi(z,t+d t)=e^{-i\hat{H}d t/(2\hbar)}\psi(z,t)$$
+This can be Taylor expanded to:
+$$\Big(1+\dfrac{i}{2\hbar}\hat{H} dt\Big)\psi(z,t+dt)= \Big(1-\dfrac{i}{2\hbar}\hat{H}dt\Big)\psi(z,t)$$
+Let now i be the space index and n the time index of our discretized system, then we obtain for the derivations:
+$$\dfrac{\partial}{\partial t}\psi(z,t)\:\:\Rightarrow\:\:\dfrac{\psi_i^{n+1}-\psi_i^n}{\Delta t},\:\:\:\:\:\dfrac{\partial^2}{\partial z^2}\psi (z,t)\:\:\Rightarrow\:\:\dfrac{\psi_{i+1}^{n}-2\psi_{i}^{n}+\psi_{i-1}^{n}}{(\Delta z)^2}$$
+So the discretized form of the equation above reads:
+$$\Big(1+\dfrac{i}{2\hbar}H_i \Delta t\Big)\psi_i^{n+1}= \Big(1-\dfrac{i}{2\hbar}H_i\Delta t\Big)\psi_i^n,\:\:\:\:\:\:\:\:\:\:\:\:H_i\Psi_i^n:=-\dfrac{\hbar^2}{2m}\dfrac{\psi_{i+1}^{n}-2\psi_{i}^{n}+\psi_{i-1}^{n}}{(\Delta z)^2}+V_i\Psi_i^n$$
+Note that the equation is now in the standard half forward Euler and half backward Euler form, which is characteristic for the Crank Nicolson method:
+$$\dfrac{u_i^{n+1}-u_i^n}{\Delta t}=\dfrac{1}{2}(F_i^{n+1}+F_i^n)$$
+This system can be written in matrix form as:
+$$A \psi_i^{n+1}=B \psi_i^{n}$$
+The matrix \(A\) is given by:
+$$A=\mathbb{1}+\dfrac{i}{2\hbar}\Delta t\begin{pmatrix}
+V_1&{}&{} &{}&{}\\
+{}&V_2&{}&{}&{}\\
+{}&{}&V_3&{}&{}\\
+{}&{}&{}&{\ddots}&{}\\
+{}&{}&{}&{}&{V_n}\\
+\end{pmatrix}-\dfrac{i}{2\hbar}\Delta t\dfrac{\hbar^2}{2m(\Delta z)^2}\begin{pmatrix}
+-2&\:\:\:1&{} &{}&{}\\
+\:\:\:1&-2&\:\:\:1&{}&{}\\
+{}&\:\:\:1&-2&\:\:\:1&{}\\
+{}&{}&\:\:\:1&\ddots&\ddots\\
+{}&{}&{}&{\ddots}&\ddots\\
+\end{pmatrix}$$
+For the matrix \(B\) one only needs to change the sign of \(\Delta t\) in matrix \(A\). So in order to solve the Schrödinger equation we need to solve the system \(A \psi_i^{n+1}=B \psi_i^{n}\), this can be done in several ways, one is to simply invert matrix \(A\):
+$$\psi_i^{n+1}=A^{-1}B \psi_i^{n}$$
+Another way is to simply use an linear solver method such as np.linalg.solve. However, this would be really time consuming compared to the LU decomposition combined with tridiagonal solvers and even more time consuming compared to banded matrix solvers, which exploit the fact that most of our matrix entries are 0. 
+In Python, scipy is providing most common solvers for that such as scipy.linalg.solve_banded, scipy.linalg.solve_triangular and scipy.linalg.lu.
+One thing especially worth mentioning is that the Crank Nicolson method described above can also be used to solve problems with a time depending potential \(V(z,t)\), everything one has to do is to take the matrices \(A\) and \(B\) explicitly time dependent and update them for every timestep \(\Delta t\).
+</div>
+
+<div class="accordionboxneu">
+<div class="accordionbox">
+<div class="accordiontext">
+  <div>
+    <input type="checkbox" name="example_accordiontext" id="section1" class="accordiontext__input">
+    <label for="section1" class="accordiontext__label">Quantum Harmonic Oscillator</label>
+    <div class="accordiontext__content">
+<p> In order to test the numerical solution we are going to have a look at the quantum harmonic oscillator:</p>
+$$\hat{H}=\dfrac{p_z^2}{2m}+\dfrac{m}{2}\omega_z^2z^2$$
+that is the most standard system in physics partially due to its nice analytical solution, which can be derived from an algebraic approach discovered by Paul Dirac. 
+The time independent Schrödinger equation is given by:
+$$(-\dfrac{\hbar^2}{2m}\dfrac{d^2}{dz^2}+\dfrac{m}{2}\omega_z^2z^2)\psi(z)=E\psi(z)$$
+Now one defines the so called creation and annihilation operators:
+$$\hat{a}^\dagger:=\dfrac{\omega_z m z- ip_z}{\sqrt{2\omega_z m \hbar}},\:\:\:\:\:\:\hat{a}:=\dfrac{\omega m z+ ip_z}{\sqrt{2\omega_z m \hbar}},\:\:\:\:\:\:with\:\:[\hat{a},\hat{a}^\dagger]=1$$
+Note that the invers relation is given by:
+$$z=\sqrt{\dfrac{\hbar}{2\omega_z m}}(\hat{a}+\hat{a}^\dagger),\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:p_z=-i\sqrt{\dfrac{\hbar\omega_z m}{2}}(\hat{a}-\hat{a}^\dagger)$$      
+The operators above can be written as:
+$$\hat{a}=\dfrac{1}{\sqrt{2}}(\dfrac{z}{z_0}+z_0\dfrac{d}{dz}),\:\:\:\:\:\:\:\:\:\:\:\hat{a}^\dagger=\dfrac{1}{\sqrt{2}}(\dfrac{z}{z_0}-z_0\dfrac{d}{dz}),\:\:\:\:\:\:with\:\:z_0=\sqrt{\dfrac{\hbar}{\omega_z m}}$$
+The number operator is defined as \(\hat{n}:=\hat{a}^\dagger \hat{a}\) and satisfies:
+$$[\hat{n},\hat{a}^\dagger]=\hat{a}^\dagger,\:\:\:\:\:\:\:\:\:\:\:[\hat{n},\hat{a}]=-\hat{a}$$
+We therefore obtain for our Hamiltonian:
+$$H=\frac{1}{2}\hbar\omega_z(\hat{a}^\dagger \hat{a}+\hat{a} \hat{a}^\dagger)=\hbar\omega_z(\hat{a}^\dagger \hat{a}+\frac{1}{2})$$
+The problem has now reduced to find the eigenfunctions of the number operator \(\hat{n}\). Let \(\psi_{\eta}\) be the eigenfunction of \(\hat{n}\) with eigenvalue \(\eta\). 
+This eigenvalue can not be negative because:
+$$\eta\langle\psi_{\eta},\psi_{\eta}\rangle=\langle\psi_{\eta},\hat{a}^\dagger \hat{a}\psi_{\eta}\rangle=\langle \hat{a}\psi_{\eta},\hat{a} \psi_{\eta}\rangle\ge 0$$
+So the smallest eigenvalue must be \(\eta=0\), the eigenequation is given by:
+$$\hat{a}\psi_0=\dfrac{1}{\sqrt{2}}(\dfrac{z}{z_0}+z_0\dfrac{d}{dz})\psi_0=0$$
+This equation is solved by:
+$$\psi_0(z)=\dfrac{1}{\sqrt{\sqrt{\pi}z_0}}\:e^{-\dfrac{1}{2}\big(\dfrac{z}{z_0}\big)^2}$$
+The eigenfunction to the eigenvalue \(\eta +1\) can be written as \(\hat{a}^\dagger\psi_{\eta}\) because:
+$$\hat{n}\hat{a}^\dagger\psi_{\eta}=(\hat{a}^\dagger\hat{n}+\hat{a}^\dagger)\psi_{\eta}=(\eta+1)\hat{a}^\dagger\psi_{\eta}$$
+For the norm one gets:
+$$\langle \hat{a}^\dagger\psi_{\eta},\hat{a}^\dagger\psi_{\eta}\rangle=\langle \psi_{\eta},\hat{a}\hat{a}^\dagger\psi_{\eta}\rangle=\langle \psi_{\eta},(\hat{a}^\dagger \hat{a}+1)\psi_{\eta}\rangle=(\eta+1)\langle\psi_{\eta},\psi_{\eta}\rangle$$
+For normalised \(\psi_{\eta}\) and \(\psi_{\eta+1}\) it has to be:
+$$\hat{a}^\dagger\psi_{\eta}=\sqrt{\eta+1}\psi_{\eta+1}\:\:\Rightarrow\:\:\psi_{n}=\frac{1}{\sqrt{n}}\hat{a}^\dagger\psi_{n-1}=\frac{1}{\sqrt{n!}}(\hat{a}^\dagger)^n\psi_{0}$$
+Furthermore note that \(\hat{a}\psi_{\eta}\) is an eigenfunction to the eigenvalue \(\eta-1\) since:
+$$\hat{n}\hat{a}\psi_{\eta}=(\hat{a}\hat{n}-\hat{a})\psi_{\eta}=(\eta-1)\hat{a}\psi_{\eta}$$
+The norm is given by:
+$$\langle \hat{a}\psi_{\eta},\hat{a}\psi_{\eta} \rangle=\langle \psi_{\eta},\hat{a}^\dagger \hat{a}\psi_{\eta}\rangle=\eta\langle \psi_{\eta},\psi_{\eta} \rangle $$
+such that:
+$$\hat{a}\psi_{\eta}=\sqrt{\eta}\psi_{\eta-1}$$
+So with n \(\in\) \(\mathbb{N}\) we already found all of our eigenfunctions. Let us otherwise assume there was an eigenvalue \(\eta=n+c\) with \(0 < c<1\) and n \( \in \) \( \mathbb{N} \). 
+One would obtain:
+$$\hat{n}\psi_{\eta}=(n+c)\psi_{\eta}\:\:\Rightarrow\:\:\hat{n}(\hat{a}^n\psi_{\eta})=c(\hat{a}^n\psi_{\eta})\:\:\Rightarrow\:\:\hat{n}(\hat{a}^{n+1}\psi_{\eta})=(c-1)(\hat{a}^{n+1}\psi_{\eta})$$
+Therefore it would lead us to an eigenfunction with negative eigenvalue that we already excluded previously. So the solution for the quantum harmonic oscillator is:
+$$\psi_n(z)=\dfrac{1}{\sqrt{n!\sqrt{\pi}z_0}}(\hat{a}^\dagger)^ne^{-\dfrac{1}{2}\big(\dfrac{z}{z_0}\big)^2},\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:E_n=\hbar\omega_z(n+\frac{1}{2})$$    
+The solution can also be written in terms of the Hermite polynomials as:
+$$\psi_n(z)=\dfrac{1}{\sqrt{2^nn!\sqrt{\pi}z_0}}e^{-\dfrac{1}{2}\big(\dfrac{z}{z_0}\big)^2}H_n(\dfrac{z}{z_0})$$
+with:
+$$H_n(x)=e^{\frac{x^2}{2}}(\sqrt{2}a^\dagger)^ne^{-\frac{x^2}{2}}=e^{x^2}e^{-\frac{x^2}{2}}(x-\frac{d}{dx})^ne^{\frac{x^2}{2}}e^{-x^2}=(-1)^ne^{x^2}\frac{d^n}{dx^n}e^{-x^2}$$
+</div>
+  </div>
+  <div>
+    <input type="checkbox" name="example_accordiontext" id="section2" class="accordiontext__input">
+    <label for="section2" class="accordiontext__label">Superposition State</label>
+    <div class="accordiontext__content">
+     <br>
+     <div class="ganz">
+ Now we want to check our numerical solution for the Crank Nicolson method against an analytical solution. 
+      So let us have a look at the time evolution for the first two eigenfunctions superposition state of the harmonic oscillator:
+$$\psi_s(z,0)=\dfrac{1}{\sqrt{2}}(\psi_0(z)+\psi_1(z))$$  
+ The time evolution of an arbitrary initial state written in the eigenstate basis is:
+$$\psi(z,t)=\sum\limits_{n=0}^{\infty}c_ne^{-\frac{i}{\hbar}E_n t}\psi_n(z),\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\psi(z,0)=\sum\limits_{n=0}^{\infty}c_n\psi_n(z)$$    
+So for our above initial state we get:
+$$\psi_s(z,t)=\dfrac{1}{\sqrt{2}}\Big(e^{-i\omega_z t/2}\psi_0(z)+e^{-3i\omega_z t/2}\psi_1(z)\Big)$$
+with \(\psi_n=\psi_n^\dagger\) we get for the probability density:
+$$|\psi_s (z,t)|^2=\frac{1}{2}(|\psi_0(z)|^2+|\psi_1(z)|^2)+\cos{(\omega_z t)}\psi_1 (z)\psi_0(z)$$ </div>
+
+
+<br>      
+ <div class="ganz">
+<div class="imgbox1">
+<img src="docs/assets/img/super.gif"></div>
+<div class="imgbox2">
+<h4>Figure 1: Shows the time evolution of the probability density for the initial superposition state \(\psi_s(z,0)\) and compares its analytical solution \(\psi_s(z,t)\) with the numerical calculated result from the above described Crank Nicolson method \(\psi (z,t)\). Notice however that one has set \(m=m_e\) and \(\omega_z=110\cdot 2\pi\) kHz.</h4></div>
+         
+     </div>
+<p>\(\:\)</p>
+      
+    </div>
+  </div>
+<div>
+    <input type="checkbox" name="example_accordiontext" id="section3" class="accordiontext__input">
+    <label for="section3" class="accordiontext__label">Coherent State</label>
+    <div class="accordiontext__content"> 
+<br>
+<div class="ganz">
+Another interesting solution of the harmonic oscillator is the coherent state \(\ket{\alpha}\) which is defined as:
+$$\hat{a}\ket{\alpha} =\alpha \ket{\alpha},\:\:\:\:\:\:\:\:\langle\hat{n}|\alpha\rangle=\bra{0}\frac{\hat{a}^n}{\sqrt{n!}}\ket{\alpha}=\frac{\alpha^n}{\sqrt{n!}}\braket{0}{\alpha}$$
+Since the eigenstates build a basis of the Hilbert space we can write:
+$$\ket{\alpha}=C\sum_{n=0}^\infty\frac{\alpha^n}{\sqrt{n!}}\ket{n}=C\sum_{n=0}^\infty\frac{(\alpha \hat{a}^\dagger)^n}{n!}\ket{0},\:\:\:\:1=\langle \alpha|\alpha\rangle=C^2\sum_{n=0}^\infty \frac{|\alpha|^{2n}}{n!}=C^2e^{|\alpha|^2}\xrightarrow[]{}C=e^{-\frac{|\alpha|^2}{2}}$$
+
+So the time evolution for a coherent state is given by:
+$$\langle z|\alpha\rangle=\Psi_\alpha (z,t)= e^{-\frac{|\alpha|^2}{2}}e^{-i\omega_z t/2}\sum_{n=0}^\infty\frac{(\alpha e^{-i\omega_z t})^n}{\sqrt{n!}}\Psi_n(z)$$
+$$=\frac{1}{\sqrt{\sqrt{\pi}z_0}} e^{-\frac{|\alpha|^2}{2}}e^{-i\omega_z t/2}e^{-\frac{1}{2}(z/z_0)^2}\sum_{n=0}^\infty\frac{(\alpha/\sqrt{2} e^{-i\omega_z t})^n}{n!}H_n(z/z_0)$$
+$$=\frac{1}{\sqrt{\sqrt{\pi}z_0}} e^{-\frac{|\alpha|^2}{2}}e^{-i\omega_z t/2}e^{-\frac{1}{2}(z/z_0)^2}e^{2(\alpha/\sqrt{2} e^{-i\omega_z t})z/z_0}e^{-(\alpha/\sqrt{2} e^{-i\omega_z t})^2}$$
+
+Where we denoted with \(H_n\) the Hermite polynomials and used the formula:
+$$e^{2ax-a^2}=\sum_{n=0}^\infty\frac{a^n}{n!}H_n(x)$$
+If we now sum up the last three exponents of the equation above we obtain:
+$$-\frac{1}{2}((\alpha e^{-i\omega_z t})^2-2\sqrt{2}\alpha e^{-i\omega_z t}z/z_0+(z/z_0)^2)=-\frac{1}{2}(-\alpha^2e^{-2i\omega_zt}+(z/z_0-\sqrt{2}\alpha e^{-i\omega_z t})^2)$$
+
+If we write the coherence amplitude as \(\alpha=|\alpha|e^{i\delta}\), the first term in the bracket can be expressed with:
+
+$$-\alpha^2e^{-2i\omega_zt}
+=-|\alpha|^2e^{-2i(\omega_zt-\delta)}=-|\alpha|^2\cos (2\omega_zt-2\delta)+|\alpha|^2i\sin (2\omega_zt-2\delta)$$
+Notice that:
+$$-|\alpha|^2\cos (2(\omega_zt-\delta))=-|\alpha|^2+2|\alpha|^2\sin^2 (\omega_zt-\delta)$$
+the second term on the other hand can be written as:
+$$(z/z_0-\sqrt{2}|\alpha|(\cos (\omega_zt-\delta)-i\sin (\omega_zt-\delta)))^2$$
+$$=z^2/z_0^2-2\sqrt{2}|\alpha|z/z_0(\cos (\omega_zt-\delta)-i\sin (\omega_zt-\delta))$$
+$$+2|\alpha|^2(\cos^2 (\omega_zt-\delta)-2i\cos (\omega_zt-\delta)\sin (\omega_zt-\delta)-\sin^2 (\omega_zt-\delta))$$
+$$=(z/z_0-\sqrt{2}|\alpha|\cos (\omega_zt-\delta))^2+2\sqrt{2}|\alpha|z/z_0i\sin (\omega_zt-\delta)$$
+$$-4|\alpha|^2i\sin (\omega_zt-\delta)\cos (\omega_zt-\delta)-2|\alpha|^2\sin^2(\omega_zt-\delta)$$
+With:
+$$-2|\alpha|^2i(2\sin (\omega_zt-\delta)\cos (\omega_zt-\delta))=-2|\alpha|^2i\sin (2(\omega_zt-\delta))$$
+we get the following expression for our exponent term:
+
+$$-\frac{1}{2}\bigg((z/z_0-\sqrt{2}|\alpha|\cos (\omega_zt-\delta))^2+2\sqrt{2}|\alpha|z/z_0i\sin (\omega_zt-\delta)-|\alpha|^2-|\alpha|^2i\sin (2(\omega_zt-\delta))\bigg)$$
+So the time evolution of the initial coherent state is:
+
+$$\Psi_\alpha (z,t)=\frac{1}{\sqrt{\sqrt{\pi}z_0}} e^{-\frac{1}{2}(z/z_0-\sqrt{2}|\alpha|\cos (\omega_zt-\delta))^2}e^{-i\omega_z t/2}e^{-\sqrt{2}|\alpha|z/z_0i\sin (\omega_zt-\delta)}e^{\frac{|\alpha|^2}{2}i\sin (2(\omega_zt-\delta))}$$
+The probability density is then simply given by: 
+
+$$|\Psi_\alpha (z,t)|^2=\frac{1}{\sqrt{\pi}z_0} e^{-(z/z_0-\sqrt{2}|\alpha|\cos (\omega_zt-\delta))^2}$$
+If we only consider real \(\alpha\) we can set \(\delta=0\) so we get \(\cos (\omega_zt-\delta)=\cos (\omega_zt)\). This leads us to following initial state:
+$$\Psi_\alpha (z,0)=\frac{1}{\sqrt{\sqrt{\pi}z_0}} e^{-\frac{1}{2}(z/z_0-\sqrt{2}|\alpha|)^2}$$
+The probability density now becomes:
+$$|\Psi_\alpha (z,t)|^2=\frac{1}{\sqrt{\pi}z_0} e^{-(z/z_0-\sqrt{2}|\alpha|\cos (\omega_zt))^2}$$
+</div>
+
+<br>      
+ <div class="ganz">
+<div class="imgbox1">
+<img src="docs/assets/img/co2.gif"></div>
+<div class="imgbox2">
+<h4>Figure 2: Shows the time evolution of the probability density for the initial coherent state \(\psi_\alpha(z,0)\) and compares <br>
+its analytical solution \(\psi_\alpha(z,t)\) to the numerical calculated result from the above described Crank Nicolson <br> method \(\psi (z,t)\). Notice however that one has set \(m=m_e\) and \(\omega_z=110\cdot 2\pi\) kHz.
+         </h4></div>
+
+      </div>          
+
+      
+    </div>
+  </div>
+  
+  
+  </div>
+<br>
+<div class="ganzneu">
+<b>References</b>
+<br>
+<p>[1] <a href="https://en.wikipedia.org/wiki/Crank%E2%80%93Nicolson_method"> https://en.wikipedia.org/wiki/Crank%E2%80%93Nicolson_method</a></p>
+<p>[2] <a href="https://en.wikipedia.org/wiki/Quantum_harmonic_oscillator" > https://en.wikipedia.org/wiki/Quantum_harmonic_oscillator</a></p>
+
+</div>
+<div class="accordion">
+  <div>
+    <input type="checkbox" name="example_accordion" id="section1neu" class="accordion__input">
+    <label for="section1neu" class="accordion__label"><div class="codebesch"><a href="https://github.com/DianaNtz/1D-Crank-Nicolson-Method">To get the code go to my GitHub repository 1D-Crank-Nicolson-Method</a></div><div class="button">View Code</div></label>
+    <div class="accordion__content">
+      
+        <p><div class="codebox">
+        <pre><code class="python">"""
+The code below was written by @author: https://github.com/DianaNtz and is an 
+implementation of the 1D Crank Nicolson method. It solves in particular the 
+Schrödinger equation for the quantum harmonic oscillator. For more details on 
+the code requirements and licences see 
+https://github.com/DianaNtz/1D-Crank-Nicolson-Method.
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+import imageio
+filenames = []
+#some initial values
+hbar = 1.05e-34
+mass = 9.11e-31 #mass electron
+wz=110*2*np.pi*1000 #freuquency in Hz
+z0=np.sqrt(hbar/(wz*mass))
+nz=2**9
+dt=1*10**(-8) #dt in s
+tfinal=2*np.pi/wz 
+time_steps=int(np.round(tfinal/dt))
+t=0
+zmax=6.6*z0  #zmax in m
+zmin=-6.6*z0 #zmin in m
+dz=(zmax-zmin)/(nz-1)
+n=np.linspace(-nz/2,nz/2-1,nz)
+z=n*dz
+psi0=np.exp(-((z)/z0)**2/2)
+norm0=np.sum(psi0*np.conjugate(psi0))*dz
+psi0=psi0/np.sqrt(norm0)
+psi1=np.exp(-((z)/z0)**2/2)*2*z/z0
+norm1=np.sum(psi1*np.conjugate(psi1))*dz
+psi1=psi1/np.sqrt(norm1)
+absalpha=2.5
+psico=np.exp(-((z-z0*np.sqrt(2)*absalpha)/z0)**2/2)
+normco=np.sum(psico*np.conjugate(psico))*dz
+psico=psico/np.sqrt(normco)
+#psi=(1/(np.sqrt(2)))*(psi1+psi0)
+psi=psico
+Vz=0.5*wz**2*z**2*mass
+a=(1j*dt/hbar)/((4.0*mass*dz**2)/(hbar**2))
+b=np.empty(nz, dtype=complex)
+c=np.empty(nz, dtype=complex)
+for i in range(0,nz):
+    b[i]=1.0+0.5*dt/hbar*1j*(hbar**2/((dz**2*mass))+Vz[i])
+    c[i]=1.0-0.5*dt/hbar*1j*(hbar**2/((dz**2*mass))+Vz[i])
+#setting up matrices A and B
+A=np.empty([nz, nz], dtype=complex)
+B=np.empty([nz, nz], dtype=complex)
+for i in range(0,nz):
+    for j in range(0,nz):
+        if   (j==i):
+            A[i][j]=b[i]
+            B[i][j]=c[i]
+        elif (j==i+1):
+            A[i][j]=-a
+            B[i][j]=a
+        elif (j==i-1):
+            A[i][j]=-a
+            B[i][j]=a
+        else:
+            A[i][j]=0.0
+            B[i][j]=0.0            
+invA=np.linalg.inv(A)
+#starting loop for time iteration
+for i in range(0,time_steps+1):
+    psis=(1/(np.sqrt(2)))*(psi0*np.exp(-1j*wz*t/2)+psi1*np.exp(-1j*3*wz*t/2))
+    rohco=np.exp(-((z-z0*np.sqrt(2)*absalpha*np.cos(wz*t))/z0)**2)/(z0*np.sqrt(np.pi)) 
+    ka=B.dot(psi)
+    psi=invA.dot(ka)
+    #creating gif animation with imageio
+    if(i%10==0): 
+          print(i)
+          ax1 = plt.subplots(1, sharex=True, figsize=(10,5))          
+          plt.plot(z*10**3,rohco/10**(3),
+          color='black',linestyle='-',linewidth=3.0,label="$|\psi_{α} (z, t)|^2$")
+          #plt.plot(z*10**3,np.real(psis*np.conjugate(psis))/10**(3),
+          #color='black',linestyle='-',linewidth=3.0,label="$|\psi_{s} (z, t)|^2$")
+          plt.plot(z*10**3,np.real(psi*np.conjugate(psi))/10**(3),
+          color='deepskyblue',linestyle='-.',linewidth=3.0,label = "$|\psi (z, t)|^2$")
+          plt.xlabel("Position in [mm]",fontsize=16) 
+          plt.ylabel(r'Probability density [1/mm]',fontsize=16)
+          plt.ylim([0,70])
+          plt.xlim([zmin*10**3,zmax*10**3]) 
+          plt.xticks(fontsize= 16)
+          plt.xticks([-0.08,-0.04,0,0.04,0.08])
+          plt.yticks(fontsize= 16) 
+          plt.text(0.04, 56.5,
+          "t=".__add__(str(round(t*10**(6),1))).__add__(" $\mu$s"),fontsize=19 )
+          plt.legend(loc=2,fontsize=19,handlelength=3,frameon=False) 
+          filename ='bla{0:.0f}.png'.format(i/10)
+          filenames.append(filename)    
+          plt.savefig(filename,dpi=120)
+          plt.close()
+    t=t+dt
+with imageio.get_writer('co2.gif', mode='I') as writer:
+    for filename in filenames:
+        image = imageio.imread(filename)
+        writer.append_data(image)       
+for filename in set(filenames):
+    os.remove(filename)</code></pre>
+      </div></p>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+</div>
+<div class="bottom2">
+\(\:\)
+<div>
+<div class="break"></div>
+
+</body>
+
+</html>
