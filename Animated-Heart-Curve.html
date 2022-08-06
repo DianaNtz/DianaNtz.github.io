@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/monokai-sublime.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+   
+
+<style>
+html {
+    background-image: url(docs/assets/img/backneuneu.jpg);
+    !background-color:blue;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    zoom: 100%;
+}
+@media all and (max-width: 920px){
+html {
+zoom:40%;
+}
+}
+@media all and (max-width: 320px){
+html {
+zoom:30%;
+}
+}
+
+html, body { 
+height: 100%; width: 100%; margin: 0; 
+display:flex;
+align-items:center;
+flex-wrap: wrap;
+!font-family: "Quicksand", sans-serif;
+}
+
+.topneu{
+
+height:25px;
+
+}
+
+.top{
+width: 100%;
+height:45px;
+!background:blue;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:0px;
+!border: black 1.5px solid;
+position: absolute; 
+top: 0; 
+left: 0; 
+}
+
+.start-container{
+width: 450px;
+height:45px;
+margin:0px;
+background-color:#dadada;
+}
+
+.start-container a{
+!margin-left:3%;
+color:black;
+font-size:13pt;
+}
+
+.impressum-container{
+width: 450px;
+height:45px;
+!margin:0px;
+background-color:#dadada;
+}
+
+.impressum-container a{
+color:black;
+font-size:13pt;
+}
+.impressum-container a:hover{
+font-size:15pt;
+color:black;
+}
+
+.start-container a:hover{
+font-size:15pt;
+color:black;}
+
+
+.startbutton{
+background-color:white;
+width:110px;
+height:22px;
+margin-top:10.5px;
+margin-left:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+!border-radius:50%;
+border: black 1.5px solid
+}
+.startbutton:hover{
+border: black 1.5px dashed;
+}
+
+.impressumbutton{
+float:right;
+background-color:white;
+margin-top:10.5px;
+margin-right:20px;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+!border-radius:50%;
+border: black 1.5px solid
+}
+
+.button{
+float:right;
+background-color:white;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+!border-radius:50%;
+border: black 1.5px solid
+}
+
+
+.codebesch{
+float:left;
+!font-size:13pt;
+}
+
+
+
+.button:hover{
+border: black 1.5px dashed;
+font-size:15pt;
+color:black;
+}
+
+.impressumbutton:hover{
+border: black 1.5px dashed;
+}
+
+
+a {
+text-decoration:none;
+color:black;
+}
+
+
+
+.bottom{
+width:100%;
+height:595px;
+display:flex;
+justify-content:center;
+!align-items:center;
+!background:black;
+padding-bottom:0px;
+position: relative;
+}
+
+.boxradius{
+
+border: black 1.5px solid;
+
+}
+
+.box{
+width:900px;
+height:545px; 
+background:white;
+!margin-left:17.5%;
+!border: black 1.5px solid;
+display:flex;
+justify-content:space-between;
+font-size:13pt; 
+padding:0px;
+margin-top:45px;
+position: relative;
+}
+
+
+.box2{
+!height:990px;
+width:900px;
+position: absolute; 
+top: 470px; 
+left: 0; 
+!background:green;
+margin-top:20px;
+!padding-bottom:2.5px;
+}
+.textbox{
+!background:blue;
+width:510px;
+height:490px;
+}
+
+.codebox {
+width:860px;
+padding-left:20px;
+padding-bottom:2.5px;
+}
+
+
+
+.box h1{
+margin-top:20px;
+margin-left:20px;
+font-size:30pt;
+display: inline-block;
+margin-bottom:10px;
+}
+
+@media all and (max-width: 920px){
+.box h1{
+font-size:220%;
+}
+}
+
+
+.imgbox{
+margin-right:20px;
+width:360px;
+height:490px;
+background:#dadada;
+float:right;
+!border: black 1.0px dotted;
+}
+
+
+
+.imgbox h4{
+margin-left:15px;
+margin-right:15px;
+margin-top:10px;
+}
+
+@media all and (max-width: 920px){
+.imgbox h4{
+font-size:93%;
+}
+}
+
+
+
+.imgbox img{
+!margin-top:10px;
+width:360px;
+!border: black 1.5px solid
+}
+
+
+.absatz1{
+margin-right:10px;
+margin-left:20px;
+}
+
+.accordion {
+  max-width: 900px;
+  !box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  !border-radius: 10px;
+  overflow: hidden;
+  !font-family: "Quicksand", sans-serif;
+  !background: lightgray;!#009578;
+  font-size:13pt;
+}
+
+.accordion__label {
+  padding:14px 20px;}
+
+
+.accordion__label {
+  display: block;
+  !color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
+  margin-bottom:25px;
+}
+
+.accordion__label:hover {
+ ! background: rgba(0, 0, 0, 0.1);
+}
+
+.accordion__content{
+  background: #ffffff;
+  !line-height: 1.6;
+  !font-size: 0.85em;
+  display:none;
+}
+
+.accordion__content h2{
+  margin-left:20px;
+}
+
+
+.accordion__input{
+  display: none;
+}
+
+
+
+
+
+.accordion__input:checked~ .accordion__content {
+  display: block;
+}
+
+
+.head{
+width:900px;
+background-color:#dadada;
+display:flex;}
+
+@media all and (max-width: 920px){
+.start-container a {
+font-size:93%;
+}
+}
+
+@media all and (max-width: 920px){
+.impressum-container a {
+font-size:93%;
+}
+}
+
+@media all and (max-width: 920px){
+.impressum-container a:hover {
+font-size:93.5%;
+}
+}
+
+@media all and (max-width: 920px){
+.start-container a:hover {
+font-size:93.5%;
+}
+}
+
+@media all and (max-width: 920px){
+.button{
+font-size:93%;
+}
+}
+
+
+@media all and (max-width: 920px){
+.codebesch{
+font-size:93%;
+}
+}
+
+@media all and (max-width: 920px){
+.button:hover{
+font-size:93.5%;
+}
+}
+
+@media all and (max-width: 920px){
+.accordion{
+font-size:93%;
+}
+}
+
+@media all and (max-width: 920px){
+.box{
+font-size:93%;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="topneu">\(\:\)</div>
+<div class="bottom">
+<div class="top">
+<div class="head">
+<div class="start-container"><div class="startbutton"><a href="https://dianantz.github.io">Overview</a></div></div>
+<div class="impressum-container"><div class="impressumbutton"><a href="https://github.com/DianaNtz">My GitHub</a></div></div>
+</div></div>
+<div class="box">
+
+
+<div class="textbox">
+
+<h1>Fast Animations In Python</h1>
+<br>
+<div class="absatz1">
+There is the following common saying: 
+<b>"A picture is worth a thousand words!"</b>
+But what about animations created out of pictures? 
+An easy and fast understandable way to make an animation is the flip book method that one should be familiar with since play school times.
+The best Python library using this principle is imageio. What makes imageio especially neat is the fact that after you know how to create the single plots of your animation, further needed is only a simple for loop to generate the gif.  
+Other libraries like matplotlib with matplotlib.animation are similar to use but not as straight forward and simple for beginners like imageio. An example code on how to create an gif with imageio is given below, just click the button or go directly to github.
+The example curve we investigated is the most important curve in \(\mathbb{R}^2\) and given by:
+$$c(t)=\begin{pmatrix}
+t \\
+|t| \pm \sqrt{1-t^2}
+\end{pmatrix},\:\:\:\:\:\:\:\:\:\:\:\:t\in[-1,1]$$
+\(c(t)\) is a constant reminder that no matter what we do we should always make sure that we do these things with love.
+After all, it is the passioned flame living in peoples heart that drives them and there is no greater tragedy than letting this flame expire.     
+</div>
+
+</div>
+   <div class="imgbox">
+          <div class="imgbox1">
+<img src="docs/assets/img/Herz.gif">
+<h4>Figure 1: shows the curve \(c(t)\) mentioned in the text. The gif was created from the Python library imageio, which uses a flip book method. 
+It is the most important curve in \(\mathbb{R}^2\). Make sure to remember its shape. </h4>
+
+
+      </div>
+
+
+          </div>
+<div class="box2">
+<div class="accordion">
+  <div>
+    <input type="checkbox" name="example_accordion" id="section1" class="accordion__input">
+    <label for="section1" class="accordion__label"><div class="codebesch"><a href="https://github.com/DianaNtz/Animated-Heart-Curve">To get the code go to my GitHub repository Animated-Heart-Curve</a> </div><div class="button">View Code</div></label>
+    <div class="accordion__content">
+      
+      <p><div class="codebox">
+        <pre><code class="python">""" 
+The code below was written by @author: https://github.com/DianaNtz and is an 
+example on how to create an animated gif with the library imageio. For details 
+on requirements and licences see https://github.com/DianaNtz/Animated-Heart-Curve.
+"""
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+import imageio
+n=100 #gifs worth in units of 10**3 words :)
+t=np.linspace(-1,1,n-1)
+filenames = []
+for i in range(0,n):
+    #plot the curve
+    fig, ax = plt.subplots(figsize=(7,7))
+    ax.plot(t[:i],np.sqrt((t[:i])**2)+np.sqrt(1-(t[:i])**2),"-",
+linewidth=3.0,color='deeppink',label='$(\:t,|t|+\sqrt{1-t^2}\:)$')
+    ax.plot(-t[:i],np.sqrt((t[:i])**2)-np.sqrt(1-(t[:i])**2), "-m",
+linewidth=3.0,label='$(\:t,|t|-\sqrt{1-t^2}\:)$')
+    ax.set_xlim(-1.5,1.5)
+    ax.set_ylim(-1.5,2.5)
+    plt.xticks(fontsize= 16) 
+    plt.yticks(fontsize= 16)
+    plt.legend(loc=1,fontsize= 16)    
+    #create file name for index i 
+    filename ='bla{0:.0f}.png'.format(i)
+    #append file name to the list filename
+    filenames.append(filename)    
+    #save the plot
+    plt.savefig(filename,dpi=100)
+    plt.close()    
+#build the gif
+with imageio.get_writer('Herz.gif', mode='I') as writer:
+    for filename in filenames:
+        image = imageio.imread(filename)
+        writer.append_data(image)       
+#remove saved figures 
+for filename in set(filenames):
+    os.remove(filename)</code></pre>
+      </div></p>
+    </div>
+  </div>
+  </div>
+
+
+
+</div>
+
+</div>
+
+</div>
+<div class="bottom2">
+\(\:\)
+<div>
+<div class="break"></div>
+</body>
+
+</html>
