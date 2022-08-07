@@ -809,9 +809,9 @@ y
 \sin{(\omega_mt + \phi_m)}
 \end{pmatrix}$$
 Another way of solving such a coupled system of ordinary differential equations:
-$$\dfrac{d}{dt}\vec{u}(t)=F(t,\vec{u}(t)),\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\vec{u}(t_0)=\vec{u}_0$$
+$$\dfrac{d}{dt}\vec{u}(t)=\vec{F}(t,\vec{u}(t)),\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\vec{u}(t_0)=\vec{u}_0$$
 Can be done numerically through the Euler method:
-$$\vec{u}_{n+1}=\vec{u}_n+\Delta tF(t_n,\vec{u}_n),\:\:\:\:\:\:\:\:\:\:\:\:\:\:t_{n+1}=t_n+\Delta t$$
+$$\vec{u}_{n+1}=\vec{u}_n+\Delta t\vec{F}(t_n,\vec{u}_n),\:\:\:\:\:\:\:\:\:\:\:\:\:\:t_{n+1}=t_n+\Delta t$$
 In order for this method to work, one has to rewrite our sytem in a set of first order differential equations depending on:
 $$x_1=x,\:\:\:\:\:x_2=\dot{x},\:\:\:\:\:y_1=y,\:\:\:\:\:y_2=\dot{y},\:\:\:\:\:z_1=z,\:\:\:\:\:z_2=\dot{z}$$ 
 We therefore obtain the following algorithm for the x component:
