@@ -431,6 +431,42 @@ float:right;
 !border: black 1.0px dotted;
 }
 
+.imgbox1a{
+height:325px;
+display:flex;
+align-items:center;
+}
+
+.imgbox2a{
+height:315px;
+display:flex;
+align-items:center;
+}
+
+.imgbox3a{
+height:250px;
+display:flex;
+align-items:center;
+}
+
+.imgbox4a{
+height:225px;
+display:flex;
+align-items:center;
+}
+
+.imgbox5a{
+height:545px;
+display:flex;
+align-items:center;
+}
+
+.imgbox6a{
+height:132px;
+display:flex;
+align-items:center;
+}
+
 
 
 .imgbox1 h4{
@@ -446,7 +482,7 @@ width:360px;
 }
 
 .imgbox2{
-margin-top:92.5px;
+margin-top:182.5px;
 width:360px;
 height:665px;
 background:#dadada;
@@ -470,7 +506,7 @@ width:360px;
 
 
 .imgbox3{
-margin-top:92.5px;
+margin-top:182.5px;
 width:360px;
 height:605px;
 background:#dadada;
@@ -493,7 +529,7 @@ width:360px;
 }
 
 .imgbox4{
-margin-top:92.5px;
+margin-top:182.5px;
 width:360px;
 height:580px;
 background:#dadada;
@@ -516,10 +552,10 @@ width:360px;
 }
 
 .imgbox5{
-margin-top:92.5px;
+margin-top:182.5px;
 !margin-right:20px;
 width:360px;
-height:680px;
+height:772.5px;
 background:#dadada;
 float:right;
 !border: black 1.0px dotted;
@@ -897,56 +933,55 @@ where the magnetron and modified cyclotron mode are again coupled in the x-y pla
 <div class="right">
 <div class="imgbox1">
 <img src="docs/assets/img/total.gif">
-
+<div class="imgbox1a">
 <h4>Figure 1: the figure above shows a schematic sketch of the classical Penning trap. This ion trap was developed by Hans Georg Dehmelt in 1959. 
 Unlike its close relative (the Paul trap), the Penning trap uses only static fields which are given by a quadrupole electric field and a constant magnetic field in the z direction.
 In black, one can see the end cap
 electrodes, which are mathematically an elliptic hyperboloid. In silver one gets to see the ring electrode,
 which is mathematically a hyperbolic hyperboloid. In pink one gets to see the 
 trajectory of the charged particle. Notice however that it is a schematic sketch and not drawn to scale. </h4>
-</div>
+</div></div>
 <br>
 <div class="imgbox2">
 <img src="docs/assets/img/Penning1Doff.gif">
-
+<div class="imgbox2a">
 <h4>Figure 2: shows the independent movement in z direction derived from the Lorentz force. <br>The z direction is sometimes also referred to as axial direction. As you can see the axial movement 
 is basically a harmonic oscillaton \(z=C_z\cos{(\omega_zt+\phi_z)}\) with frequency \(\omega_z=\sqrt{2eV_0/(md^2)}\), amplitude \(C_z\) and phase \(\phi_z\). The period of such a harmonic oscillator is given by \(T_z=2\pi/\omega_z\). 
 Note that the figure above is using again arbitrary units and is not to scale. The independent movement in axial direction comes in very handy for all sorts of experiments with Penning traps and is one of the main reasons why they are so popular.</h4>
-
+</div>
 </div>
 
 <div class="imgbox3">
 <img src="docs/assets/img/Penning2Dtogetheroff.gif">
+<div class="imgbox3a">
 <h4>Figure 3: illustrates the coupled movement of the Penning trap in the plane perpendicular to te axial direction and therefore the x-y plane. The x direction movement in time is given by 
 \(x=C_c\cos{(\omega_c't + \phi_c)}+C_m\cos{(\omega_mt + \phi_m)} \) and the movement in y direction is given by
 \(y=C_c\sin{(\omega_c't + \phi_c)}+C_m\sin{(\omega_mt + \phi_m)} \). \(\omega_c'\) is the so called modified cyclotron frequency and \(\omega_m\) the magnetron frequency. 
 The figure above is again only an illustration and not to scale although \(\omega_c' > \omega_m\) is indeed true.</h4>
-
+</div>
 
 </div>
 
 <div class="imgbox4">
 <img src="docs/assets/img/Penning2Doff.gif">
+<div class="imgbox4a">
 <h4>Figure 4: The figure above shows us how the movement in the x-y plane can be interpreted further in terms of decoupled magnetron and modified cyclotron mode. 
 In green we see the really fast modified cyclotron motion and in orange the slower magnetron motion. If one superimposes these two separate movements one would again obtain the results of figure 3. The figure is again only for illustration and<br> not to scale. </h4>
 
-
+</div>
 </div>
 
 <div class="imgbox5">
-<img src="docs/assets/img/3dneu.gif">
-
-<h4>Figure 5: Illustrates the total solution for the 3 dimensional trajectory of a charged particle in a classical Penning trap calculated from the Lorentz force. It consists of an independent harmonic oscillation 
-in the z direction \(z=C_z\cos{(\omega_zt+\phi_z)}\) and a coupled motion in the x-y plane with with frequency \(\omega_z\), amplitude \(C_z\) and phase \(\phi_z\). The trajectory in x direction is given by \(x=C_c\cos{(\omega_c't + \phi_c)}\)\(+C_m\cos{(\omega_mt + \phi_m)} \) and the one in y direction is \(y=C_c\sin{(\omega_c't + \phi_c)}+\)\(C_m\sin{(\omega_mt + \phi_m)} \).
-\(\omega_c'\) is the so called modified cyclotron frequency and \(\omega_m\) the magnetron frequency. The movement perpendicular to the z direction can be seen as a coupled movment as shown in figure 3 or as decoupled movements in a slow magnetron mode and a fast modified cyclotron mode like illustrated in figure 4 above. The figure 5 is again only an illustration and not to scale although \(\omega_c' >\omega_z > \omega_m \) is indeed true and important for Penning traps.
-</h4>
-</div>
-<div class="imgbox6">
 <img src="docs/assets/img/analyvsnumeric.gif">
-
-<h4>Figure 6: Comparison of the analytical (blue) and numerical (pink) trajectories. Note that one has set \(\omega_c=28\), \(\omega_z=6.77\) and \(\Delta t=0.005711986642890533\cdot10^{-3}\).
-The figure is again only for illustration and not to scale. </h4>
+<div class="imgbox5a">
+<h4>Figure 5: Comparison of the analytical (blue) and numerical (pink) trajectories. Illustrates the total solution for the 3 dimensional trajectory of a charged particle in a classical Penning trap calculated from the Lorentz force. It consists of an independent harmonic oscillation 
+in the z direction \(z=C_z\cos{(\omega_zt+\phi_z)}\) and a coupled motion in the x-y plane with with frequency \(\omega_z\), amplitude \(C_z\) and phase \(\phi_z\). The trajectory in x direction is given by \(x=C_c\cos{(\omega_c't + \phi_c)}\)\(+C_m\cos{(\omega_mt + \phi_m)} \) and the one in y direction is \(y=C_c\sin{(\omega_c't + \phi_c)}+\)\(C_m\sin{(\omega_mt + \phi_m)} \).
+\(\omega_c'\) is the so called modified cyclotron frequency and \(\omega_m\) the magnetron frequency. The movement perpendicular to the z direction can be seen as a coupled movment as shown in figure 3 or as decoupled movements in a slow magnetron mode and a fast modified cyclotron mode like illustrated in figure 4 above. 
+Note that one has set \(\omega_c=28\), \(\omega_z=6.77\) and \(\Delta t=0.005711986642890533\cdot10^{-3}\).
+Figure 5 is again only an illustration and not to scale although \(\omega_c' >\omega_z > \omega_m \) is indeed true and important for Penning traps.
+</h4></div>
 </div>
+
 
 
 
