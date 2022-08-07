@@ -464,7 +464,7 @@ $$\Big(1+\dfrac{i}{2\hbar}H_i \Delta t\Big)\psi_i^{n+1}= \Big(1-\dfrac{i}{2\hbar
 Note that the equation is now in the standard half forward Euler and half backward Euler form, which is characteristic for the Crank Nicolson method:
 $$\dfrac{u_i^{n+1}-u_i^n}{\Delta t}=\dfrac{1}{2}(F_i^{n+1}+F_i^n)$$
 This system can be written in matrix form as:
-$$A \psi_i^{n+1}=B \psi_i^{n}$$
+$$A \psi^{n+1}=B \psi^{n}$$
 The matrix \(A\) is given by:
 $$A=\mathbb{1}+\dfrac{i}{2\hbar}\Delta t\begin{pmatrix}
 V_1&{}&{} &{}&{}\\
