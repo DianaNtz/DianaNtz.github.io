@@ -27,6 +27,16 @@
        url('docs/tiro-gurmukhi-v3-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+/* nanum-myeongjo-regular - latin */
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('docs/nanum-myeongjo-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('docs/fonts/nanum-myeongjo-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 html {
     background-image: url(docs/assets/img/backneuneu.jpg);
     background-position: 0% 0%;
@@ -37,6 +47,7 @@ html {
     -o-background-size: cover;
     background-size: cover;
     zoom: 100%;
+    font-family: 'Nanum Myeongjo', serif;
     
 }
 
@@ -180,25 +191,27 @@ color:black;
 
 .bottom{
 width:100%;
-height:4320px;
+height:4145px;
 display:flex;
 justify-content:center;
 align-items:center;
 padding-bottom:0px;
 position:relative;
+
 }
 
 
 
 .box{
 width:900px;
-height:4275px; 
+height:4100px; 
 background:white;
 display:flex;
 justify-content:space-between;
 font-size:16.5px;
 padding:0px;
 margin-top:45px;
+
 position: relative;
 }
 
@@ -209,12 +222,13 @@ width:900px;
 position: absolute; 
 top: 0px; 
 left: 0; 
-background:green;
+background:orange;
 margin-top:20px;
 }
 .textbox{
 width:900px;
-height:4140px;
+height:3975px;
+
 }
 
 .codebox {
@@ -351,7 +365,7 @@ padding-bottom:25px;
 .right{
 float:right;
 width:360px;
-height:4040px;
+height:3900px;
 margin-right:20px;
 }
 
@@ -359,13 +373,14 @@ margin-right:20px;
 margin-left:20px;
 float:left;
 width:480px;
-height:4040px;
+height:3900px;
 }
 
 
 .absatz1box{
 margin-right:0px;
-height:4020px;
+height:3900px;
+
 }
 .ganz{
 width:860px;}
@@ -533,11 +548,12 @@ width:360px;
 
 
 .ganzneu{
-height:70px;
-margin-top:25px;
+height:60px;
+margin-top:5px;
 margin-right:20px;
 margin-left:20px;
-line-height: 20px;}
+line-height: 20px;
+}
 
 .head{
 width:900px;
@@ -915,7 +931,7 @@ Figure 5 is again only an illustration and not to scale although \(\omega_c' >\o
 
 
 
-$$\:\:\:\:\:\:$$ 
+
    
 </div>
 <div class="ganzneu"><b>References</b>
