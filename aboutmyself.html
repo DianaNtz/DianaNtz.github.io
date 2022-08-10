@@ -8,7 +8,20 @@
 <script type="text/javascript" id="MathJax-script" async
   src="docs/es5/tex-chtml.js"></script>
 
+
 <style>
+
+/* tiro-gurmukhi-italic - latin */
+@font-face {
+  font-family: 'Tiro Gurmukhi';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+       url('docs/tiro-gurmukhi-v3-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('docs/tiro-gurmukhi-v3-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
 html {
     background-image: url(docs/assets/img/backneuneu.jpg);
     background-position: 0% 0%;
@@ -19,6 +32,7 @@ html {
     -o-background-size: cover;
     background-size: cover;
     zoom: 100%;
+    font-family: 'Tiro Gurmukhi', serif;
 }
 @media all and (max-width: 920px){
 html {
@@ -35,6 +49,7 @@ height: 100%; width: 100%; margin: 0;
 display:flex;
 align-items:center;
 flex-wrap: wrap;
+
 }
 
 .topneu{
