@@ -586,7 +586,7 @@ height:100px;
 The Penning trap is an ion trap first built by Hans Georg Dehmelt in 1959. 
 In order to trap a particle with charge q in a limited volume, one needs a minimum of the potential
 energy \(V\). With this in mind and the well known relationship between a potential and its force \(\vec{F}=-\nabla V\) the corresponding force has to be:
-$$\vec{F}=-c \vec{r}\:\:\Rightarrow\:\:\varphi=\frac{V}{q}=\frac{c}{2q}\vec{r}\:^2=\frac{c}{2q}(Ax^2+By^2+Cz^2)$$
+$$\vec{F}=-c \vec{r}\:\Rightarrow\:\varphi=\frac{V}{q}=\frac{c}{2q}\vec{r}\:^2=\frac{c}{2q}(Ax^2+By^2+Cz^2)$$
 Since \(\varphi\) has to obey the Laplace equation \(\Delta \varphi=0\) one finds that \(A+B+C=0\). 
 For the Penning trap it is common to set \(C=2\) and \(A=B=-1\).
 Unfortunately due to the differing signs, we dont get the desired extrema but at least a saddle point. However note that it is not possible to confine a charged particle
@@ -599,10 +599,10 @@ which is mathematically a hyperbolic hyperboloid (one sheet) and two end cap
 electrodes, which are mathematically an elliptic hyperboloid (two sheets). If we
 denote the distance of the trap center to the end cap electrode with \(z_0\) and the
 distance of the trap center to the ring electrode with \(r_0\), one would obtain:
-$$z^2-\frac{x^2}{2}-\frac{y^2}{2}=z_0^2,\:\:\:\:\:\:\:\:\:\:z^2-\frac{x^2}{2}-\frac{y^2}{2}=-\frac{r_0^2}{2}$$
+$$z^2-\frac{x^2}{2}-\frac{y^2}{2}=z_0^2,\:\:\:\:z^2-\frac{x^2}{2}-\frac{y^2}{2}=-\frac{r_0^2}{2}$$
 
 By taking a look on the electrode potentials one gets:
-$$c=-\frac{4V_0q}{2z_0^2+r_0^2}=-\frac{V_0q}{d^2},\:\:\:\:\:\:\:\:\:\:\:\:d:=\sqrt{\frac{1}{2}\big(z_0^2+\frac{1}{2}r_0^2\big)}$$
+$$c=-\frac{4V_0q}{2z_0^2+r_0^2}=-\frac{V_0q}{d^2},\:\:\:\:\:d:=\sqrt{\frac{1}{2}\big(z_0^2+\frac{1}{2}r_0^2\big)}$$
 Note that \(2V_0\) is the voltage difference between the ring electrode and the end cap electrodes. This means: $$2V_0=\varphi_{ring}-\varphi_{end}=-c r_0^2/(2q)-cz_0^2/q $$ It is convention to apply an equal absolute value of voltage on the respective electrode.
 
 \(d\) is the so called geometrical parameter of the trap. According to the laws of electrodynamics \(\vec{E}=-\nabla \varphi\) one now finds the following magnetic and electric field:
@@ -611,16 +611,16 @@ $$\begin{align}
 0\\
 0\\
 1
-\end{pmatrix}\end{align},\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\vec{E}=-\frac{V_0}{d^2}\begin{pmatrix}
+\end{pmatrix}\end{align},\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\vec{E}=-\frac{V_0}{d^2}\begin{pmatrix}
 \:\:\:x\:\\
 \:\:\:y\:\\
 -2z
 \end{pmatrix}$$
 For the particles trajectory one needs to consider the Lorentz force:
-$$ m\ddot{\vec{r}}=q\big(\vec{E}+\dot{\vec{r}}\times\vec{B}_0\big)=-\frac{V_0q}{d^2}\begin{pmatrix}
-\:\:\:x\:\\
-\:\:\:y\:\\
--2z
+$$ \vec{F}_L=q\big(\vec{E}+\dot{\vec{r}}\times\vec{B}_0\big)=\frac{V_0q}{d^2}\begin{pmatrix}
+-x\\
+-y\\
+\:\:2z\:
 \end{pmatrix}+q\begin{pmatrix}
 \dot{x}\\
 \dot{y}\\
@@ -641,7 +641,7 @@ $$m\begin{pmatrix}
 -\frac{2V_0}{d^2}z
 \end{pmatrix}$$
 It is easy to spot that the motion in z direction is independent from the motion in the x-y plane. One further concludes that \(V_0\times q\) must be of negative sign in order to confine the particle in the axial direction. This means that the endcap electrodes need to be charged with the same sign as the particles charge. Otherwise the solution of the above equation would be an exponential growing function. The ansatz to solve this equation is:
-$$z(t)=e^{\lambda t},\:\:\:\:\:\:\:\:\:\lambda^2=-\omega_z^2,\:\:\:\:\:\:\:\:\:\lambda_{\pm}=\pm i\omega_z,\:\:\:\:\:\:\:\:\:\omega_z^2=\frac{2eV_0}{md^2}$$  
+$$z(t)=e^{\lambda t},\:\:\:\lambda^2=-\omega_z^2,\:\:\:\lambda_{\pm}=\pm i\omega_z,\:\:\:\omega_z^2=\frac{2eV_0}{md^2}$$  
 The solution is the superposition of the two solutions above:
 $$z(t)=C_1e^{i\omega_zt}+C_2e^{-i\omega_zt}$$
 In order to find a real solution it requires \(|C_1|=|C_2|\), we therefore get the well known harmonic oscillator:
@@ -668,20 +668,20 @@ with:
 $$I:=\begin{pmatrix}
 1&0\\
 0&1
-\end{pmatrix},\:\:\:\:\:\:\:\:\: A:=\begin{pmatrix}
+\end{pmatrix},\:\:\: A:=\begin{pmatrix}
 0&\omega_c\\
 -\omega_c&0
-\end{pmatrix},\:\:\:\:\:\:\:\:\:\omega_c:=\frac{eB_0}{m}$$
+\end{pmatrix},\:\:\:\omega_c:=\frac{eB_0}{m}$$
 One can diagonalise matrix \(A\) by:
 $$A=PDP^{-1}$$
 where the column vectors of \(P\) form a basis of eigenvectors and \(D\) is diagonal with the corresponding eigenvectors as entries.
 The eigenvalues are given by:
-$$det(A-\lambda I)=\lambda^2+\omega_c^2=0\:\:\Rightarrow\lambda_{\pm}=\pm i\omega_c$$
+$$det(A-\lambda I)=\lambda^2+\omega_c^2=0\:\Rightarrow\lambda_{\pm}=\pm i\omega_c$$
 The ansatz for the eigenvectors is \( (A-\lambda_{\pm})\vec{x}=0 \), so one gets:
 $$\vec{v}_{+}=\frac{1}{\sqrt{2}}\begin{pmatrix}
 -i\\
 \:\:1
-\end{pmatrix},\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\vec{v}_{-}=\frac{1}{\sqrt{2}}\begin{pmatrix}
+\end{pmatrix},\:\:\:\:\:\:\:\:\vec{v}_{-}=\frac{1}{\sqrt{2}}\begin{pmatrix}
 i\\
 1
 \end{pmatrix}$$
@@ -689,12 +689,9 @@ The matrices \(P\) and \(D\) are given by:
 $$D=\begin{pmatrix}
 i\omega_c&\:\:\:0\\
 0&-i\omega_c
-\end{pmatrix},\:\:\:P=\frac{1}{\sqrt{2}}\begin{pmatrix}
+\end{pmatrix},\:\:\:\:\:\:P=\frac{1}{\sqrt{2}}\begin{pmatrix}
 -i&i\\
 \:\:\:1&1
-\end{pmatrix},\:\:\:P^{-1}=\frac{1}{\sqrt{2}}\begin{pmatrix}
-\:\:\:i&1\\
--i&1
 \end{pmatrix}$$
 Note that a skew-hermitian (normal) matrix like \(A\) is diagonalised by an unitary matrix that means \(P^{-1}=P^\dagger\).
  Now we define:
@@ -730,12 +727,12 @@ v
 \end{pmatrix}
 $$
 We now use the ansatz \(u(t)=e^{\lambda_ut}\) and \(v(t)=e^{\lambda_vt}\) to obtain:
-$$\lambda_u^2+i\omega_c\lambda_u-\dfrac{\omega_z^2}{2}=0,\:\:\:\:\:\lambda_v^2-i\omega_c\lambda_v-\dfrac{\omega_z^2}{2}=0$$
+$$\lambda_u^2+i\omega_c\lambda_u-\dfrac{\omega_z^2}{2}=0,\:\:\:\lambda_v^2-i\omega_c\lambda_v-\dfrac{\omega_z^2}{2}=0$$
 The solutions to these equations for \(\omega_c^2 > 2\omega_z^2\) are:
-$$\lambda_{u1}=-i\omega_c',\:\:\lambda_{u2}=-i\omega_m,\:\:\:\:\:\:\:\:\:\:
+$$\lambda_{u1}=-i\omega_c',\:\:\lambda_{u2}=-i\omega_m,\:\:\:\:
 \lambda_{v1}=i\omega_c',\:\:\lambda_{v2}=i\omega_m$$
 with:
-$$\omega_c'=\frac{\omega_c}{2}+\sqrt{\frac{\omega_c^2}{4}-\frac{\omega_z^2}{2}},\:\:\:\:\:\:\:\:\:\omega_m=\frac{\omega_c}{2}-\sqrt{\frac{\omega_c^2}{4}-\frac{\omega_z^2}{2}}$$
+$$\omega_c'=\frac{\omega_c}{2}+\sqrt{\frac{\omega_c^2}{4}-\frac{\omega_z^2}{2}},\:\:\:\omega_m=\frac{\omega_c}{2}-\sqrt{\frac{\omega_c^2}{4}-\frac{\omega_z^2}{2}}$$
 \(\omega_c'\) is the so called modified cyclotron frequency and \(\omega_m\) the magnetron frequency. The solution for the decoupled system is:
 $$\begin{pmatrix}
 u\\
@@ -766,17 +763,17 @@ y
 \sin{(\omega_mt + \phi_m)}
 \end{pmatrix}$$
 Another way of solving such a coupled system of ordinary differential equations:
-$$\dfrac{d}{dt}\vec{u}(t)=\vec{F}(t,\vec{u}(t)),\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\vec{u}(t_0)=\vec{u}_0$$
+$$\dfrac{d}{dt}\vec{u}(t)=\vec{F}(t,\vec{u}(t)),\:\:\:\:\:\:\vec{u}(t_0)=\vec{u}_0$$
 Can be done numerically through the Euler method:
-$$\vec{u}_{n+1}=\vec{u}_n+\Delta t\vec{F}(t_n,\vec{u}_n),\:\:\:\:\:\:\:\:\:\:\:\:\:\:t_{n+1}=t_n+\Delta t$$
+$$\vec{u}_{n+1}=\vec{u}_n+\Delta t\vec{F}(t_n,\vec{u}_n),\:\:\:\:\:t_{n+1}=t_n+\Delta t$$
 In order for this method to work, one has to rewrite our sytem in a set of first order differential equations depending on:
-$$x_1=x,\:\:\:\:\:x_2=\dot{x},\:\:\:\:\:y_1=y,\:\:\:\:\:y_2=\dot{y},\:\:\:\:\:z_1=z,\:\:\:\:\:z_2=\dot{z}$$ 
+$$x_1=x,\:\:\:x_2=\dot{x},\:\:\:y_1=y,\:\:\:y_2=\dot{y},\:\:\:z_1=z,\:\:\:z_2=\dot{z}$$ 
 We therefore obtain the following algorithm for the x component:
-$$x_{1,n+1}=x_{1,n}+\Delta t x_{2,n},\:\:\:\:\:x_{2,n+1}=x_{2,n}+\Delta t (\frac{w_z^2}{2}x_{1,n}-w_c y_{2,n})$$
+$$x_{1,n+1}=x_{1,n}+\Delta t x_{2,n},\:\:\:x_{2,n+1}=x_{2,n}+\Delta t (\frac{w_z^2}{2}x_{1,n}-w_c y_{2,n})$$
 For the y component, one gets:
-$$y_{1,n+1}=y_{1,n}+\Delta t y_{2,n},\:\:\:\:\:\:\:\:\:\:y_{2,n+1}=y_{2,n}+\Delta t (\frac{w_z^2}{2}y_{1,n}+w_c x_{2,n})$$
+$$y_{1,n+1}=y_{1,n}+\Delta t y_{2,n},\:\:\:y_{2,n+1}=y_{2,n}+\Delta t (\frac{w_z^2}{2}y_{1,n}+w_c x_{2,n})$$
 The z component can be calculated by:
-$$z_{1,n+1}=z_{1,n}+\Delta t z_{2,n},\:\:\:\:\:\:\:\:\:\:z_{2,n+1}=z_{2,n}-\Delta t \omega_z^2z_{1,n}$$
+$$z_{1,n+1}=z_{1,n}+\Delta t z_{2,n},\:\:\:z_{2,n+1}=z_{2,n}-\Delta t \omega_z^2z_{1,n}$$
 The comparison of the analytical and numerical result can be seen in figure 5.
 An interesting fact is that the quantum mechanical Hamiltonian of the Penning trap is as well described by 3 harmonic oscillators:
 $$\hat{H}_P=\hbar\omega_z(\hat{a}_z^\dagger \hat{a}_z+\frac{1}{2})+\hbar\omega_c'(\hat{a}_c^\dagger \hat{a}_c+\frac{1}{2})-\hbar\omega_m(\hat{a}_m^\dagger \hat{a}_m+\frac{1}{2})$$
