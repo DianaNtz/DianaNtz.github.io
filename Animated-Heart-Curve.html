@@ -12,7 +12,8 @@
 <link rel="stylesheet" href="docs/monokai-sublime.min.css">
 <script src="docs/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
-   
+
+
 
 <style>
 
@@ -35,6 +36,7 @@
        url('docs/nanum-myeongjo-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('docs/fonts/nanum-myeongjo-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
 html {
     background-image: url(docs/assets/img/backneuneu.jpg);
     background-position: 0% 0%;
@@ -46,28 +48,31 @@ html {
     background-size: cover;
     zoom: 100%;
     font-family: 'Nanum Myeongjo', serif;
-}
-@media (max-width: 920px){
-html {
-zoom:40%;
-}
-}
-@media (max-width: 320px){
-html {
-zoom:30%;
-}
-}
 
-html, body { 
-height: 100%; width: 100%; margin: 0; 
-display:flex;
-align-items:center;
-flex-wrap: wrap;
 }
 
 body h4{
 font-size:16.5px;
 }
+
+@media (max-width: 920px){
+html {
+zoom:40%;
+}
+}
+
+@media (max-width: 320px){
+html {
+zoom:30%;
+}
+}
+html, body {
+height: 100%; width: 100%; margin: 0;
+display:flex;
+align-items:center;
+flex-wrap: wrap;
+}
+
 
 .topneu{
 
@@ -82,9 +87,9 @@ display:flex;
 justify-content:center;
 align-items:center;
 margin-top:0px;
-position: absolute; 
-top: 0; 
-left: 0; 
+position: absolute;
+top: 0;
+left: 0;
 }
 
 .start-container{
@@ -118,7 +123,6 @@ color:black;
 font-size:17.5px;
 color:black;}
 
-
 .startbutton{
 background-color:white;
 width:110px;
@@ -147,6 +151,9 @@ align-items:center;
 border: black 1.5px solid
 }
 
+
+
+
 .button{
 float:right;
 background-color:white;
@@ -157,10 +164,12 @@ justify-content:center;
 align-items:center;
 border: black 1.5px solid
 }
-
 .codebesch{
 float:left;
+font-size:16.5px;
 }
+
+
 
 .button:hover{
 border: black 1.5px dashed;
@@ -182,102 +191,136 @@ color:black;
 
 .bottom{
 width:100%;
-height:605px;
+/*! height:4145px; */
 display:flex;
 justify-content:center;
+align-items:center;
 padding-bottom:0px;
-position: relative;
-}
-
-.boxradius{
-
-border: black 1.5px solid;
+position:relative;
 
 }
+
+
 
 .box{
 width:900px;
-height:555px; 
+/*! height:4100px; */
 background:white;
-display:flex;
+display:inline-block;
 justify-content:space-between;
-font-size:16.5px; 
+font-size:16.5px;
 padding:0px;
 margin-top:45px;
+
 position: relative;
 }
+
 
 
 .box2{
 width:900px;
-position: absolute; 
-top: 470px; 
-left: 0; 
-margin-top:30px;
+position: absolute;
+top: 0px;
+left: 0;
+background:orange;
+margin-top:20px;
 }
 .textbox{
-width:510px;
-height:490px;
+width:900px;
+/*! height:3975px; */
+
+display: inline-block;
 }
 
 .codebox {
 width:860px;
-padding-left:20px;
-padding-bottom:2.5px;
+margin-left:20px;
+justify-content:center;
+align-items:center;
+background:green;
 }
 
 
 
 .box h1{
 margin-top:20px;
-margin-left:20px;
 font-size:40px;
 display: inline-block;
 margin-bottom:10px;
 }
 
-@media (max-width: 920px){
-.box h1{
-font-size:220%;
-}
-}
-
-
 .imgbox{
+margin-top:20px;
 margin-right:20px;
-width:360px;
-height:490px;
+width:250px;
+height:300px;
+background:#dadada;
 float:right;
 }
 
 
 
-.imgbox h4{
-margin-left:15px;
-margin-right:15px;
-}
-
-@media (max-width: 920px){
-.imgbox h4{
-font-size:93%;
-}
-}
-
-.neuneuimbox{
-height:120px;
-display:flex;
-align-items:center;
-background-color:#dadada;
-}
-
-.imgbox img{
-width:360px;
-}
 
 
-.absatz1{
-margin-right:10px;
-margin-left:20px;
+
+
+.accordiontext {
+  max-width: 860px;
+  margin-left:20px;
+  overflow: hidden;
+}
+
+.accordiontext__label {
+ height:20px;
+ margin-top:10px;
+}
+
+.accordiontext__content {
+  padding-top: 5px;
+  padding-bottom:20px;
+}
+
+.accordiontext__label {
+  display: block;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+
+  position: relative;
+
+  transition: background 0.1s;
+}
+
+.accordiontext__label:hover {
+
+  font-size:17.5px;
+}
+
+
+
+.accordiontext__content {
+  background: #ffffff;
+  display: none;
+}
+
+.accordiontext__input {
+  display: none;
+}
+
+.accordiontext__input:checked ~ .accordiontext__content {
+  display: block;
+}
+
+.accordiontext__input:checked ~ .accordiontext__label::after {
+  transform: translateY(-50%) rotate(0.5turn);
+}
+.accordionbox{
+width:900px;
+background:white;
+}
+
+.accordionboxneu{
+padding-bottom:5px;
 }
 
 .accordion {
@@ -285,6 +328,7 @@ margin-left:20px;
   overflow: hidden;
   font-size:16.5px;
 }
+
 
 .accordion__label {
   padding:14px 20px;}
@@ -314,19 +358,221 @@ margin-left:20px;
   display: none;
 }
 
-
-
-
-
 .accordion__input:checked~ .accordion__content {
   display: block;
 }
 
+.right{
+/*! float:right; */
+width:360px;
+/*! height:3900px; */
+margin-left:17.5px;
+display: inline-block;
+}
+
+.left{
+margin-left:20px;
+/*! float:left; */
+width:480px;
+/*! height:3900px; */
+display: inline-block;
+vertical-align: top;
+}
+
+
+.absatz1box{
+margin-right:0px;
+/*! height:3900px; */
+
+}
+.ganz{
+width:860px;}
+
+.hallo{
+background:#dadada;
+height:500px;}
+
+.hallo img{
+width:350px;}
+
+.hallo h4{
+margin-left:10px;
+margin-right:10px;
+margin-top:2.5px;
+}
+
+.imgbox1{
+width:360px;
+float:right;
+
+}
+
+.imgbox1a{
+/*! height:325px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
+}
+
+
+.imgbox1a h4{
+margin-left:10px;
+margin-right:10px;
+}
+
+
+
+.imgbox1 img{
+width:360px;
+}
+
+.imgbox2a{
+/*! height:345px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
+
+}
+
+.imgbox3a{
+/*! height:250px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
+}
+
+.imgbox4a{
+/*! height:225px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
+}
+
+.imgbox5a{
+/*! height:545px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
+}
+
+
+.imgbox2{
+width:360px;
+background:#dadada;
+float:right;
+}
+
+
+
+.imgbox2a h4{
+margin-left:10px;
+margin-right:10px;
+}
+
+
+
+.imgbox2 img{
+width:360px;
+}
+
+.imgbox3{
+margin-top:200px;
+width:360px;
+background:#dadada;
+float:right;
+}
+
+.imgallgemein{
+margin-top:146px;
+width:360px;
+float:right;
+
+}
+.imgallgemein img{
+width:360px;
+}
+
+.imgbox3a h4{
+margin-left:10px;
+}
+
+
+
+.imgbox3 img{
+width:360px;
+}
+
+.imgbox4{
+
+width:360px;
+background:#dadada;
+float:right;
+}
+
+
+
+.imgbox4a h4{
+margin-left:10px;
+}
+
+
+
+.imgbox4 img{
+width:360px;
+}
+
+.imgbox5{
+width:360px;
+background:#dadada;
+float:right;
+}
+
+
+
+.imgbox5a h4{
+margin-left:10px;
+}
+
+
+
+.imgbox5 img{
+width:360px;
+}
+
+
+.ganzneu{
+height:60px;
+margin-top:20px;
+margin-right:20px;
+margin-left:20px;
+line-height: 20px;
+}
 
 .head{
 width:900px;
 background-color:#dadada;
 display:flex;}
+
+.blockfill
+{
+height:100px;
+}
+
+@media (max-width: 920px){
+.box{
+font-size:93%;
+}
+}
 
 @media (max-width: 920px){
 .start-container a {
@@ -378,10 +624,36 @@ font-size:93%;
 }
 
 @media (max-width: 920px){
-.box{
+.imgbox1a h4{
 font-size:93%;
 }
 }
+
+@media (max-width: 920px){
+.imgbox2a h4{
+font-size:93%;
+}
+}
+
+@media  (max-width: 920px){
+.imgbox3a h4{
+font-size:93%;
+}
+}
+
+@media  (max-width: 920px){
+.imgbox4a h4{
+font-size:93%;
+}
+}
+
+@media (max-width: 920px){
+.imgbox5a h4{
+font-size:93%;
+}
+}
+
+
 
 </style>
 </head>
@@ -391,19 +663,19 @@ font-size:93%;
 
 <div class="topneu">\(\:\)</div>
 <div class="bottom">
-<div class="top">
-<div class="head">
+<div class="top"><div class="head">
 <div class="start-container"><div class="startbutton"><a href="https://dianantz.github.io/repositories.html">Overview</a></div></div>
 <div class="impressum-container"><div class="impressumbutton"><a href="https://github.com/DianaNtz">My GitHub</a></div></div>
 </div></div>
 <div class="box">
-
-
 <div class="textbox">
 
+
+<div class="absatz1">
+<div class="absatz1box">
+<div class="left">
 <h1>Fast Animations In Python</h1>
 <br>
-<div class="absatz1">
 There is a common saying: 
 <b>"A picture is worth a thousand words!"</b>
 But what about animations created out of pictures? 
@@ -416,31 +688,42 @@ t \\
 |t| \pm \sqrt{1-t^2}
 \end{pmatrix},\:\:\:\:\:\:\:\:\:\:\:\:t\in[-1,1]$$
 \(c(t)\) is a constant reminder that no matter what we do we should always make sure that we do these things with love.
-After all, it is the passioned flame living in peoples heart that drives them and there is no greater tragedy than letting this flame expire.     
+After all, it is the passioned flame living in peoples heart that drives them and there is no greater tragedy than letting this flame expire. 
 </div>
 
+<div class="right">
+<div class="imgbox1">
+<img src="docs/assets/img/Herz.gif">
 </div>
-   <div class="imgbox">
-          <div class="imgbox1">
-<img src="docs/assets/img/Herz.gif"></div>
-<div class="neuneuimbox">
+<div class="imgbox1a">
 <h4>Figure 1: shows the curve \(c(t)\) mentioned in the text. The gif was created from the Python library imageio, which uses a flip book method. 
-It is the most important curve in \(\mathbb{R}^2\). Make sure to remember its shape. </h4>
+It is the most important curve in \(\mathbb{R}^2\). Make sure to remember its shape.</h4>
 </div>
 
-      
 
 
-          </div>
-<div class="box2">
+
+
+
+
+</div></div>
+
+
+
+
+   
+</div>
+<div class="accordionboxneu">
+<div class="accordionbox">
+
 <div class="accordion">
   <div>
-    <input type="checkbox" name="example_accordion" id="section1" class="accordion__input">
-    <label for="section1" class="accordion__label"><div class="codebesch"><a href="https://github.com/DianaNtz/Animated-Heart-Curve">To get the code go to my GitHub repository Animated-Heart-Curve</a> </div><div class="button">View Code</div></label>
+    <input type="checkbox" name="example_accordion" id="section1neu" class="accordion__input">
+    <label for="section1neu" class="accordion__label"><div class="codebesch"><a href="https://github.com/DianaNtz/Animated-Heart-Curve">To get the code go to my GitHub repository Animated-Heart-Curve</a></div><div class="button">View Code</div></label>
     <div class="accordion__content">
       
-      <p><div class="codebox">
-        <pre><code class="python">""" 
+        <p><div class="codebox">
+ <pre><code class="python">""" 
 The code below was written by @author: https://github.com/DianaNtz and is an 
 example on how to create an animated gif with the library imageio. For details 
 on requirements and licences see https://github.com/DianaNtz/Animated-Heart-Curve.
@@ -478,23 +761,30 @@ with imageio.get_writer('Herz.gif', mode='I') as writer:
         writer.append_data(image)       
 #remove saved figures 
 for filename in set(filenames):
-    os.remove(filename)</code></pre>
+    os.remove(filename)</code></pre>        
       </div></p>
     </div>
   </div>
   </div>
 
+</div>
+
 
 
 </div>
 
+
 </div>
 
+
+
+</div>
 </div>
 <div class="bottom2">
 \(\:\)
 <div>
 <div class="break"></div>
+
 </body>
 
 </html>

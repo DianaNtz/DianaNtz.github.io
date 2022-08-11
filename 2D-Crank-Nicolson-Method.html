@@ -5,12 +5,15 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <script type="text/javascript" id="MathJax-script" async
   src="docs/es5/tex-chtml.js"></script>
 
 <link rel="stylesheet" href="docs/monokai-sublime.min.css">
 <script src="docs/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+
+
 
 <style>
 
@@ -34,7 +37,6 @@
        url('docs/fonts/nanum-myeongjo-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-
 html {
     background-image: url(docs/assets/img/backneuneu.jpg);
     background-position: 0% 0%;
@@ -46,7 +48,13 @@ html {
     background-size: cover;
     zoom: 100%;
     font-family: 'Nanum Myeongjo', serif;
+
 }
+
+body h4{
+font-size:16.5px;
+}
+
 @media (max-width: 920px){
 html {
 zoom:40%;
@@ -58,16 +66,11 @@ html {
 zoom:30%;
 }
 }
-
-html, body { 
-height: 100%; width: 100%; margin: 0; 
+html, body {
+height: 100%; width: 100%; margin: 0;
 display:flex;
 align-items:center;
 flex-wrap: wrap;
-}
-
-body h4{
-font-size:16.5px;
 }
 
 
@@ -84,9 +87,9 @@ display:flex;
 justify-content:center;
 align-items:center;
 margin-top:0px;
-position: absolute; 
-top: 0; 
-left: 0; 
+position: absolute;
+top: 0;
+left: 0;
 }
 
 .start-container{
@@ -148,6 +151,9 @@ align-items:center;
 border: black 1.5px solid
 }
 
+
+
+
 .button{
 float:right;
 background-color:white;
@@ -160,6 +166,7 @@ border: black 1.5px solid
 }
 .codebesch{
 float:left;
+font-size:16.5px;
 }
 
 
@@ -184,38 +191,45 @@ color:black;
 
 .bottom{
 width:100%;
-height:2135px;
+/*! height:4145px; */
 display:flex;
 justify-content:center;
 align-items:center;
 padding-bottom:0px;
 position:relative;
+
 }
 
 
 
 .box{
 width:900px;
-height:2090px; 
+/*! height:4100px; */
 background:white;
-display:flex;
+display:inline-block;
 justify-content:space-between;
-font-size:16.5px; 
+font-size:16.5px;
 padding:0px;
 margin-top:45px;
+
 position: relative;
 }
 
+
+
 .box2{
 width:900px;
-position: absolute; 
-top: 530px; 
-left: 0; 
+position: absolute;
+top: 0px;
+left: 0;
+background:orange;
 margin-top:20px;
 }
 .textbox{
 width:900px;
-height:550px;
+/*! height:3975px; */
+
+display: inline-block;
 }
 
 .codebox {
@@ -223,7 +237,7 @@ width:860px;
 margin-left:20px;
 justify-content:center;
 align-items:center;
-background:blue;
+background:green;
 }
 
 
@@ -250,15 +264,6 @@ float:right;
 
 
 
-.absatz1{
-margin-right:20px;
-margin-left:20px;
-}
-
-.absatz1box{
-margin-right:0px;
-height:520px;
-}
 
 .accordiontext {
   max-width: 860px;
@@ -273,7 +278,7 @@ height:520px;
 
 .accordiontext__content {
   padding-top: 5px;
-  padding-bottom:5px;
+  padding-bottom:20px;
 }
 
 .accordiontext__label {
@@ -281,11 +286,14 @@ height:520px;
   color: black;
   font-weight: 500;
   cursor: pointer;
-  position: relative;  
-  transition: background 0.1s;  
+
+  position: relative;
+
+  transition: background 0.1s;
 }
 
 .accordiontext__label:hover {
+
   font-size:17.5px;
 }
 
@@ -304,14 +312,16 @@ height:520px;
   display: block;
 }
 
-
+.accordiontext__input:checked ~ .accordiontext__label::after {
+  transform: translateY(-50%) rotate(0.5turn);
+}
 .accordionbox{
 width:900px;
 background:white;
 }
 
 .accordionboxneu{
-padding-bottom:25px;
+padding-bottom:5px;
 }
 
 .accordion {
@@ -354,56 +364,216 @@ padding-bottom:25px;
 }
 
 .right{
-float:right;
-width:445px;
-height:520px;
+/*! float:right; */
+width:440px;
+/*! height:3900px; */
+margin-left:17.5px;
+display: inline-block;
 }
 
 .left{
-float:left;
-width:405px;
-height:520px;
+margin-left:20px;
+/*! float:left; */
+width:400px;
+/*! height:3900px; */
+display: inline-block;
+vertical-align: top;
 }
 
+
+.absatz1box{
+margin-right:0px;
+/*! height:3900px; */
+
+}
 .ganz{
 width:860px;}
 
 .hallo{
-height:500px;
-}
-
-.halloneu{
-display:flex;
-align-items:center;
-height:120px;
-background:#dadada;;
-}
+background:#dadada;
+height:500px;}
 
 .hallo img{
-width:445px;}
+width:350px;}
 
 .hallo h4{
 margin-left:10px;
 margin-right:10px;
+margin-top:2.5px;
 }
 
-@media (max-width: 920px){
-.hallo h4{
-font-size:93%;
+.imgbox1{
+width:440px;
+float:right;
+
 }
+
+.imgbox1a{
+/*! height:325px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
 }
+
+
+.imgbox1a h4{
+margin-left:10px;
+margin-right:10px;
+}
+
+
+
+.imgbox1 img{
+width:360px;
+}
+
+.imgbox2a{
+/*! height:345px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
+
+}
+
+.imgbox3a{
+/*! height:250px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
+}
+
+.imgbox4a{
+/*! height:225px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
+}
+
+.imgbox5a{
+/*! height:545px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
+}
+
+
+.imgbox2{
+width:360px;
+background:#dadada;
+float:right;
+}
+
+
+
+.imgbox2a h4{
+margin-left:10px;
+margin-right:10px;
+}
+
+
+
+.imgbox2 img{
+width:360px;
+}
+
+.imgbox3{
+margin-top:200px;
+width:360px;
+background:#dadada;
+float:right;
+}
+
+.imgallgemein{
+margin-top:146px;
+width:360px;
+float:right;
+
+}
+.imgallgemein img{
+width:360px;
+}
+
+.imgbox3a h4{
+margin-left:10px;
+}
+
+
+
+.imgbox3 img{
+width:360px;
+}
+
+.imgbox4{
+
+width:360px;
+background:#dadada;
+float:right;
+}
+
+
+
+.imgbox4a h4{
+margin-left:10px;
+}
+
+
+
+.imgbox4 img{
+width:360px;
+}
+
+.imgbox5{
+width:360px;
+background:#dadada;
+float:right;
+}
+
+
+
+.imgbox5a h4{
+margin-left:10px;
+}
+
+
+
+.imgbox5 img{
+width:360px;
+}
+
 
 .ganzneu{
-height:70px;
+height:60px;
 margin-top:20px;
 margin-right:20px;
 margin-left:20px;
-line-height: 20px;}
+line-height: 20px;
+}
 
 .head{
 width:900px;
 background-color:#dadada;
 display:flex;}
+
+.blockfill
+{
+height:100px;
+}
+
+@media (max-width: 920px){
+.box{
+font-size:93%;
+}
+}
 
 @media (max-width: 920px){
 .start-container a {
@@ -455,10 +625,39 @@ font-size:93%;
 }
 
 @media (max-width: 920px){
-.box{
+.imgbox1a h4{
 font-size:93%;
 }
 }
+
+@media (max-width: 920px){
+.imgbox2a h4{
+font-size:93%;
+}
+}
+
+@media  (max-width: 920px){
+.imgbox3a h4{
+font-size:93%;
+}
+}
+
+@media  (max-width: 920px){
+.imgbox4a h4{
+font-size:93%;
+}
+}
+
+@media (max-width: 920px){
+.imgbox5a h4{
+font-size:93%;
+}
+}
+
+.textundso{
+margin-left:20px;
+margin-right:20px;}
+
 
 </style>
 </head>
@@ -466,26 +665,22 @@ font-size:93%;
 <body>
 
 
-<div class="topneu">
-
-\(\:\)
-
-</div>
-
+<div class="topneu">\(\:\)</div>
 <div class="bottom">
-       <div class="top"><div class="head">
-               <div class="start-container"><div class="startbutton"><a href="https://dianantz.github.io/repositories.html">Overview</a></div></div>
-               <div class="impressum-container"><div class="impressumbutton"><a href="https://github.com/DianaNtz">My GitHub</a></div></div>
-       </div></div>
-       <div class="box">
-                    <div class="textbox">
-                           <h1>2D Crank Nicolson Method</h1>
-                           <br>
+<div class="top"><div class="head">
+<div class="start-container"><div class="startbutton"><a href="https://dianantz.github.io/repositories.html">Overview</a></div></div>
+<div class="impressum-container"><div class="impressumbutton"><a href="https://github.com/DianaNtz">My GitHub</a></div></div>
+</div></div>
+<div class="box">
+<div class="textbox">
+<h1>2D Crank Nicolson Method</h1>
+<br>
 
-                               <div class="absatz1">
-                                        <div class="absatz1box">
-                                                     <div class="left">
-                                                           The 2 dimensional Schrödinger equation is given by:
+<div class="absatz1">
+<div class="absatz1box">
+<div class="left">
+
+ The 2 dimensional Schrödinger equation is given by:
                                                            $$i\hbar\dfrac{\partial}{\partial t}\psi(x,y,t)=\Big(-\dfrac{\:\:\:\hbar^2}{2m}\Delta+V(x,y)\Big)\psi(x,y,t)$$
                                                            where the Laplace operator \(\Delta\) is:
                                                            $$\dfrac{\partial^2}{\partial x^2}+\dfrac{\partial^2}{\partial y^2}$$
@@ -496,21 +691,31 @@ font-size:93%;
                                                            the time derivation by:
                                                            $$\dfrac{\partial}{\partial t}\psi(x,y,t)\:\Rightarrow\:\dfrac{\psi_{i,j}^{n+1}-\psi_{i,j}^n}{\Delta t}$$
                                                            and the second order space derivations by:
-                                                      </div>
 
-                                                      <div class="right">
-                                                                 <div class="hallo">
 
-                                                                       <img src="docs/assets/img/2DCN.gif">
-                                                                              <div class="halloneu">
-                                                                            <h4>Figure 1: shows the time evolution of the probability density under the 2D harmonic oscillator Hamiltonian for \(\psi(x,y,0)=\psi_s(y,0)\psi_\alpha (x,0)\). \(\psi_s\) is the superposition of the two lowest eigenstates and \(\psi_\alpha \) a coherent state. 
-                                                                             One has set \(m=m_e\) and \(\omega_x=\omega_y=110\cdot 2\pi\) kHz.</h4></div>
-                                                                 </div>
+</div>
 
-                                                      </div>
+<div class="right">
+<div class="imgbox1">
+<img src="docs/assets/img/2DCN.gif">
+</div>
+<div class="imgbox1a">
+<h4>
+Figure 1: shows the time evolution of the probability density under the 2D harmonic oscillator Hamiltonian for \(\psi(x,y,0)=\psi_s(y,0)\psi_\alpha (x,0)\). \(\psi_s\) is the superposition of the two lowest eigenstates and \(\psi_\alpha \) a coherent state. 
+                                                                             One has set \(m=m_e\) and \(\omega_x=\omega_y=110\cdot 2\pi\) kHz.
 
-                                            </div>
-                                            $$\dfrac{\partial^2}{\partial x^2}\psi (x,y,t)\:\Rightarrow\:\dfrac{1}{2(\Delta x)^2}\Big((\psi_{i+1,j}^{n}-2\psi_{i,j}^{n}+\psi_{i-1,j}^{n})+(\psi_{i+1,j}^{n+1}-2\psi_{i,j}^{n+1}+\psi_{i-1,j}^{n+1})\Big)$$
+</h4>
+</div>
+
+</div>
+</div>
+
+
+
+
+   
+</div>
+ <div class="textundso">$$\dfrac{\partial^2}{\partial x^2}\psi (x,y,t)\:\Rightarrow\:\dfrac{1}{2(\Delta x)^2}\Big((\psi_{i+1,j}^{n}-2\psi_{i,j}^{n}+\psi_{i-1,j}^{n})+(\psi_{i+1,j}^{n+1}-2\psi_{i,j}^{n+1}+\psi_{i-1,j}^{n+1})\Big)$$
                                             $$\dfrac{\partial^2}{\partial y^2}\psi (x,y,t)\:\Rightarrow\:\dfrac{1}{2(\Delta y)^2}\Big((\psi_{i,j+1}^{n}-2\psi_{i,j}^{n}+\psi_{i,j-1}^{n})+(\psi_{i,j+1}^{n+1}-2\psi_{i,j}^{n+1}+\psi_{i,j-1}^{n+1})\Big)$$
                                             Plugging in the above expressions in the Schrödinger equation leads us to:
                                             $$\psi_{i,j}^{n+1}-\dfrac{\hbar i \Delta t}{4m(\Delta x)^2}(\psi_{i+1,j}^{n+1}-2\psi_{i,j}^{n+1}+\psi_{i-1,j}^{n+1})-\dfrac{\hbar i \Delta t}{4m(\Delta y)^2}(\psi_{i,j+1}^{n+1}-2\psi_{i,j}^{n+1}+\psi_{i,j-1}^{n+1})+\frac{\Delta t}{2\hbar}V_{i,j}\Psi_{i,j}^{n+1}$$
@@ -590,25 +795,24 @@ font-size:93%;
                                                 -(A_m-X_m)^{-1}D(A^{-1})_{m-1,n},& \text{if } m > n\\
                                                 -(A_m-Y_m)^{-1}D(M^{-1})_{m+1,n},& \text{if } m < n 
                                             \end{cases}$$
-                                            <br>      
-                                  </div>
-                                  <div class="ganzneu">
+                                            <br>      </div>
+<div class="ganzneu">
                                   <b>References</b>
                                   <br>
                                   [1] <a href="http://dx.doi.org/10.1088/1749-4699/5/1/014009" >http://dx.doi.org/10.1088/1749-4699/5/1/014009</a><br>
                                   [2] <a href="https://en.wikipedia.org/wiki/Crank%E2%80%93Nicolson_method"> https://en.wikipedia.org/wiki/Crank%E2%80%93Nicolson_method</a>
                                   </div>
-                                  <div class="accordionboxneu">
-                                                 <div class="accordionbox">
+<div class="accordionboxneu">
+<div class="accordionbox">
 
-                                                                <div class="accordion">
-                                                                <div>
-                                                                <input type="checkbox" name="example_accordion" id="section1neu" class="accordion__input">
-                                                                <label for="section1neu" class="accordion__label"><div class="codebesch"><a href="https://github.com/DianaNtz/2D-Crank-Nicolson-Method">To get the code go to my GitHub repository 2D-Crank-Nicolson-Method</a></div><div class="button">View Code</div></label>
-                                                                       <div class="accordion__content">
+<div class="accordion">
+  <div>
+    <input type="checkbox" name="example_accordion" id="section1neu" class="accordion__input">
+    <label for="section1neu" class="accordion__label"><div class="codebesch"><a href="https://github.com/DianaNtz/2D-Crank-Nicolson-Method">To get the code go to my GitHub repository 2D-Crank-Nicolson-Method</a></div><div class="button">View Code</div></label>
+    <div class="accordion__content">
       
-                                                                                 <p><div class="codebox">
-<pre><code class="python">"""
+        <p><div class="codebox">
+        <pre><code class="python">"""
 The code below was written by @author: https://github.com/DianaNtz and is an 
 implementation of the 2D Crank Nicolson method. It solves in particular the 
 Schrödinger equation for the quantum harmonic oscillator. For more details on 
@@ -821,31 +1025,28 @@ plt.ylim([0,80])
 plt.legend(loc=2,fontsize=20)
 plt.savefig('y2D.png',dpi=120)
 plt.show()</pre></code> 
-                                                                                 </div></p>
-                                                                        </div>
-                                                                 </div>
-                                                 </div>
+      </div></p>
+    </div>
+  </div>
+  </div>
 
-                                  </div>
-
-
-
-                    </div>
-
-
-        </div>
+</div>
 
 
 
 </div>
 
+
+</div>
+
+
+
+</div>
 </div>
 <div class="bottom2">
 \(\:\)
 <div>
-<div class="break">
-
-</div>
+<div class="break"></div>
 
 </body>
 
