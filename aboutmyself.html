@@ -61,6 +61,7 @@ flex-wrap: wrap;
 
 }
 
+
 .topneu{
 
 height:25px;
@@ -74,9 +75,9 @@ display:flex;
 justify-content:center;
 align-items:center;
 margin-top:0px;
-position: absolute; 
-top: 0; 
-left: 0; 
+position: absolute;
+top: 0;
+left: 0;
 }
 
 .start-container{
@@ -101,7 +102,6 @@ background-color:#dadada;
 color:black;
 font-size:16.5px;
 }
-
 .impressum-container a:hover{
 font-size:17.5px;
 color:black;
@@ -110,8 +110,6 @@ color:black;
 .start-container a:hover{
 font-size:17.5px;
 color:black;}
-
-
 
 .startbutton{
 background-color:white;
@@ -122,7 +120,6 @@ margin-left:20px;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center;
 border: black 1.5px solid
 }
 .startbutton:hover{
@@ -139,58 +136,82 @@ height:22px;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center;
 border: black 1.5px solid
 }
 
 
 
+
+.button{
+float:right;
+background-color:white;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid
+}
+.codebesch{
+float:left;
+font-size:16.5px;
+}
+
+
+
+.button:hover{
+border: black 1.5px dashed;
+font-size:17.5px;
+color:black;
+}
+
 .impressumbutton:hover{
 border: black 1.5px dashed;
 }
-
 
 a {
 text-decoration:none;
 color:black;
 }
 
-
-
 .bottom{
 width:100%;
-height:1110px;
+/*height:1110px;*/
 display:flex;
 justify-content:center;
 align-items:center;
 position: relative;
+padding-bottom:0px;
+}
+
+
+
+.bottom{
+width:100%;
+/*! height:4145px; */
+display:flex;
+justify-content:center;
+align-items:center;
+padding-bottom:0px;
+position:relative;
+
 }
 
 
 
 .box{
 width:900px;
-height:1065px; 
+/*! height:4100px; */
 background:white;
-display:flex;
+display:inline-block;
 justify-content:space-between;
-font-size: 16.5px; 
+font-size:16.5px;
 padding:0px;
 margin-top:45px;
+
 position: relative;
 }
 
-.box2{
-width:900px;
-position: absolute; 
-top: 530px; 
-left: 0; 
-margin-top:20px;
-}
-.textbox{
-width:610px;
-height:395px;
-}
 
 
 
@@ -204,26 +225,15 @@ display: inline-block;
 margin-bottom:10px;
 }
 
-.imgbox{
-margin-bottom:20px;
-margin-left:5px;
-width:320px;
-height:360px;
-background:#dadada;
-float:right;
-}
-
-.imgbox img{
-width:320px;
-}
 
 .text{
 margin-top:0px;
 margin-right:0px;
 margin-left:0px;
 width:520px;
-height:425px;
-float:left;
+/*height:425px;*/
+
+display:inline-block;
 }
 
 
@@ -234,7 +244,8 @@ width:900px;}
 .absatz1{
 margin-right:20px;
 margin-left:20px;
-height:415px;
+/*height:415px;*/
+display:inline-block;
 width:860px;
 
 }
@@ -242,23 +253,29 @@ width:860px;
 .absatz2{
 margin-right:20px;
 margin-left:20px;
-height:560px;
+/*height:560px;*/
+display: inline-block;
 width:860px;
 }
 .links{
 float:left;
 width:430px;
-height:245px;
-line-height:25px;}
+/*height:245px;*/
+line-height:25px;
+margin-top:20px;
+margin-bottom:20px;}
 
 .rechts{
 float:right;
 width:430px;
-height:245px;
-line-height:25px;}
+/*height:245px;*/
+line-height:25px;
+margin-top:20px;
+margin-bottom:20px;}
 
 .ganz{
-width:860px;}
+width:860px;
+margin-bottom: 20px;}
 
 .head{
 width:900px;
@@ -311,75 +328,71 @@ font-size:93%;
 
 <div class="topneu">\(\:\)</div>
 <div class="bottom">
-<div class="top">
-<div class="head">
-<div class="start-container"><div class="startbutton"><a href="https://dianantz.github.io/repositories.html">Overview</a></div></div>
-<div class="impressum-container"><div class="impressumbutton"><a href="https://github.com/DianaNtz">My GitHub</a></div></div>
-</div></div>
+
+  <div class="top"><div class="head">
+    <div class="start-container"><div class="startbutton"><a href="https://dianantz.github.io/repositories.html">Overview</a></div></div>
+    <div class="impressum-container"><div class="impressumbutton"><a href="https://github.com/DianaNtz">My GitHub</a></div></div>
+    </div></div>
+
+
 <div class="box">
 
 <div class="textbox">
 <h1>About myself</h1>
 <div class="absatz1">
 
-<div class="text">
+
 Hey there, my name is Diana and I am an almost finished major physics student. I have written my bachelor thesis about some cool quantum side band transitions in unconventional Penning traps. Unconventional in the sense that there where some additional magnetic fields involved. 
 If you want to find out more about Penning traps, please visit the repository page <a href="https://dianantz.github.io/Euler-Method-Example.html">Euler-Method-Example</a>. During my bachelor years I had a lot of fun learning all kinds of stuff just like elementary quantum theory but my favorite lecture back then was general relativity where I could relate to differential geometry, a mathematical lecture I used to hear. In this lecture I also learned about black holes and was introduced to the Einstein equations that we used to derive the Tolman Oppenheimer Volkoff equation. 
 Besides math and physics, I also like programming. Some programming languages that I know are Fortran, C++ and Python. I also used to do some elementary stuff in C and Java, whereby in Java I focused on the subject of object oriented programming. But interesting for me is and always will be solving differential equations numerically, 
 especially when there is something to illustrate or animate. You want to create some cool gifs as well? Then check out my GitHub repository page <a href="https://dianantz.github.io/Animated-Heart-Curve.html">Animated-Heart-Curve</a> on how to create a heart gif in Python. During my studies, I had the awesome opportunity to work as a tutor for some elementary physics lectures such as electrodynamics and mathematical methods for physicists. A list of advanced lectures I visited is:
-</div>
-<div class="imgbox">
-<img src="docs/assets/img/me.jpg">
-</div>
+
+
 </div>
 
 <div class="absatz2">
 
 
-<div class="links">
-$$\:$$
-<b>Advanced physics courses:</b>
-<br>
-General Relativity (Bachelor)
-<br> 
-Theory of Black Holes
-<br>
-Introduction to Particle Physics
-<br>
-Special Topics in General Relativity
-<br>
-Quantum Optics
-<br>
-Quantum Field Theory
-<br>
-Theoretical Quantum Information Theory
-<br>
-Theoretical Quantum Optics
-<br>
-<br></div>
-<div class="rechts">
-$$\:$$
-<b>Seminar:</b>
-<br>
-Astronomy in the Copernican Revolution
-<br>
-<br>
-<br>
-<b>Mathematics courses:</b>
-<br>
-Complex Analysis
-<br>
-Functional Analysis (Bachelor)
-<br>
-Classical Differential Geometry (Bachelor) 
-<br>
-Partial Differential Equations
-<br>
-<br>
-</div>
+  <div class="links">
+
+    <b>Advanced physics courses:</b>
+    <br>
+    General Relativity (Bachelor)
+    <br> 
+    Theory of Black Holes
+    <br>
+    Introduction to Particle Physics
+    <br>
+    Special Topics in General Relativity
+    <br>
+    Quantum Optics
+    <br>
+    Quantum Field Theory
+    <br>
+    Theoretical Quantum Information Theory
+    <br>
+    Theoretical Quantum Optics
+    </div>
+    <div class="rechts">
+    
+    <b>Seminar:</b>
+    <br>
+    Astronomy in the Copernican Revolution
+    <br>
+    <br>
+    <br>
+    <b>Mathematics courses:</b>
+    <br>
+    Complex Analysis
+    <br>
+    Functional Analysis (Bachelor)
+    <br>
+    Classical Differential Geometry (Bachelor) 
+    <br>
+    Partial Differential Equations
+    
+    </div>
 <div class="ganz">
-$$\:$$
-$$\:$$
 Again I have to say that although I like Quantum theory related topics, the lecture I enjoyed the most was the lecture about black holes. We learned not only about charged rotating black holes or their thermodynamics but also about stars. Even the Newtonian description and the Lane Emden equation were included. The topic of my master thesis is not yet public but it can be said that I worked with a more generalised 3 dimensional Split Operator method to solve a partial differential equation. This is also where I had to learn Fortran and improved my C++ skills. Other time integration methods apart from the Split Operator method are the Crank Nicolson and the Runge Kutta method. 
 These 2 methods rely on discretizations rather than on Fourier transforms. 
 If you are interested in solving the Schrödinger equation numerically please check out my GitHub repository pages <a href="https://dianantz.github.io/1D-Crank-Nicolson-Method.html">1D-Crank-Nicolson-Method</a> and <a href="https://dianantz.github.io/2D-Crank-Nicolson-Method.html">2D-Crank-Nicolson-Method</a>. Make sure to visit my GitHub repository page <a href="https://dianantz.github.io/Runge-Kutta-Method-Example.html">Runge-Kutta-Method-Example</a> as well. My dream is to become a professor for numerical astro physics one day because I love to solve numerical differential equations as much as I love to inspire and teach people. So always keep your head in the stars and have fun scrolling around my GitHub repository pages and learning something new. Feel free to use code or figures from there for private purposes but keep in mind to give some credit where it's due.
