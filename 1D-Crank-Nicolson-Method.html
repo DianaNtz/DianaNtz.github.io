@@ -208,6 +208,11 @@ margin-top:45px;
 position: relative;
 }
 
+.box a{
+text-decoration: underline;
+
+}
+
 
 .textbox{
 width:900px;
@@ -418,7 +423,7 @@ $$\dfrac{u_i^{n+1}-u_i^n}{\Delta t}=\dfrac{1}{2}(F_i^{n+1}+F_i^n)$$
 This system can be written in matrix form as:
 $$A \psi^{n+1}=B \psi^{n}$$
 The matrix \(A\) is given by:
-$$A=\mathbb{1}+\dfrac{i}{2\hbar}\Delta t\begin{pmatrix}
+$$A=I+\dfrac{i}{2\hbar}\Delta t\begin{pmatrix}
 V_1&{}&{} &{}&{}\\
 {}&V_2&{}&{}&{}\\
 {}&{}&V_3&{}&{}\\
@@ -431,11 +436,11 @@ V_1&{}&{} &{}&{}\\
 {}&{}&\:\:\:1&\ddots&\ddots\\
 {}&{}&{}&{\ddots}&\ddots\\
 \end{pmatrix}$$
-For the matrix \(B\) one only needs to change the sign of \(\Delta t\) in matrix \(A\). So in order to solve the Schrödinger equation we need to solve the system \(A \psi^{n+1}=B \psi^{n}\), this can be done in several ways, one is to simply invert matrix \(A\):
+\(I\) is defined as identity matrix here. For the matrix \(B\) one only needs to change the sign of \(\Delta t\) in matrix \(A\). So in order to solve the Schrödinger equation we need to solve the system \(A \psi^{n+1}=B \psi^{n}\), this can be done in several ways, one is to simply invert matrix \(A\):
 $$\psi^{n+1}=A^{-1}B \psi^{n}$$
 Another way is to simply use an linear solver method such as np.linalg.solve. However, this would be really time consuming compared to the LU decomposition combined with tridiagonal solvers and even more time consuming compared to banded matrix solvers, which exploit the fact that most of our matrix entries are 0. 
 In Python, scipy is providing most common solvers for that such as scipy.linalg.solve_banded, scipy.linalg.solve_triangular and scipy.linalg.lu.
-One thing especially worth mentioning is that the Crank Nicolson method described above can also be used to solve problems with a time depending potential \(V(z,t)\), everything one has to do is to take the matrices \(A\) and \(B\) explicitly time dependent and update them for every timestep \(\Delta t\).
+One thing especially worth mentioning is that the Crank Nicolson method described above can also be used to solve problems with a time depending potential \(V(z,t)\), everything one has to do is to make the matrices \(A\) and \(B\) explicitly time dependent and update them for every timestep \(\Delta t\).
 </div>
 
 <div class="accordionboxneu">
