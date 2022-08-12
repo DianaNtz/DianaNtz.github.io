@@ -158,6 +158,13 @@ justify-content:center;
 align-items:center;
 border: black 1.5px solid
 }
+
+
+
+.textforaccordionlabel{
+float:left;
+}
+
 .codebesch{
 float:left;
 font-size:16.5px;
@@ -275,7 +282,13 @@ margin-left:20px;
   font-weight: 500;
   cursor: pointer; 
   position: relative; 
-  transition: background 0.1s;
+}
+
+.accordiontext__down{
+float:right;
+display:flex;
+justify-content:center;
+align-items:right;
 }
 
 .accordiontext__label:hover {
@@ -295,6 +308,19 @@ margin-left:20px;
 .accordiontext__input:checked ~ .accordiontext__content {
   display: block;
 }
+
+#section1:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
+#section2:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
+#section3:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
 
 
 .accordionbox{
@@ -345,6 +371,14 @@ padding-bottom:5px;
 .accordion__input:checked~ .accordion__content {
   display: block;
 }
+
+
+/*.downsymbole{
+transform: rotate(180deg);
+}*/
+
+
+
 
 .imgbox1{
 margin-bottom:0px;
@@ -447,8 +481,9 @@ One thing especially worth mentioning is that the Crank Nicolson method describe
 <div class="accordionbox">
 <div class="accordiontext">
   <div>
+    
     <input type="checkbox" name="example_accordiontext" id="section1" class="accordiontext__input">
-    <label for="section1" class="accordiontext__label">Quantum Harmonic Oscillator</label>
+   <label for="section1" class="accordiontext__label"><div class="textforaccordionlabel"> Quantum Harmonic Oscillator</div><div class="accordiontext__down" >\(\nabla\)</div></label>
     <div class="accordiontext__content">
 <p> In order to test the numerical solution we are going to have a look at the quantum harmonic oscillator:</p>
 $$\hat{H}=\dfrac{p_z^2}{2m}+\dfrac{m}{2}\omega_z^2z^2$$
@@ -497,7 +532,8 @@ $$H_n(x)=e^{\frac{x^2}{2}}(\sqrt{2}a^\dagger)^ne^{-\frac{x^2}{2}}=e^{x^2}e^{-\fr
   </div>
   <div>
     <input type="checkbox" name="example_accordiontext" id="section2" class="accordiontext__input">
-    <label for="section2" class="accordiontext__label">Superposition State</label>
+    <label for="section2" class="accordiontext__label"> <div class="textforaccordionlabel">Superposition State </div><div class="accordiontext__down"  >\(\nabla\)</div>
+    </label>
     <div class="accordiontext__content">
      <br>
      <div class="ganz">
@@ -525,7 +561,7 @@ $$|\psi_s (z,t)|^2=\frac{1}{2}(|\psi_0(z)|^2+|\psi_1(z)|^2)+\cos{(\omega_z t)}\p
   </div>
 <div>
     <input type="checkbox" name="example_accordiontext" id="section3" class="accordiontext__input">
-    <label for="section3" class="accordiontext__label">Coherent State</label>
+    <label for="section3" class="accordiontext__label"><div class="textforaccordionlabel">Coherent State</div><div class="accordiontext__down" >\(\nabla\)</div></label>
     <div class="accordiontext__content"> 
 <br>
 <div class="ganz">
