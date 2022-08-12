@@ -438,9 +438,9 @@ display:flex;}
 
 <div class="absatz1">
  The Crank Nicolson algorithm is a finite difference method and can be interpreted as a combination of the forward and backward Euler method.
- It is famous for solving the heat equation numerically but basically any equation of the form:
+ It is famous for solving the heat equation numerically but any equation of the form:
 $$\dot{u}(z,t)=F(z,t,u(z,t),u'(z,t),u''(z,t))$$
-can be easily solved with the Crank Nicolson method. A well known example of this type is the Schrödinger equation:
+can be solved with the Crank Nicolson method. A well known example of this type is the Schrödinger equation:
 $$i\hbar\dfrac{\partial}{\partial t}\psi(z,t)=\Big(-\dfrac{\hbar^2}{2m}\dfrac{\partial^2}{\partial z^2}+V(z)\Big)\psi(z,t)$$
 The time evolution for a small amount of \(d t\) is:
 $$\Psi(z,t+d t)=\hat{U}\psi(z,t),\:\:\:\:\:\:\:\:\:\:\:\hat{U}:=e^{-i\hat{H}dt/\hbar},\:\:\:\:\:\:\:\:\:\:\:\hat{H}:=-\dfrac{\hbar^2}{2m}\dfrac{\partial^2}{\partial z^2}+V(z)$$
