@@ -64,15 +64,18 @@ align-items:center;
 margin-top:0px;
 }
 
-
 a {
 text-decoration:none;
-text-align: center;
+color:black;
+}
+
+.bottom a {
+text-decoration:none;
 color:black;
 font-size:22px;
 }
 
-a:hover{
+.bottom a:hover{
 text-align: center;
 font-size:25px;
 }
@@ -209,7 +212,47 @@ justify-content:center;
 align-items:center;
 }
 
+.blur{
+position:absolute;
+right:0%;
+top  :0%;
+align-items:center;
+justify-content: center;
+background-color: rgb(240, 231, 231);
+height: 100%;
+opacity:50%;
+width:100%;
+display: flex;
+}
 
+.blurbox {
+align-items:center;
+justify-content: center;
+display: flex;
+height: 200px;
+width: 620px;
+background-color: rgb(252, 252, 252);
+border: black 1.5px solid;
+padding-left: 25px;
+padding-right: 25px;
+}
+
+.blurbox:hover{
+border: black 1.5px dashed;
+}
+
+.blurboxcon {
+position:absolute;
+right:0%;
+top  :0%;
+align-items:center;
+justify-content: center;
+height: 100%;
+width:100%;
+display: flex;
+font-size:16.5px;
+font-family: arial;
+}
 
 </style>
 </head>
@@ -240,7 +283,12 @@ align-items:center;
 </div>
 </div>
 <div class="break"></div>
-
+<a href="https://dianantz.github.io/repositories.html"><div class="blur"></div></a>
+<a href="https://dianantz.github.io/repositories.html"><div class="blurboxcon"><div class="blurbox">Welcome to my GitHub repositories!<br>
+    <br>
+     Sadly there are some small text formatting issues with Firefox you should be aware of before continuing. For best performance please consider using Chrome. Text formatting problems can 
+     also occur on mobile devices. 
+     These issues are currently getting fixed. </div></div></a>
 </body>
 
 </html>
