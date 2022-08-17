@@ -485,7 +485,49 @@ One thing especially worth mentioning is that the Crank Nicolson method describe
     <input type="checkbox" name="example_accordiontext" id="section1" class="accordiontext__input">
    <label for="section1" class="accordiontext__label"><div class="textforaccordionlabel"> Quantum Harmonic Oscillator</div><div class="accordiontext__down" >&#9660;</div></label>
     <div class="accordiontext__content">
-<p> hallo</p>
+<p> In order to test the numerical solution we are going to have a look at the quantum harmonic oscillator:</p>
+$$\hat{H}=\dfrac{p_z^2}{2m}+\dfrac{m}{2}\omega_z^2z^2$$
+that is the most standard system in physics partially due to its nice analytical solution, which can be derived from an algebraic approach discovered by Paul Dirac. 
+The time independent Schrödinger equation is given by:
+$$(-\dfrac{\hbar^2}{2m}\dfrac{d^2}{dz^2}+\dfrac{m}{2}\omega_z^2z^2)\psi(z)=E\psi(z)$$
+Now one defines the so called creation and annihilation operators:
+$$\hat{a}^\dagger:=\dfrac{\omega_z m z- ip_z}{\sqrt{2\omega_z m \hbar}},\:\:\:\:\:\:\hat{a}:=\dfrac{\omega m z+ ip_z}{\sqrt{2\omega_z m \hbar}},\:\:\:\:\:\:with\:\:[\hat{a},\hat{a}^\dagger]=1$$
+Note that the invers relation is given by:
+$$z=\sqrt{\dfrac{\hbar}{2\omega_z m}}(\hat{a}+\hat{a}^\dagger),\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:p_z=-i\sqrt{\dfrac{\hbar\omega_z m}{2}}(\hat{a}-\hat{a}^\dagger)$$      
+The operators above can be written as:
+$$\hat{a}=\dfrac{1}{\sqrt{2}}(\dfrac{z}{z_0}+z_0\dfrac{d}{dz}),\:\:\:\:\:\:\:\:\:\:\:\hat{a}^\dagger=\dfrac{1}{\sqrt{2}}(\dfrac{z}{z_0}-z_0\dfrac{d}{dz}),\:\:\:\:\:\:with\:\:z_0=\sqrt{\dfrac{\hbar}{\omega_z m}}$$
+The number operator is defined as \(\hat{n}:=\hat{a}^\dagger \hat{a}\) and satisfies:
+$$[\hat{n},\hat{a}^\dagger]=\hat{a}^\dagger,\:\:\:\:\:\:\:\:\:\:\:[\hat{n},\hat{a}]=-\hat{a}$$
+We therefore obtain for our Hamiltonian:
+$$H=\frac{1}{2}\hbar\omega_z(\hat{a}^\dagger \hat{a}+\hat{a} \hat{a}^\dagger)=\hbar\omega_z(\hat{a}^\dagger \hat{a}+\frac{1}{2})$$
+The problem has now reduced to find the eigenfunctions of the number operator \(\hat{n}\). Let \(\psi_{\eta}\) be the eigenfunction of \(\hat{n}\) with eigenvalue \(\eta\). 
+This eigenvalue can not be negative because:
+$$\eta\langle\psi_{\eta},\psi_{\eta}\rangle=\langle\psi_{\eta},\hat{a}^\dagger \hat{a}\psi_{\eta}\rangle=\langle \hat{a}\psi_{\eta},\hat{a} \psi_{\eta}\rangle\ge 0$$
+So the smallest eigenvalue must be \(\eta=0\), the eigenequation is given by:
+$$\hat{a}\psi_0=\dfrac{1}{\sqrt{2}}(\dfrac{z}{z_0}+z_0\dfrac{d}{dz})\psi_0=0$$
+This equation is solved by:
+$$\psi_0(z)=\dfrac{1}{\sqrt{\sqrt{\pi}z_0}}\:e^{-\dfrac{1}{2}\big(\dfrac{z}{z_0}\big)^2}$$
+The eigenfunction to the eigenvalue \(\eta +1\) can be written as \(\hat{a}^\dagger\psi_{\eta}\) because:
+$$\hat{n}\hat{a}^\dagger\psi_{\eta}=(\hat{a}^\dagger\hat{n}+\hat{a}^\dagger)\psi_{\eta}=(\eta+1)\hat{a}^\dagger\psi_{\eta}$$
+For the norm one gets:
+$$\langle \hat{a}^\dagger\psi_{\eta},\hat{a}^\dagger\psi_{\eta}\rangle=\langle \psi_{\eta},\hat{a}\hat{a}^\dagger\psi_{\eta}\rangle=\langle \psi_{\eta},(\hat{a}^\dagger \hat{a}+1)\psi_{\eta}\rangle=(\eta+1)\langle\psi_{\eta},\psi_{\eta}\rangle$$
+For normalised \(\psi_{\eta}\) and \(\psi_{\eta+1}\) it has to be:
+$$\hat{a}^\dagger\psi_{\eta}=\sqrt{\eta+1}\psi_{\eta+1}\:\:\Rightarrow\:\:\psi_{n}=\frac{1}{\sqrt{n}}\hat{a}^\dagger\psi_{n-1}=\frac{1}{\sqrt{n!}}(\hat{a}^\dagger)^n\psi_{0}$$
+Furthermore note that \(\hat{a}\psi_{\eta}\) is an eigenfunction to the eigenvalue \(\eta-1\) since:
+$$\hat{n}\hat{a}\psi_{\eta}=(\hat{a}\hat{n}-\hat{a})\psi_{\eta}=(\eta-1)\hat{a}\psi_{\eta}$$
+The norm is given by:
+$$\langle \hat{a}\psi_{\eta},\hat{a}\psi_{\eta} \rangle=\langle \psi_{\eta},\hat{a}^\dagger \hat{a}\psi_{\eta}\rangle=\eta\langle \psi_{\eta},\psi_{\eta} \rangle $$
+such that:
+$$\hat{a}\psi_{\eta}=\sqrt{\eta}\psi_{\eta-1}$$
+So with n \(\in\) \(\mathbb{N}\) we already found all of our eigenfunctions. Let us otherwise assume there was an eigenvalue \(\eta=n+c\) with \(0 < c<1\) and n \( \in \) \( \mathbb{N} \). 
+One would obtain:
+$$\hat{n}\psi_{\eta}=(n+c)\psi_{\eta}\:\:\Rightarrow\:\:\hat{n}(\hat{a}^n\psi_{\eta})=c(\hat{a}^n\psi_{\eta})\:\:\Rightarrow\:\:\hat{n}(\hat{a}^{n+1}\psi_{\eta})=(c-1)(\hat{a}^{n+1}\psi_{\eta})$$
+Therefore it would lead us to an eigenfunction with negative eigenvalue that we already excluded previously. So the solution for the quantum harmonic oscillator is:
+$$\psi_n(z)=\dfrac{1}{\sqrt{n!\sqrt{\pi}z_0}}(\hat{a}^\dagger)^ne^{-\dfrac{1}{2}\big(\dfrac{z}{z_0}\big)^2},\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:E_n=\hbar\omega_z(n+\frac{1}{2})$$    
+The solution can also be written in terms of the Hermite polynomials as:
+$$\psi_n(z)=\dfrac{1}{\sqrt{2^nn!\sqrt{\pi}z_0}}e^{-\dfrac{1}{2}\big(\dfrac{z}{z_0}\big)^2}H_n(\dfrac{z}{z_0})$$
+with:
+$$H_n(x)=e^{\frac{x^2}{2}}(\sqrt{2}a^\dagger)^ne^{-\frac{x^2}{2}}=e^{x^2}e^{-\frac{x^2}{2}}(x-\frac{d}{dx})^ne^{\frac{x^2}{2}}e^{-x^2}=(-1)^ne^{x^2}\frac{d^n}{dx^n}e^{-x^2}$$
 </div>
   </div>
   <div>
@@ -493,9 +535,32 @@ One thing especially worth mentioning is that the Crank Nicolson method describe
     <label for="section2" class="accordiontext__label"> <div class="textforaccordionlabel">Superposition State </div><div class="accordiontext__down"  >&#9660;</div>
     </label>
     <div class="accordiontext__content">
-      <p> hallo</p>
-      </div>
-        </div>
+     <br>
+     <div class="ganz">
+ Now we want to check our numerical solution for the Crank Nicolson method against an analytical solution. 
+      So let us have a look at the time evolution for the first two eigenfunctions superposition state of the harmonic oscillator:
+$$\psi_s(z,0)=\dfrac{1}{\sqrt{2}}(\psi_0(z)+\psi_1(z))$$  
+ The time evolution of an arbitrary initial state written in the eigenstate basis is:
+$$\psi(z,t)=\sum\limits_{n=0}^{\infty}c_ne^{-\frac{i}{\hbar}E_n t}\psi_n(z),\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\psi(z,0)=\sum\limits_{n=0}^{\infty}c_n\psi_n(z)$$    
+So for our above initial state we get:
+$$\psi_s(z,t)=\dfrac{1}{\sqrt{2}}\Big(e^{-i\omega_z t/2}\psi_0(z)+e^{-3i\omega_z t/2}\psi_1(z)\Big)$$
+with \(\psi_n=\psi_n^\dagger\) we get for the probability density:
+$$|\psi_s (z,t)|^2=\frac{1}{2}(|\psi_0(z)|^2+|\psi_1(z)|^2)+\cos{(\omega_z t)}\psi_1 (z)\psi_0(z)$$ 
+</div>
+
+
+<br>      
+ <div class="ganz">
+<div class="imgbox1">
+<img src="docs/assets/img/super.gif"></div>
+<div class="imgbox2">
+<h4>Figure 1: Shows the time evolution of the probability density for the initial superposition state \(\psi_s(z,0)\) and compares its analytical solution \(\psi_s(z,t)\) with the numerical calculated result from the above described Crank Nicolson method \(\psi (z,t)\). Notice however that one has set \(m=m_e\) and \(\omega_z=110\cdot 2\pi\) kHz.
+</h4></div>
+         
+     </div><br>
+      
+    </div>
+  </div>
 <div>
     <input type="checkbox" name="example_accordiontext" id="section3" class="accordiontext__input">
     <label for="section3" class="accordiontext__label"><div class="textforaccordionlabel">Coherent State</div><div class="accordiontext__down" >&#9660;</div></label>
@@ -561,7 +626,6 @@ its analytical solution \(\psi_\alpha(z,t)\) to the numerical calculated result 
   
   
   </div>
-  
 
 <div class="ganzneu">
 <b>References</b>
@@ -697,6 +761,9 @@ for filename in set(filenames):
 
 </div>
 </div>
+
+</div>
+
 <div class="bottom2">
 \(\:\)
 <div>
