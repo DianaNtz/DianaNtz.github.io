@@ -459,7 +459,7 @@ $$k_1=\Delta t f(t_n,u_n),\:\:\:\:\:\:\:\:k_2=\Delta t f(t_n+\frac{1}{2}\Delta t
 The next iteration step is:
 $$u_{n+1}=u_n+\frac{1}{6}k_1+\frac{2}{3}k_2+\frac{1}{6}k_3$$
 The fourth order Runge Kutta methods coefficients are:
-$$k_1=\Delta t f(t_n,u_n),\:\:\:\:\:k_2=\Delta t f(t_n+\frac{1}{2}\Delta t,u_n+\frac{1}{2}k_1),\:\:\:\:\:k_3=\Delta t f(t_n+\frac{1}{2}\Delta t,u_n+\frac{1}{2}k_2),\:\:\:\:\:k_4=\Delta t f(t_n+\Delta t,u_n+k_3)$$
+$$k_1=\Delta t f(t_n,u_n),\:\:k_2=\Delta t f(t_n+\frac{1}{2}\Delta t,u_n+\frac{1}{2}k_1),\:\:k_3=\Delta t f(t_n+\frac{1}{2}\Delta t,u_n+\frac{1}{2}k_2),\:\:k_4=\Delta t f(t_n+\Delta t,u_n+k_3)$$
 The next iteration step of the fourth order is:
 $$u_{n+1}=u_n+\frac{1}{6}k_1+\frac{1}{3}k_2+\frac{1}{3}k_3+\frac{1}{6}k_4$$ 
 In the following we are going to discuss some 1 dimensional examples for the Runge Kutta algorithm although it should be mentioned that this method can also be used for vector valued functions \(u \Rightarrow \vec{u}\) and \(F \Rightarrow \vec{F}\).
