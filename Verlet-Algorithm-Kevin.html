@@ -598,9 +598,9 @@ margin-right:20px;}
 <h1>Verlet Algorithm</h1>
 <br>
 <div class="textundso">
-The most common example of two body problem is the Kepler problem which is described by the following:
+The most common example of a two body problem is the Kepler problem that can be described with the following equations:
 $$\vec{F}_1=m_1\ddot{\vec{r}}_1=-G\dfrac{m_1 m_2}{|\vec{r}_1-\vec{r}_2|^3}(\vec{r}_1-\vec{r}_2),\:\:\:\:\:\:\vec{F}_2=m_2\ddot{\vec{r}}_2=-G\dfrac{m_1 m_2}{|\vec{r}_1-\vec{r}_2|^3}(\vec{r}_2-\vec{r}_1)$$
-coupled vector equations above can also be written as system of 12 ordinary differential equations:
+The coupled vector equations above can also be written as a system of 12 ordinary differential equations:
 $$\dot{x}_1=v_{x,1},\:\:\:\:\:\:\dot{y}_1=v_{y,1},\:\:\:\:\:\:\dot{z}_1=v_{z,1},\:\:\:\:\:\:\dot{v}_{x,1}=\vec{F}_{1,x},\:\:\:\:\:\:\dot{v}_{y,1}=\vec{F}_{1,y},\:\:\:\:\:\:\dot{v}_{z,1}=\vec{F}_{1,z}$$
 
 $$\dot{x}_2=v_{x,2},\:\:\:\:\:\:\dot{y}_2=v_{y,2},\:\:\:\:\:\:\dot{z}_2=v_{z,2},\:\:\:\:\:\:\dot{v}_{x,2}=\vec{F}_{2,x},\:\:\:\:\:\:\dot{v}_{y,2}=\vec{F}_{2,y},\:\:\:\:\:\:\dot{v}_{z,2}=\vec{F}_{2,z}$$
@@ -643,7 +643,7 @@ $$m_1\ddot{\vec{r}}_1=-m_2\ddot{\vec{r}}_2\:\:\:\Rightarrow\:\:\:\ddot{\vec{R}}=
 <div class="imgbox1a">
 <h4>
 Figure 1: shows the solution of the two body problem with initial conditions \(\vec{r}_{1,0}=(3000,0,0)^T\) km  \(\vec{v}_{1,0}=(-7.5,15,1)^T\) km/s,   \(\vec{r}_{2,0}=(-3000,0,0)^T\) km  \(\vec{v}_{2,0}=(7.5,-15,1)^T\) km/s  and \(m_1=m_2=2\cdot 10^{26}\) kg. Left hand side: trajectories of \(\vec{r}_2\) (blue), \(\vec{r}_1\) (pink) and center of mass \(\vec{R}\) (black). Right hand side: trajectories of \(\vec{r}_2-\vec{R}\) (blue) and \(\vec{r}_1-\vec{R}\) (pink).
-If one neglects the center of mass motion part for the two masses one finds the planar elliptic motion well known from astronomy.  It is worth mentioning that this plane motion is perpendicular to \(\vec{L}=m_1m_2/M\:\vec{r}\times\vec{v}\). For the initial conditions above one finds that \(\vec{L}\) is parallel to the z coordinate direction.
+If one neglects the center of mass motion part for the two masses one finds the planar elliptic motion that is well known from astronomy.  It is worth mentioning that this plane motion is perpendicular to \(\vec{L}=m_1m_2/M\:\vec{r}\times\vec{v}\). For the initial conditions above one finds that \(\vec{L}\) is parallel to the z coordinate direction.
 </h4>
 </div>
 </div>

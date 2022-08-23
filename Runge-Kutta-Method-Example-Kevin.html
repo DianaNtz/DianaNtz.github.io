@@ -476,7 +476,7 @@ In the following we are going to discuss some 1 dimensional examples for the Run
     <div class="accordiontext__content">
 <div class="ganz">
 <br>
-One example of differential equation is:
+One example for a differential equation is:
 $$\dfrac{d}{dt}u(t)=-(t-a)u(t),\:\:\:\:\:\:\:\:\:\:\:u(0)=C$$
 Its analytical solution is:
 $$u_a(t)=Ce^{-\frac{1}{2}(t-2a)t}$$
@@ -578,7 +578,7 @@ plt.show()</code></pre>
     <div class="accordiontext__content">
      <br>
      
-In a spherical smetric Newtonian star gravitational force:
+In a spherical symmetric Newtonian star the gravitational force:
 $$\vec{F}_{G}=-\frac{G\rho (r)M(r)}{r^2}r^2dr\sin{\theta}d\theta d\varphi\vec{e}_r$$
 and pressure force:
 $$\vec{F}_{P}=-(P(r+dr)-P(r))r^2\sin{\theta}d\theta d\varphi\vec{e}_r$$
@@ -686,7 +686,7 @@ plt.show()</code></pre>
     <div class="accordiontext__content"> 
 <br>
 <div class="ganz">
-Now let us have a look on a more complicated example then the above with constant density. Starting from:
+Now let us take a look on a more complicated example than the example above with constant density. Starting from:
 $$-P'(r)=\frac{G\rho(r)M(r)}{r^2}$$
 and assuming a polytropic equation of state:
 $$P=k\rho^{\gamma},\:\:\:\gamma:=\frac{n+1}{n}$$
@@ -808,7 +808,7 @@ plt.show()</code></pre>
     <div class="accordiontext__content"> 
 <br>
 <div class="ganz">
-Now let us have a look at a general static sperical symmetric metric:
+Now let us take a look at a general static spherical symmetric metric:
 $$g_{\mu\nu}dx^\mu dx^\nu=e^{\eta (r)}c^2dt^2-e^{\xi (r)}dr^2-r^2d\theta^2-r^2\sin^2{\theta}d\varphi^2$$
 The stress energy tensor for a perfect fluid is diagonal that means 
 $$T_0^0=\rho (r)c^2,\:\:\:\:T_i^j=-P(r)\delta_i^j$$
@@ -822,7 +822,7 @@ Plugging in the result for \(e^{\xi (r)}\) one finds:
 $$\frac{d\eta}{dr}=\frac{1}{r}\Big(1-\frac{2GM(r)}{c^2r}\Big)^{-1}\Big(\frac{8\pi G}{c^4}P(r)r^2+\frac{2GM(r)}{c^2r}\Big)$$
 from \(\nabla_\mu T_\nu^\mu=0\) and \(\partial _t\rho=\partial_tP=0\) one finds:
 $$\nabla_\mu T_1^\mu=-\frac{dP}{dr}-\frac{1}{2}(P+\rho c^2)\frac{d\eta}{dr}=0\:\:\:\Rightarrow\:\:-P'(r)=\frac{1}{2}(P(r)+\rho (r)c^2)\eta'(r)$$
-If one plugs in \(\eta'(r)\) this results in Tolman Oppenheimer Volkoff equation:
+If one plugs in \(\eta'(r)\) this results in the Tolman Oppenheimer Volkoff equation:
 $$-P'(r)=G\frac{M(r)+4\pi r^3P(r)/c^2}{r^2(1-\frac{2GM(r)}{c^2r})}(\rho(r)+P(r)/c^2)$$
 An example where the above equation can be solved analytically is for constant density:
 $$\rho (r)=\rho_0\:\:\:\Rightarrow\:\:\:M(r)=\frac{4}{3}\pi r^3\rho_0$$ 
@@ -840,7 +840,7 @@ For the left hand side one does a partial fraction decomposition:
 $$\frac{A}{\rho_0c^2+3 P(r)}+\frac{B}{\rho_0c^2+P(r)}=\frac{2\rho_0 c^2}{(\rho_0c^2+3 P(r))(\rho_0c^2+P(r))}\:\:\:\Rightarrow\:\:\:B=-1,\:\:A=3$$
 So one obtains
 $$\int_{P(r')}^{P(R)}\frac{1}{\rho_0 c^2/3+P(r)}-\frac{1}{\rho_0c^2+P(r)}dP=\Big[\ln{\Big(\frac{\rho_0c^2/3+P(r)}{P(r)+\rho_0c^2}\Big)}\Big]_{P(r')}^{P(R)}$$
-Note that for the stars radius \(R\) one finds \(P(R)=0\), so one obtains:
+Note that for the star radius \(R\) one finds \(P(R)=0\), so one obtains:
 $$\ln{\Big(\frac{\rho_0c^2/3}{\rho_0c^2/3+P(r')}\frac{\rho_0c^2+P(r')}{\rho_0c^2}\Big)}=\ln{\Big(\frac{\sqrt{1-R^2/d^2}}{\sqrt{1-r'^2/d^2}}\Big)}$$
 This leads us to:
 $$\frac{\rho_0c^2+P(r')}{\rho_0c^2+3P(r')}=\frac{\sqrt{1-r_s/R}}{\sqrt{1-r'^2r_s/R^3}}$$
