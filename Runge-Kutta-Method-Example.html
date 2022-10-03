@@ -450,7 +450,7 @@ display:flex;}
 
 <div class="absatz1">
 The Runge Kutta algorithm is a method to solve initial value problems that are specified more precisely as follows:
-$$\dfrac{d}{dt}u(t)=F(t,u(t)),\:\:\:\:\:\:\:\:\:\:\:u(t_0)=u_0$$
+$$\dfrac{d}{dt}u(t)=f(t,u(t)),\:\:\:\:\:\:\:\:\:\:\:u(t_0)=u_0$$
 One reason why the Runge Kutta algorithm is so famous is that the accuracy of the algorithm is increasing with higher orders.
 The second order Runge Kutta method is given by:
 $$k_1=\Delta t f(t_n,u_n),\:\:\:\:\:\:\:\:\:\:\:k_2=\Delta t f(t_n+\frac{1}{2}\Delta t,u_n+\frac{1}{2}k_1),\:\:\:\:\:\:\:\:\:\:\:u_{n+1}=u_n+k_2$$
@@ -463,7 +463,7 @@ $$k_1=\Delta t f(t_n,u_n),\:\:\:\:\:\:\:\:k_2=\Delta t f(t_n+\frac{1}{2}\Delta t
 $$k_3=\Delta t f(t_n+\frac{1}{2}\Delta t,u_n+\frac{1}{2}k_2),\:\:\:\:\:\:\:\:k_4=\Delta t f(t_n+\Delta t,u_n+k_3)$$
 The next iteration step of the fourth order is:
 $$u_{n+1}=u_n+\frac{1}{6}k_1+\frac{1}{3}k_2+\frac{1}{3}k_3+\frac{1}{6}k_4$$ 
-In the following we are going to discuss some 1 dimensional examples for the Runge Kutta algorithm although it should be mentioned that this method can also be used for vector valued functions \(u \Rightarrow \vec{u}\) and \(F \Rightarrow \vec{F}\).
+In the following we are going to discuss some 1 dimensional examples for the Runge Kutta algorithm although it should be mentioned that this method can also be used for vector valued functions \(u \Rightarrow \vec{u}\) and \(f \Rightarrow \vec{f}\).
 </div>
 \(\:\)
 <div class="accordionboxneu">
