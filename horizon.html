@@ -473,7 +473,7 @@ $$s_i=C\psi^2\begin{pmatrix}
                                             -h_\theta/r^2\\
                                             -h_\phi/(r^2\sin^2{\theta})\\
                                             \end{pmatrix}\:\:\:\:\:\:\:\:\:\:\:\:C:=\frac{1}{\sqrt{1+h_\theta^2/r^2+h_\phi^2/(r^2\sin^2{\theta})}}$$
-In the axi axisymmetric case \(h=h(\theta)\) this comes down to:
+In the axisymmetric case \(h=h(\theta)\) this comes down to:
 $$s_i=C\psi^2\begin{pmatrix}
                                             1\\
                                             -h_\theta\\
@@ -495,7 +495,7 @@ Putting this together and setting \(r=h\) one finds:
 $$h_{\theta\theta}=\frac{\psi^2h^2}{C^3}(K_{ij}-K)+2h-\cot{\theta}/C^2h_\theta+\frac{4h^2}{\psi C^2}(\psi_r-\frac{h_\theta}{h^2}\psi_\theta)+3\frac{h_\theta^2}{h}$$
 Note however that:
 $$\cot{\theta}/C^2h_\theta (\theta=0=\pi)=0$$ 
-The most common exampels for conformally flat metrics are Brill Lindquist metrics with conformal factor:
+The most common examples for conformally flat metrics are Brill Lindquist metrics with conformal factor:
 $$\psi=1+\frac{1}{2}\sum_{i=1}^N\frac{m_i}{\sqrt{r^2-2z_ir\cos{\theta}+z_i^2}}$$ 
 Note that for that case one obtains \(K_{ij}=0\).
 </div>
@@ -512,7 +512,7 @@ Note that for that case one obtains \(K_{ij}=0\).
 <br>
 The boundary conditions of the above equation are given by 
 $$h_{\theta}(0)=h_{\theta}(\pi)=0$$
-The Shooting method converts the boundary value problem into the following initaial value problem:
+The Shooting method converts the boundary value problem into the following initial value problem:
 $$\frac{d}{d\theta}\begin{pmatrix}
                                             h\\
                                             h_\theta\\
@@ -536,7 +536,7 @@ with initial values:
 $$r_1(0)=r_0\:\:\:\:\:\:\:\:\:\:\:\:r_2(0)=0$$
 Note that \(r_0\) is our initial guess and has to be choosen such that \(r_2(\pi)=0\). This means one has to find the root of 
 $$g(r_0):=r_2(\pi,r_0)$$ 
-This can be done by many algorithms one would be the bisection method. 
+This can be done by many algorithms, one would be the bisection method. 
  </div>
 <div class="ganz">
 <div class="imgbox1">
@@ -742,7 +742,7 @@ plt.show()</code></pre>
      
 Consider an elliptic operator \(L\) such that:
 $$L(u)=0$$
-the flow method rewrites this elliptic PDE into the following hyperbolic equation:
+The flow method rewrites this elliptic PDE into the following hyperbolic equation:
 $$\frac{\partial u}{\partial \lambda}=-L(u)$$
 since the expansion \(\Theta\) is such an elliptic operator one finds for the apparent horizon equation:
 $$\partial_\lambda x^i=-\Theta s^i$$
