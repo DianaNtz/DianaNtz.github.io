@@ -457,9 +457,9 @@ The needed coefficients are often written in a Butcher-Tableau:
 $$\begin{array}
 {c|cccc}
 c_1&0\\
-c_2 & a_{2\:1}\\
+c_2 & a_{21}\\
  \vdots &\vdots &  \ddots \\
-c_s& a_{s\:1}& \ldots& a_{s\:s-1}&0\\
+c_s& a_{s1}& \ldots& a_{ss-1}&0\\
 \hline
 & b_1 &b_2 & \ldots&b_s 
 \end{array}$$
@@ -614,10 +614,77 @@ plt.show()</code></pre>
     </label>
     <div class="accordiontext__content">
      <br>
-     TobeDone<br>
-     Lets have again a look at our analytical test case:
+     Dense Runge Kutta methods are using one extra function evaluation to interpolate values between two time steps:
+     $$u(t_n+\sigma dt)=u(t_n)+dt\sum\limits_{j=1}^{s+1}b'_j(\sigma)k_j$$
+     For Dormand Prince one gets the more precise formula:
+     $$u(t_n+\sigma dt)=u(t_n)+dt\sigma\sum\limits_{j=1}^{8}b'_jk_j$$
+     The additional coefficients for \(s+1\) can be calculated from:
+     $$\begin{pmatrix}
+                                            (c)_{3-7}&c_8&0&0\\
+                                            (c^2)_{3-7}&c_8^2&0&0\\
+                                            (c^3)_{3-7}&c_8^3&0&0\\
+                                            (c^4)_{3-7}&c_8^4&0&0\\
+                                            (Ac^3)_{3-7}&0&0&0\\
+                                            (A^2e_2)_{3-7}&0&-1&0\\
+                                            (Ae_2\cdot c)_{3-7}&0&0&-c_8\\
+                                            (Ae_2)_{3-7}&0&0&-1
+                                            \end{pmatrix}\begin{pmatrix}
+                                            b'_3\\
+                                            b'_4\\
+                                            b'_5\\
+                                            b'_6\\
+                                            b'_7\\
+                                            b'_8\\
+                                            \gamma_1\\
+                                            \gamma_2
+                                            \end{pmatrix}=                                     
+                                            \begin{pmatrix}
+                                            \frac{1}{2}\sigma\\
+                                            \frac{1}{3}\sigma^2\\
+                                            \frac{1}{4}\sigma^3\\
+                                            \frac{1}{5}\sigma^4\\
+                                            \frac{1}{20}\sigma^4-\gamma\\
+                                            0\\
+                                            0\\
+                                            0
+                                            \end{pmatrix}$$
+and 
+$$\begin{pmatrix}
+                                            c_2&c_3&c_4&c_5&1\\
+                                            c_2^2&c_3^2&c_4^2&c_5^2&1\\
+                                            c_2^3&c_3^3&c_4^3&c_5^3&1\\
+                                            0&a_{32}&a_{42}&a_{52}&0\\
+                                            1&0&0&0&0\\
+                                            
+                                            \end{pmatrix}\begin{pmatrix}
+                                            a_{82}\\
+                                            a_{83}\\
+                                            a_{84}\\
+                                            a_{85}\\
+                                            a_{87}\\
+                                            \end{pmatrix}=                                     
+                                            \begin{pmatrix}
+                                            \frac{1}{2}c_8^2-a_{86}\\
+                                            \frac{1}{3}c_8^3-a_{86}\\
+                                            \frac{\gamma}{b'_8}-a_{86}\\
+                                            -\frac{\gamma_1}{b'_8}-a_{62}a_{86}\\
+                                            -\frac{\gamma_2}{b'_8}\\
+                                            \end{pmatrix}$$
+With:
+$$b'_1=1-\sum\limits_{j=3}^8,\:\:\:\:\:\:\:\:\:\:b'_2=0,\:\:\:\:\:\:\:\:\:\:a_{81}=c_8-\sum\limits_{j=2}^7a_{8j}$$
+Note that \(c_8\), \(\gamma\) and \(a_{86}\) can be chosen almost freely with only some minor restrictions on \(c_8\).
+Further note that:
+$$e_2=\begin{pmatrix}0&1&0&0&0&0&0\end{pmatrix}^T,\:\:\:\:\:c=\begin{pmatrix}c_1&c_2&c_3&c_4&c_5&c_6&c_7\end{pmatrix}^T,\:\:\:\:\:
+A=\begin{pmatrix}0&0&0&...\\
+a_{21}&0&0&...\\
+a_{31}&a_{32}&0&...\\
+&...&...&..
+\end{pmatrix}$$
+Lets have again a look at our analytical test case:
 $$\dfrac{d}{dt}u(t)=-(t-a)u(t)\:\xrightarrow{}\:u_a(t)=u_0e^{-\frac{1}{2}(t-2a)t}$$
-
+To test the convergence of the above example on can use:
+$$error(N)=\|u_a(t)-u_N(t)\|_{sup},\:\:\:\:\:\:\:\:C(N)=\dfrac{error(N)}{error(2N)}\xrightarrow{}2^p$$
+Where \(N\) is the number of time steps and therefore related to \(dt\).
 <div class="ganz">
 <div class="imgbox1">
 <img src="docs/assets/img/error.png">
