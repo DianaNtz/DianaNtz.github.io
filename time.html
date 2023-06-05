@@ -490,7 +490,7 @@ $$\begin{array}
     <div class="accordiontext__content">
 <div class="ganz">
 <br>
-A very helpful feature of embedded Runge Kutta methods is that the error can easely estimated by:
+A very helpful feature of embedded Runge Kutta methods is that the error can easily estimated by:
 $$err_n=dt_n\sum\limits_{j=1}^{s}(b_j-\tilde{b_j})k_j$$
 With this estimate the step size for the next time step can be calculated to:
 $$dt_{n+1}=dt_n\bigg(\frac{tol}{\|err_n\|}\bigg)^{1/p}$$
@@ -682,7 +682,7 @@ a_{31}&a_{32}&0&...\\
 \end{pmatrix}$$
 Lets have again a look at our analytical test case:
 $$\dfrac{d}{dt}u(t)=-(t-a)u(t)\:\xrightarrow{}\:u_a(t)=u_0e^{-\frac{1}{2}(t-2a)t}$$
-To test the convergence of the above example on can use:
+To test the convergence of the above example one can use:
 $$error(N)=\|u_a(t)-u_N(t)\|_{sup},\:\:\:\:\:\:\:\:C(N)=\dfrac{error(N)}{error(2N)}\xrightarrow{}2^p$$
 Where \(N\) is the number of time steps and therefore related to \(dt\).
 <div class="ganz">
@@ -702,11 +702,11 @@ $$\begin{array}{ |c|c|c|c|c|c|c| }
  \hline
  DorPr4 & 12.6087 & 14.3075& 15.1565&15.5788 &15.7896 & 15.8944\\ 
  \hline
- DorPr\:interpolated & 12.6041 & 14.3073 &15.1566 & 15.5789& 15.7896&15.8943\\ 
+ DorPr4\:interpolated & 12.6041 & 14.3073 &15.1566 & 15.5789& 15.7896&15.8943\\ 
  \hline
- DorPre5 & 20.9932 & 26.3935 &29.1663 &30.5719 &31.3945 &31.3620\\ 
+ DorPr5 & 20.9932 & 26.3935 &29.1663 &30.5719 &31.3945 &31.3620\\ 
  \hline
- DorPre5\:interpolated & 20.9853 &  26.3932 &29.1663 &30.5719 & 31.3946&31.3620\\ 
+ DorPr5\:interpolated & 20.9853 &  26.3932 &29.1663 &30.5719 & 31.3946&31.3620\\ 
  \hline
 \end{array}$$
 
