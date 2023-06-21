@@ -556,7 +556,7 @@ This can be done by many algorithms, one would be the bisection method.
       
         <p><div class="codebox">
         <pre><code class="python">"""
-The code below was written by @author: Diana Nitzschke (https://github.com/DianaNtz) and
+The code below was written by https://github.com/DianaNtz and
 solves the Apparent Horizon equation in axi symmetry for a time symmetric 
 conformally flat metric. The code is an implementation of the shooting 
 method which solves a boundary value problem by reducing it to an initial 
@@ -776,7 +776,7 @@ $$x^i=\begin{pmatrix}
       
         <p><div class="codebox">
         <pre><code class="python">"""
-The code below was written by @author: Diana Nitzschke (https://github.com/DianaNtz) and
+The code below was written by https://github.com/DianaNtz and
 solves the Apparent Horizon equation in axi symmetry for a time symmetric 
 conformally flat metric. The code is an implementation of the flow 
 method which solves an elliptic PDE by transforming it into a hyperbolic equation. 
@@ -793,8 +793,8 @@ def d2theta(D,theta):
     for j in range(0,n):
                  if(j!=0 and j!=n-1):
                      Dxx[j]=(D[j+1]-2*D[j]+D[j-1])/(dtheta**2)
-    Dxx[0]=(D[1]-2*D[0]+D[n-1])/(dtheta**2)
-    Dxx[n-1]=(D[0]-2*D[n-1]+D[n-2])/(dtheta**2)
+    Dxx[0]=(D[1]-2*D[0]+D[1])/(dtheta**2)
+    Dxx[n-1]=(D[n-2]-2*D[n-1]+D[n-2])/(dtheta**2)
     return Dxx
 def d1theta(D,theta):
     dtheta=theta[1]-theta[0]
