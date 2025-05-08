@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript" id="MathJax-script" async
+  src="docs/es5/tex-chtml.js"></script>
+
+<link rel="stylesheet" href="docs/monokai-sublime.min.css">
+<script src="docs/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+
+
+<style>
+
+/* tiro-gurmukhi-italic - latin */
+@font-face {
+  font-family: 'Tiro Gurmukhi';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+       url('docs/tiro-gurmukhi-v3-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('docs/tiro-gurmukhi-v3-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* nanum-myeongjo-regular - latin */
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('docs/nanum-myeongjo-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('docs/fonts/nanum-myeongjo-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html {
+    background-image: url(docs/assets/img/backneuneu.jpg);
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    zoom: 100%;
+    font-family: 'Nanum Myeongjo', serif;
+
+}
+
+body h4{
+font-size:16.5px;
+}
+
+@media (max-width: 920px){
+html {
+zoom:40%;
+}
+}
+
+@media (max-width: 320px){
+html {
+zoom:30%;
+}
+}
+html, body {
+height: 100%; width: 100%; margin: 0;
+display:flex;
+align-items:center;
+flex-wrap: wrap;
+}
+
+
+.topneu{
+
+height:25px;
+
+}
+
+.top{
+width: 100%;
+height:45px;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:0px;
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.start-container{
+width: 450px;
+height:45px;
+margin:0px;
+background-color:#dadada;
+}
+
+.start-container a{
+color:black;
+font-size:16.5px;
+}
+
+.impressum-container{
+width: 450px;
+height:45px;
+background-color:#dadada;
+}
+
+.impressum-container a{
+color:black;
+font-size:16.5px;
+}
+.impressum-container a:hover{
+font-size:17.5px;
+color:black;
+}
+
+.start-container a:hover{
+font-size:17.5px;
+color:black;}
+
+.startbutton{
+background-color:white;
+width:110px;
+height:22px;
+margin-top:10.5px;
+margin-left:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid
+}
+.startbutton:hover{
+border: black 1.5px dashed;
+}
+
+.impressumbutton{
+float:right;
+background-color:white;
+margin-top:10.5px;
+margin-right:20px;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid
+}
+
+
+
+
+.button{
+float:right;
+background-color:white;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid
+}
+.codebesch{
+float:left;
+font-size:16.5px;
+}
+
+
+
+.button:hover{
+border: black 1.5px dashed;
+font-size:17.5px;
+color:black;
+}
+
+.impressumbutton:hover{
+border: black 1.5px dashed;
+}
+
+
+a {
+text-decoration:none;
+color:black;
+}
+
+
+
+.bottom{
+width:100%;
+/*! height:4145px; */
+display:flex;
+justify-content:center;
+align-items:center;
+padding-bottom:0px;
+position:relative;
+
+}
+
+
+
+.box{
+width:900px;
+/*! height:4100px; */
+background:white;
+display:inline-block;
+justify-content:space-between;
+font-size:16.5px;
+padding:0px;
+margin-top:45px;
+
+position: relative;
+}
+
+.box a{
+text-decoration: underline;
+
+}
+
+.box2{
+width:900px;
+position: absolute;
+top: 0px;
+left: 0;
+background:orange;
+margin-top:20px;
+}
+.textbox{
+width:900px;
+/*! height:3975px; */
+
+display: inline-block;
+}
+
+.codebox {
+width:860px;
+margin-left:20px;
+justify-content:center;
+align-items:center;
+background:green;
+}
+
+
+
+.box h1{
+margin-top:20px;
+margin-left:20px;
+font-size:40px;
+display: inline-block;
+margin-bottom:10px;
+}
+
+.imgbox{
+margin-top:20px;
+margin-right:20px;
+width:250px;
+height:300px;
+background:#dadada;
+float:right;
+}
+
+
+
+
+
+
+
+.accordiontext {
+  max-width: 860px;
+  margin-left:20px;
+  overflow: hidden;
+}
+
+.accordiontext__label {
+ height:20px;
+ margin-top:10px;
+}
+
+.accordiontext__content {
+  padding-top: 5px;
+  padding-bottom:20px;
+}
+
+.accordiontext__label {
+  display: block;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+
+  position: relative;
+
+  transition: background 0.1s;
+}
+
+.accordiontext__label:hover {
+
+  font-size:17.5px;
+}
+
+
+
+.accordiontext__content {
+  background: #ffffff;
+  display: none;
+}
+
+.accordiontext__input {
+  display: none;
+}
+
+.accordiontext__input:checked ~ .accordiontext__content {
+  display: block;
+}
+
+.accordiontext__input:checked ~ .accordiontext__label::after {
+  transform: translateY(-50%) rotate(0.5turn);
+}
+.accordionbox{
+width:900px;
+background:white;
+}
+
+.accordionboxneu{
+padding-bottom:5px;
+}
+
+.accordion {
+  max-width: 900px;
+  overflow: hidden;
+  font-size:16.5px;
+}
+
+
+.accordion__label {
+  padding:14px 20px;}
+
+
+.accordion__label {
+  display: block;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
+  margin-bottom:25px;
+}
+
+
+.accordion__content{
+  background: #ffffff;
+  display:none;
+}
+
+.accordion__content h2{
+  margin-left:20px;
+}
+
+
+.accordion__input{
+  display: none;
+}
+
+.accordion__input:checked~ .accordion__content {
+  display: block;
+}
+
+.right{
+/*! float:right; */
+width:440px;
+/*! height:3900px; */
+margin-left:17.5px;
+display: inline-block;
+vertical-align: bottom;
+}
+
+.left{
+margin-left:20px;
+/*! float:left; */
+width:400px;
+/*! height:3900px; */
+display: inline-block;
+vertical-align: top;
+}
+
+
+.absatz1box{
+margin-right:0px;
+/*! height:3900px; */
+
+}
+.ganz{
+width:860px;}
+
+.hallo{
+background:#dadada;
+height:500px;}
+
+.hallo img{
+width:350px;}
+
+.hallo h4{
+margin-left:10px;
+margin-right:10px;
+margin-top:2.5px;
+}
+
+.imgbox1{
+width:440px;
+float:right;
+
+}
+
+.imgbox1a{
+/*! height:325px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
+}
+
+
+.imgbox1a h4{
+margin-left:10px;
+margin-right:10px;
+}
+
+
+
+.imgbox1 img{
+width:390px;
+}
+
+.imgbox2a{
+/*! height:345px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
+
+}
+
+.imgbox3a{
+/*! height:250px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
+}
+
+.imgbox4a{
+/*! height:225px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
+}
+
+.imgbox5a{
+/*! height:545px; */
+/*! width:360px; */
+background:#dadada;
+/*! float:right; */
+display:inline-block;
+align-items:center;
+}
+
+
+.imgbox2{
+width:360px;
+background:#dadada;
+float:right;
+}
+
+
+
+.imgbox2a h4{
+margin-left:10px;
+margin-right:10px;
+}
+
+
+
+.imgbox2 img{
+width:360px;
+}
+
+.imgbox3{
+margin-top:200px;
+width:360px;
+background:#dadada;
+float:right;
+}
+
+.imgallgemein{
+margin-top:146px;
+width:360px;
+float:right;
+
+}
+.imgallgemein img{
+width:360px;
+}
+
+.imgbox3a h4{
+margin-left:10px;
+}
+
+
+
+.imgbox3 img{
+width:360px;
+}
+
+.imgbox4{
+
+width:360px;
+background:#dadada;
+float:right;
+}
+
+
+
+.imgbox4a h4{
+margin-left:10px;
+}
+
+
+
+.imgbox4 img{
+width:360px;
+}
+
+.imgbox5{
+width:360px;
+background:#dadada;
+float:right;
+}
+
+
+
+.imgbox5a h4{
+margin-left:10px;
+}
+
+
+
+.imgbox5 img{
+width:360px;
+}
+
+
+.ganzneu{
+height:60px;
+margin-top:20px;
+margin-right:20px;
+margin-left:20px;
+line-height: 20px;
+}
+
+.head{
+width:900px;
+background-color:#dadada;
+display:flex;}
+
+.blockfill
+{
+height:100px;
+}
+
+
+.textundso{
+margin-left:20px;
+margin-right:20px;}
+
+
+</style>
+</head>
+
+<body>
+
+
+<div class="topneu">\(\:\)</div>
+<div class="bottom">
+<div class="top"><div class="head">
+<div class="start-container"><div class="startbutton"><a href="https://dianantz.github.io/index3.html">Overview</a></div></div>
+<div class="impressum-container"><div class="impressumbutton"><a href="https://github.com/DianaNtz">My GitHub</a></div></div>
+</div></div>
+<div class="box">
+<div class="textbox">
+<h1>Raytracing</h1>
+<br>
+
+<div class="absatz1">
+<div class="absatz1box">
+<div class="left">
+
+ A non-rotating black hole is described by:
+                                                           $$g_{\mu\nu}dx^\mu dx^\nu=-(1-\dfrac{r_s}{r})c^2dt^2+(1-\dfrac{r_s}{r})^{-1}dr^2+r^2d\Omega^2$$
+                                                           where \(d\Omega^2\) is defined as:
+                                                           $$d\Omega^2=d\theta^2-\sin^2{\theta}d\varphi^2,\:\:\:\:\:\:r_s=\dfrac{2MG}{c^2}$$
+                                                           Objects follow the geodesic equation:
+                                                           $$\dfrac{d^2x^\mu}{ds^2}+\Gamma_{\alpha\beta}^{\mu}\dfrac{dx^\alpha}{ds}\dfrac{dx^\beta}{ds}=0$$
+                                                           where the Christoffel symbol is given by:
+                                                           $$\Gamma_{\alpha\beta}^{\mu}=\frac{1}{2}g^{\mu\delta}(\partial_\beta g_{\alpha\delta}+\partial_\alpha g_{\beta\delta}- \partial_\delta g_{\alpha\beta})$$
+                                                           Due to spherical symmetry one can set:
+                                                           $$\theta(s):=\dfrac{\pi}{2},\:\:\:\:\:\:\dfrac{d\theta}{ds}(s):=0$$
+                                                           A light beam is a null geodesic so one finds also:
+                                                           $$g_{\mu\nu}dx^\mu dx^\nu=0$$
+
+
+</div>
+
+<div class="right">
+<div class="imgbox1">
+<img src="docs/assets/img/IBCO.gif">
+</div>
+<div class="imgbox1a">
+<h4>
+Figure 1: shows the time evolution of a light beam at the innermost bound circular orbit for \(M=1\),\(G=1\) and \(c=1\) which can be found at \(r_{IBCO}=3r_s/2\).
+
+</h4>
+</div>
+
+</div>
+</div>
+
+
+
+
+   
+</div>
+ <div class="textundso">
+  
+  
+  The geodesic equations now become:
+  $$\dfrac{d^2t}{ds^2}=\dfrac{-2M}{r(r-2M)}\dfrac{dt}{ds}\dfrac{dr}{ds},\:\:\:\:\:\:\:\:\dfrac{d^2\phi}{ds^2}=\dfrac{-2}{r}\dfrac{d\phi}{ds}\dfrac{dr}{ds}$$
+  $$\dfrac{d^2r}{ds^2}=\dfrac{M}{r(r-2M)}\dfrac{dr}{ds}\dfrac{dr}{ds}-\dfrac{M(r-2M)}{r^3}\dfrac{dt}{ds}\dfrac{dt}{ds}+(r-2M)\dfrac{d\phi}{ds}\dfrac{d\phi}{ds}$$
+  These equations can be solved numerically via Runge Kutta Methods. The Lagrange function is given by:
+  $$\mathcal{L}=T-V=-\frac{1}{2}c^2(1-\dfrac{r_s}{r})\dfrac{dt}{ds}\dfrac{dt}{ds}+\frac{1}{2}(\dfrac{1}{1-r_s/r})\dfrac{dr}{ds}\dfrac{dr}{ds}+\frac{1}{2}r^2\dfrac{d\phi}{ds}\dfrac{d\phi}{ds}$$
+  The Euler Lagrange equation is given by:
+  $$\dfrac{\partial \mathcal{L}}{d q}-\dfrac{d}{ds}\dfrac{\partial \mathcal{L}}{d \dot{q}}=0$$
+  one now finds:
+  $$\dfrac{d}{ds}r^2\dot{\phi}=0\Rightarrow r^2\dot{\phi}=L=constant,\:\:\:\:\:\dfrac{d}{ds}c^2(1-r_s/r)\dot{t}=0\Rightarrow c^2(1-r_s/r)\dot{t}=E=constant$$
+  Putting these results into \(\mathcal{L}=0\) one finds:
+  $$-E^2/c^2+\dot{r}^2+(1-r_s/r)\dfrac{L^2}{r^2}=0\Rightarrow V_{eff}=L^2/(2r^2)-L^2r_s/(2r^3)$$
+  The maximum of \(V_{eff}\) is given by:
+  $$V_{eff} ’(r)=-L^2/r^3+3L^2r_s/(2r^4)=0\Rightarrow r=r_{IBCO}=\dfrac{3r_s}{2}$$
+  \(r_{IBCO}\) is the innermost bound circular orbit. For smaller r no circular orbits are possible.
+                                            <br>      </div>
+<div class="ganzneu">
+                                  <b>References</b>
+                                  <br>
+                                  [1] <a href="https://de.wikipedia.org/wiki/Schwarzschild-Metrik" >https://de.wikipedia.org/wiki/Schwarzschild-Metrik</a><br>
+                                  [2] <a href="https://profoundphysics.com/can-light-orbit-a-black-hole-the-physics-explained/"> https://profoundphysics.com/can-light-orbit-a-black-hole-the-physics-explained/</a>
+                                  </div>
+<div class="accordionboxneu">
+<div class="accordionbox">
+
+<div class="accordion">
+  <div>
+    <input type="checkbox" name="example_accordion" id="section1neu" class="accordion__input">
+    <label for="section1neu" class="accordion__label"><div class="codebesch"><a href="https://github.com/DianaNtz/Raytracing">To get the code go to my GitHub repository Raytracing</a></div><div class="button">View Code</div></label>
+    <div class="accordion__content">
+      
+        <p><div class="codebox">
+        <pre><code class="python">"""
+The code below was written by @author: https://github.com/DianaNtz and is an
+implementation of the 2nd order Runge Kutta time integration method for the
+geodesic equation of a Schwarzschild black hole.
+For more details on the code requirements and licences see
+https://github.com/DianaNtz/Raytracing.
+"""
+          
+#importing libraries
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.animation as animation
+          
+#setting up initial values
+ntau=10000
+          
+M=1
+          
+r1n=3.0
+r2n=0.0
+          
+t1n=0
+t2n=0.1
+          
+phi1n=0
+phi2n=np.sqrt((1-2*M/r1n)/r1n**2*t2n**2)
+          
+dtau=(2.0*np.pi/phi2n)/(ntau-1)
+          
+taun=0
+          
+#setting up functions for time integration
+def ft1(t1,t2,r1,r2,phi1,phi2):
+              return t2
+def fr1(t1,t2,r1,r2,phi1,phi2):
+              return r2
+def fphi1(t1,t2,r1,r2,phi1,phi2):
+              return phi2
+          
+def ft2(t1,t2,r1,r2,phi1,phi2):
+              return -2*M/(r1*(r1-2*M))*t2*r2
+          
+def fr2(t1,t2,r1,r2,phi1,phi2):
+              return M/(r1*(r1-2*M))*r2**2-M*(r1-2*M)/r1**3*t2**2+(r1-2*M)*phi2**2
+          
+def fphi2(t1,t2,r1,r2,phi1,phi2):
+          
+              return -2/r1*phi2*r2
+          
+tau=np.zeros(ntau)
+          
+r1=np.zeros(ntau)
+r2=np.zeros(ntau)
+          
+t1=np.zeros(ntau)
+t2=np.zeros(ntau)
+          
+phi1=np.zeros(ntau)
+phi2=np.zeros(ntau)
+#loop for time integration Runge Kutta 2
+for j in range(0,ntau):
+        tau[j]=taun
+          
+        r1[j]=r1n
+        r2[j]=r2n
+          
+        t1[j]=t1n
+        t2[j]=t2n
+          
+        phi1[j]=phi1n
+        phi2[j]=phi2n
+          
+        k1r1=dtau*fr1(t1n,t2n,r1n,r2n,phi1n,phi2n)
+        k1r2=dtau*fr2(t1n,t2n,r1n,r2n,phi1n,phi2n)
+          
+        k1t1=dtau*ft1(t1n,t2n,r1n,r2n,phi1n,phi2n)
+        k1t2=dtau*ft2(t1n,t2n,r1n,r2n,phi1n,phi2n)
+          
+        k1phi1=dtau*fphi1(t1n,t2n,r1n,r2n,phi1n,phi2n)
+        k1phi2=dtau*fphi2(t1n,t2n,r1n,r2n,phi1n,phi2n)
+          
+          
+        k2r1=dtau*fr1(t1n+0.5*k1t1,t2n+0.5*k1t2,r1n+0.5*k1r1,r2n+0.5*k1r2,phi1n+0.5*k1phi1,phi2n+0.5*k1phi2)
+        k2r2=dtau*fr2(t1n+0.5*k1t1,t2n+0.5*k1t2,r1n+0.5*k1r1,r2n+0.5*k1r2,phi1n+0.5*k1phi1,phi2n+0.5*k1phi2)
+          
+        k2t1=dtau*ft1(t1n+0.5*k1t1,t2n+0.5*k1t2,r1n+0.5*k1r1,r2n+0.5*k1r2,phi1n+0.5*k1phi1,phi2n+0.5*k1phi2)
+        k2t2=dtau*ft2(t1n+0.5*k1t1,t2n+0.5*k1t2,r1n+0.5*k1r1,r2n+0.5*k1r2,phi1n+0.5*k1phi1,phi2n+0.5*k1phi2)
+          
+        k2phi1=dtau*fphi1(t1n+0.5*k1t1,t2n+0.5*k1t2,r1n+0.5*k1r1,r2n+0.5*k1r2,phi1n+0.5*k1phi1,phi2n+0.5*k1phi2)
+        k2phi2=dtau*fphi2(t1n+0.5*k1t1,t2n+0.5*k1t2,r1n+0.5*k1r1,r2n+0.5*k1r2,phi1n+0.5*k1phi1,phi2n+0.5*k1phi2)
+          
+        t1n=t1n+k2t1
+        t2n=t2n+k2t2
+          
+        r1n=r1n+k2r1
+        r2n=r2n+k2r2
+          
+        phi1n=phi1n+k2phi1
+        phi2n=phi2n+k2phi2
+          
+        taun=taun+dtau
+          
+          
+#create animation with matplotlib
+x,y=r1*np.cos(phi1),r1*np.sin(phi1)
+fig, ax = plt.subplots(figsize=(7,7))
+line2 = ax.plot(2*M*np.cos(phi1),2*M*np.sin(phi1),"-",linewidth=3.0,color='k')
+line1 = ax.plot(x[0], y[0],color='yellow',linestyle=':',linewidth=6)[0]
+ax.set_xlim(-3.1,3.1)
+ax.set_ylim(-3.1,3.1)
+plt.xlabel("x",fontsize=19)
+plt.ylabel(r'y',fontsize=19,rotation=0)
+plt.xticks(fontsize= 19)
+plt.yticks(fontsize= 19)
+          
+          
+i=40
+def update(frame):
+              # update the line plot:
+              line1.set_xdata(x[:frame*i])
+              line1.set_ydata(y[:frame*i])
+              return (line1, line2)
+ani = animation.FuncAnimation(fig=fig, func=update, frames=int(ntau/i), interval=1)
+ani.save("animated_IBCO.gif")
+plt.show()</pre></code> 
+      </div></p>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+</div>
+<div class="bottom2">
+\(\:\)
+<div>
+<div class="break"></div>
+
+</body>
+
+</html>
