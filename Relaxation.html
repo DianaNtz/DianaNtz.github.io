@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript" id="MathJax-script" async
+  src="docs/es5/tex-chtml.js"></script>
+
+<link rel="stylesheet" href="docs/monokai-sublime.min.css">
+<script src="docs/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<style>
+
+/* tiro-gurmukhi-italic - latin */
+@font-face {
+  font-family: 'Tiro Gurmukhi';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+       url('docs/tiro-gurmukhi-v3-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('docs/tiro-gurmukhi-v3-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* nanum-myeongjo-regular - latin */
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('docs/nanum-myeongjo-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('docs/fonts/nanum-myeongjo-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html {
+    background-image: url(docs/assets/img/backneuneu.jpg);
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    zoom: 100%;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+body h4{
+font-size:16.5px;
+}
+
+@media (max-width: 920px){
+html {
+zoom:40%;
+}
+}
+
+@media (max-width: 320px){
+html {
+zoom:30%;
+}
+}
+
+html, body { 
+height: 100%; width: 100%; margin: 0; 
+display:flex;
+align-items:center;
+flex-wrap: wrap;
+}
+
+.topneu{
+
+height:25px;
+
+}
+
+.top{
+width: 100%;
+height:45px;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:0px;
+position: absolute; 
+top: 0; 
+left: 0; 
+}
+
+.start-container{
+width: 450px;
+height:45px;
+margin:0px;
+background-color:#dadada;
+}
+
+.start-container a{
+color:black;
+font-size:16.5px;
+}
+
+.impressum-container{
+width: 450px;
+height:45px;
+background-color:#dadada;
+}
+
+.impressum-container a{
+color:black;
+font-size:16.5px;
+}
+.impressum-container a:hover{
+font-size:17.5px;
+color:black;
+}
+
+.start-container a:hover{
+font-size:17.5px;
+color:black;}
+
+.startbutton{
+background-color:white;
+width:110px;
+height:22px;
+margin-top:10.5px;
+margin-left:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid
+}
+.startbutton:hover{
+border: black 1.5px dashed;
+}
+
+.impressumbutton{
+float:right;
+background-color:white;
+margin-top:10.5px;
+margin-right:20px;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid
+}
+
+.button{
+float:right;
+background-color:white;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid;
+margin-right:25px;
+}
+
+
+
+.textforaccordionlabel{
+float:left;
+}
+
+.codebesch{
+float:left;
+font-size:16.5px;
+}
+
+
+
+.button:hover{
+border: black 1.5px dashed;
+font-size:17.5px;
+color:black;
+margin-right:25px;
+}
+
+.impressumbutton:hover{
+border: black 1.5px dashed;
+}
+
+
+a {
+text-decoration:none;
+color:black;
+}
+
+
+
+
+.bottom{
+width:100%;
+/*height:1635px;*/
+display:flex;
+justify-content:center;
+align-items:center;
+padding-bottom:0px;
+position:relative;
+
+}
+
+
+
+.box{
+width:900px;
+/*height:1590px; */
+background:white;
+display:inline-block;
+justify-content:space-between;
+font-size:16.5px; 
+padding:0px;
+margin-top:45px;
+position: relative;
+}
+
+.box a{
+text-decoration: underline;
+
+}
+
+
+.textbox{
+width:900px;
+/*height:550px;*/
+display: inline-block;
+}
+
+.codebox {
+width:850px;
+margin-left:25px;
+justify-content:center;
+align-items:center;
+background:blue;
+}
+
+
+
+.box h1{
+margin-top:20px;
+margin-left:20px;
+font-size:40px;
+display: inline-block;
+margin-bottom:10px;
+}
+
+.imgbox{
+margin-top:20px;
+margin-right:20px;
+width:250px;
+height:300px;
+background:#dadada;
+float:right;
+}
+
+
+.absatz1{
+margin-right:20px;
+margin-left:20px;
+}
+
+.accordiontext {
+  max-width: 860px;
+  margin-left:20px;
+  overflow: hidden;
+}
+
+.accordiontext__label {
+ height:20px;
+ margin-top:10px;
+}
+
+.accordiontext__content {
+  padding-top: 5px;
+  padding-bottom:2.5px;
+}
+
+
+
+.accordiontext__label {
+  display: block;
+  color: black;
+  font-weight: 500;
+  cursor: pointer; 
+  position: relative; 
+}
+
+.accordiontext__down{
+float:right;
+display:flex;
+justify-content:center;
+align-items:right;
+}
+
+.accordiontext__label:hover {
+  font-size:17.5px;
+}
+
+
+.accordiontext__content {
+  background: #ffffff; 
+  display: none;
+}
+
+.accordiontext__input {
+  display: none;
+}
+
+.accordiontext__input:checked ~ .accordiontext__content {
+  display: block;
+}
+
+#section1:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
+#section2:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
+#section3:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
+
+
+.accordionbox{
+width:900px;
+background:white;
+}
+
+/*.accordionboxneu{
+padding-bottom:5px;
+}*/
+
+.accordion {
+  max-width: 900px;
+  overflow: hidden;
+  font-size:16.5px;
+}
+
+
+/*.accordion__label {
+  padding:14px 20px;}*/
+
+.accordion__label {
+  padding-bottom:14px;
+padding-top:14px;}
+
+
+.accordion__label {
+  display: block;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
+  margin-bottom:25px;
+  margin-left:25px;
+}
+
+
+.accordion__content{
+  background: #ffffff;
+  display:none;
+}
+
+.accordion__content h2{
+  margin-left:10px;
+}
+
+
+.accordion__input{
+  display: none;
+}
+
+
+.accordion__input:checked~ .accordion__content {
+  display: block;
+}
+
+
+/*.downsymbole{
+transform: rotate(180deg);
+}*/
+
+
+
+
+.imgbox1{
+margin-bottom:0px;
+width:860px;
+
+}
+.imgbox2{
+padding-left:10px;
+margin-left:25px;
+padding-top:0.01em;
+display:flex;
+align-items:center;
+width:840px;
+/*height:85px;*/
+background:#dadada;
+}
+
+
+.imgbox1 img{
+width:840px;
+margin-left:10px;
+}
+
+.ganz{
+width:860px;
+}
+
+.ganz2{
+width:860px;
+margin-top:15px;
+}
+
+
+.ganzneu{
+height:60px;
+margin-top:10px;
+margin-right:20px;
+margin-left:20px;
+line-height:20px;
+padding-bottom:10px;}
+
+.head{
+width:900px;
+background-color:#dadada;
+display:flex;}
+
+
+</style>
+</head>
+
+<body>
+
+
+<div class="topneu">\(\:\)</div>
+<div class="bottom">
+<div class="top"><div class="head">
+<div class="start-container"><div class="startbutton"><a href="https://dianantz.github.io/index3.html">Overview</a></div></div>
+<div class="impressum-container"><div class="impressumbutton"><a href="https://github.com/DianaNtz">My GitHub</a></div></div>
+</div></div>
+<div class="box">
+<div class="textbox">
+<h1>Relaxation Method</h1>
+<br>
+
+<div class="absatz1">
+Let us have a look at the following initial value problem with linear operator L:
+$$L u(x)=f(x),\:\:\:\:\:\:\:\:\:x \in [x_0,x_1]\:\:\:\:\:\:\:\:\: u(x_0)=u_0\:\:\:\:\:\:\:\:\: u(x_1)=u_1$$
+with pseudo time integration one can rewrite it as:
+$$
+   \dfrac{d}{dt} u(x)=(L u(x)-f)
+$$
+A stationary solution to the above equation is also a solution of \(L u(x)=f(x)\). If we initialise the problem in a random state \(u(x)\) it will relax to a stationary solution if integrated over time.
+</div>
+<div class="ganz">
+<div class="imgbox1">
+<img src="docs/assets/img/relax.png"></div>
+
+
+<div class="imgbox2">
+<h4>Figure 1:  shows the comparison of the analytical solution
+with the numerical calculated result for the operator \(L=\dfrac{d^2}{dx^2}\), \(f=\cos{(x)}\) in \(u\in [0,3 \pi]\) with \(u(0)=-2\) and  \(u(3 \pi)=2\).
+</h4></div>
+
+      </div>
+<div class="accordion">
+  <div>
+    <input type="checkbox" name="example_accordion" id="section1neu4" class="accordion__input">
+    <label for="section1neu4" class="accordion__label"><div class="codebesch"><a href="https://github.com/DianaNtz/Relaxation">Relaxation Method</a></div><div class="button">View Code</div></label>
+    <div class="accordion__content">
+
+        <p><div class="codebox">
+        <pre><code class="python">"""
+The code below was written by https://github.com/DianaNtz and
+is an implementation of the Relaxation methods.
+"""
+
+#import libraries
+import numpy as np
+import matplotlib.pyplot as plt
+
+#Finite Difference Derivative second order
+def d2x(f,x):
+    dx=x[1]-x[0]
+    nx=len(x)
+
+    Dxx=np.zeros((nx), dtype='double')
+
+    for i in range(0,nx):
+                 if(i==0):
+                     Dxx[0]=(f[2]-2*f[1]+f[0])/(dx**2)
+                 if(i==nx-1):
+                     Dxx[nx-1]=(f[nx-1]-2*f[nx-1-1]+f[nx-1-2])/(dx**2)
+                 if(i!=0 and i!=nx-1):
+                     Dxx[i]=(f[i+1]-2*f[i]+f[i-1])/(dx**2)
+    return Dxx
+#create grid
+xmin=0
+xmax=np.pi*3
+Nx=100
+x=np.linspace(xmin,xmax,Nx-1)
+f=np.cos(x)
+
+
+#initial guess
+un=-np.zeros(Nx-1)
+
+#pseudo time integration loop
+dt=0.001
+for j in range(0,4000):
+    un=dt*(d2x(un,x)-f)+un
+    un[0]=-2
+    un[-1]=2
+#analytical solution
+ua=-np.cos(x)+2/(3*np.pi)*x-1
+#plotting results
+ax1 = plt.subplots(1, sharex=True, figsize=(10,6))
+plt.plot(x,ua,color='black',linestyle='-',linewidth=3,label="$u_a(t)$")
+plt.plot(x,un,color='green',linestyle='-.',linewidth=3,label="$u_n(t)$")
+plt.xlabel("t",fontsize=18)
+plt.ylabel(r' ',fontsize=18,labelpad=20).set_rotation(0)
+plt.xlim([xmin,xmax])
+plt.xticks(fontsize= 17)
+plt.yticks(fontsize= 17)
+plt.legend(loc=2,fontsize=19,handlelength=3)
+plt.savefig("relax.png",dpi=200)
+plt.show()
+</code></pre>
+      </div></p>
+    </div>
+  </div>
+  </div>
+
+
+<div class="ganzneu">
+<b>References</b>
+<br>
+[1] <a href="https://en.wikipedia.org/wiki/Relaxation_(iterative_method)"> https://en.wikipedia.org/wiki/Relaxation_(iterative_method)</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+</div>
+<div class="bottom2">
+\(\:\)
+<div>
+<div class="break"></div>
+
+</body>
+
+</html>
