@@ -472,7 +472,7 @@ The Transport equation can also be solved numerically with Runge Kutta methods.
 
 
 <div class="imgbox2">
-<h4>Figure 1: comparison of the numerical and analytical solution for \(u(0,x)=e^{(-50\:x^2)}\) and \(u(t,x)=e^{(-50\:(x-t)^2)}\).
+<h4>Figure 1: comparison of the numerical and analytical solution for \(u(0,x)=e^{-50\:x^2}\) and \(u(t,x)=e^{-50\:(x-t)^2}\).
 </h4></div>
 
       </div>
@@ -483,10 +483,13 @@ The Transport equation can also be solved numerically with Runge Kutta methods.
     <div class="accordion__content">
 
         <p><div class="codebox">
-        <pre><code class="python">import numpy as np
+        <pre><code class="python">"""The code below was written by @author: https://github.com/DianaNtz and is an
+implementation of the Runge Kutta method for the transport equation"""
+import numpy as np
 import matplotlib.pyplot as plt
 import os
 import imageio
+#some initial values
 filenames = []
 nx=200
 x0=-1
@@ -499,7 +502,7 @@ t0=0
 tfinal=0.5
 dt=(tfinal-t0)/(nt-1)
 
-
+#finite difference derivative
 def first(D):
     n=len(D)
     Dr=np.zeros(n)
@@ -513,7 +516,7 @@ def first(D):
 un=np.e**(-100*x**2/2)
 
 t=t0
-
+#Runge Kutta time integration loop
 for j in range(0,nt):
     ua=np.e**(-100*(x-t)**2/2)
 
@@ -546,7 +549,7 @@ for j in range(0,nt):
 
 
     t=t+dt
-
+#creating animation
 with imageio.get_writer('transport.gif', mode='I') as writer:
     for filename in filenames:
         image = imageio.imread(filename)
