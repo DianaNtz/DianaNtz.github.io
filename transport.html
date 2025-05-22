@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript" id="MathJax-script" async
+  src="docs/es5/tex-chtml.js"></script>
+
+<link rel="stylesheet" href="docs/monokai-sublime.min.css">
+<script src="docs/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<style>
+
+/* tiro-gurmukhi-italic - latin */
+@font-face {
+  font-family: 'Tiro Gurmukhi';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+       url('docs/tiro-gurmukhi-v3-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('docs/tiro-gurmukhi-v3-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* nanum-myeongjo-regular - latin */
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('docs/nanum-myeongjo-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('docs/fonts/nanum-myeongjo-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html {
+    background-image: url(docs/assets/img/backneuneu.jpg);
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    zoom: 100%;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+body h4{
+font-size:16.5px;
+}
+
+@media (max-width: 920px){
+html {
+zoom:40%;
+}
+}
+
+@media (max-width: 320px){
+html {
+zoom:30%;
+}
+}
+
+html, body { 
+height: 100%; width: 100%; margin: 0; 
+display:flex;
+align-items:center;
+flex-wrap: wrap;
+}
+
+.topneu{
+
+height:25px;
+
+}
+
+.top{
+width: 100%;
+height:45px;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:0px;
+position: absolute; 
+top: 0; 
+left: 0; 
+}
+
+.start-container{
+width: 450px;
+height:45px;
+margin:0px;
+background-color:#dadada;
+}
+
+.start-container a{
+color:black;
+font-size:16.5px;
+}
+
+.impressum-container{
+width: 450px;
+height:45px;
+background-color:#dadada;
+}
+
+.impressum-container a{
+color:black;
+font-size:16.5px;
+}
+.impressum-container a:hover{
+font-size:17.5px;
+color:black;
+}
+
+.start-container a:hover{
+font-size:17.5px;
+color:black;}
+
+.startbutton{
+background-color:white;
+width:110px;
+height:22px;
+margin-top:10.5px;
+margin-left:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid
+}
+.startbutton:hover{
+border: black 1.5px dashed;
+}
+
+.impressumbutton{
+float:right;
+background-color:white;
+margin-top:10.5px;
+margin-right:20px;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid
+}
+
+.button{
+float:right;
+background-color:white;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid;
+margin-right:25px;
+}
+
+
+
+.textforaccordionlabel{
+float:left;
+}
+
+.codebesch{
+float:left;
+font-size:16.5px;
+}
+
+
+
+.button:hover{
+border: black 1.5px dashed;
+font-size:17.5px;
+color:black;
+margin-right:25px;
+}
+
+.impressumbutton:hover{
+border: black 1.5px dashed;
+}
+
+
+a {
+text-decoration:none;
+color:black;
+}
+
+
+
+
+.bottom{
+width:100%;
+/*height:1635px;*/
+display:flex;
+justify-content:center;
+align-items:center;
+padding-bottom:0px;
+position:relative;
+
+}
+
+
+
+.box{
+width:900px;
+/*height:1590px; */
+background:white;
+display:inline-block;
+justify-content:space-between;
+font-size:16.5px; 
+padding:0px;
+margin-top:45px;
+position: relative;
+}
+
+.box a{
+text-decoration: underline;
+
+}
+
+
+.textbox{
+width:900px;
+/*height:550px;*/
+display: inline-block;
+}
+
+.codebox {
+width:850px;
+margin-left:25px;
+justify-content:center;
+align-items:center;
+background:blue;
+}
+
+
+
+.box h1{
+margin-top:20px;
+margin-left:20px;
+font-size:40px;
+display: inline-block;
+margin-bottom:10px;
+}
+
+.imgbox{
+margin-top:20px;
+margin-right:20px;
+width:250px;
+height:300px;
+background:#dadada;
+float:right;
+}
+
+
+.absatz1{
+margin-right:20px;
+margin-left:20px;
+}
+
+.accordiontext {
+  max-width: 860px;
+  margin-left:20px;
+  overflow: hidden;
+}
+
+.accordiontext__label {
+ height:20px;
+ margin-top:10px;
+}
+
+.accordiontext__content {
+  padding-top: 5px;
+  padding-bottom:2.5px;
+}
+
+
+
+.accordiontext__label {
+  display: block;
+  color: black;
+  font-weight: 500;
+  cursor: pointer; 
+  position: relative; 
+}
+
+.accordiontext__down{
+float:right;
+display:flex;
+justify-content:center;
+align-items:right;
+}
+
+.accordiontext__label:hover {
+  font-size:17.5px;
+}
+
+
+.accordiontext__content {
+  background: #ffffff; 
+  display: none;
+}
+
+.accordiontext__input {
+  display: none;
+}
+
+.accordiontext__input:checked ~ .accordiontext__content {
+  display: block;
+}
+
+#section1:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
+#section2:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
+#section3:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
+
+
+.accordionbox{
+width:900px;
+background:white;
+}
+
+/*.accordionboxneu{
+padding-bottom:5px;
+}*/
+
+.accordion {
+  max-width: 900px;
+  overflow: hidden;
+  font-size:16.5px;
+}
+
+
+/*.accordion__label {
+  padding:14px 20px;}*/
+
+.accordion__label {
+  padding-bottom:14px;
+padding-top:14px;}
+
+
+.accordion__label {
+  display: block;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
+  margin-bottom:25px;
+  margin-left:25px;
+}
+
+
+.accordion__content{
+  background: #ffffff;
+  display:none;
+}
+
+.accordion__content h2{
+  margin-left:10px;
+}
+
+
+.accordion__input{
+  display: none;
+}
+
+
+.accordion__input:checked~ .accordion__content {
+  display: block;
+}
+
+
+/*.downsymbole{
+transform: rotate(180deg);
+}*/
+
+
+
+
+.imgbox1{
+margin-bottom:0px;
+width:860px;
+
+}
+.imgbox2{
+padding-left:10px;
+margin-left:25px;
+padding-top:0.01em;
+display:flex;
+align-items:center;
+width:840px;
+/*height:85px;*/
+background:#dadada;
+}
+
+
+.imgbox1 img{
+width:840px;
+margin-left:10px;
+}
+
+.ganz{
+width:860px;
+}
+
+.ganz2{
+width:860px;
+margin-top:15px;
+}
+
+
+.ganzneu{
+height:60px;
+margin-top:10px;
+margin-right:20px;
+margin-left:20px;
+line-height:20px;
+padding-bottom:10px;}
+
+.head{
+width:900px;
+background-color:#dadada;
+display:flex;}
+
+
+</style>
+</head>
+
+<body>
+
+
+<div class="topneu">\(\:\)</div>
+<div class="bottom">
+<div class="top"><div class="head">
+<div class="start-container"><div class="startbutton"><a href="https://dianantz.github.io/index2.html">Overview</a></div></div>
+<div class="impressum-container"><div class="impressumbutton"><a href="https://github.com/DianaNtz">My GitHub</a></div></div>
+</div></div>
+<div class="box">
+<div class="textbox">
+<h1>Transport Equation</h1>
+<br>
+
+<div class="absatz1">
+The Transport Equation is given by:
+$$\partial_t u(t,x)+\partial_x u(t,x)=0\:\:\:\rightarrow \:\:\:\langle \nabla u,v\rangle=0\:\:\: for\:\:\: v=(1,1)$$
+We therefore have a look at:
+$$
+v_\zeta (t)=u(t,\zeta+t)\:\:\:\:\rightarrow \:\:\:\:\dfrac{d}{dt}v_\zeta (t)=\partial_t u(t,\zeta+t)+\partial_x u(t,\zeta+t)=0
+$$
+one now finds
+$$
+v_\zeta (t)=const.=f(\zeta)\:\:\:\:\rightarrow\:\:\:\: u(t,x)=f(x-t)\:\:\:\: since \:\:\:\:x=\zeta+t
+$$
+The Transport equation can also be solved numerically with Runge Kutta methods.
+</div>
+<div class="ganz">
+<div class="imgbox1">
+<img src="docs/assets/img/transport.gif"></div>
+
+
+<div class="imgbox2">
+<h4>Figure 1: comparison of the numerical and analytical solution for \(u(0,x)=e^{(-50\:x^2)}\) and \(u(t,x)=e^{(-50\:(x-t)^2)}\).
+</h4></div>
+
+      </div>
+<div class="accordion">
+  <div>
+    <input type="checkbox" name="example_accordion" id="section1neu4" class="accordion__input">
+    <label for="section1neu4" class="accordion__label"><div class="codebesch"><a href="https://github.com/DianaNtz/Transport">Transport equation</a></div><div class="button">View Code</div></label>
+    <div class="accordion__content">
+
+        <p><div class="codebox">
+        <pre><code class="python">import numpy as np
+import matplotlib.pyplot as plt
+import os
+import imageio
+filenames = []
+nx=200
+x0=-1
+xfinal=1
+h=(xfinal-x0)/(nx-1)
+x=np.linspace(x0,xfinal,nx)
+
+nt=120*1
+t0=0
+tfinal=0.5
+dt=(tfinal-t0)/(nt-1)
+
+
+def first(D):
+    n=len(D)
+    Dr=np.zeros(n)
+    Dr[0]=(D[0+1]-D[0])/(h)
+    Dr[n-1]=(D[n-1]-D[n-1-1])/(h)
+    for i in range(0,n-2):
+        Dr[i+1]=(D[i+2]-D[i])/(2*h)
+    return Dr
+
+
+un=np.e**(-100*x**2/2)
+
+t=t0
+
+for j in range(0,nt):
+    ua=np.e**(-100*(x-t)**2/2)
+
+
+    k1=-dt*first(un)
+    k2=-dt*first(un+0.5*k1)
+    k3=-dt*first(un+0.5*k2)
+    k4=-dt*first(un+k3)
+
+    un=un+(k1+2*k2+2*k3+k4)/6
+
+
+    if(j%1==0):
+        ax1 = plt.subplots(1, sharex=True, figsize=(10,5))
+        plt.plot(x,ua,color='deeppink',linestyle='-',linewidth=3.0,label="$u_{a} (t,x)$")
+        plt.plot(x,un,color='blue',linestyle='--',linewidth=3.0,label="$u_{n} (t,x)$")
+        plt.xlabel("x",fontsize=16)
+        plt.ylim([0,1.2])
+        #plt.ylim([-1,1])
+        plt.xlim([-1,1])
+        #plt.xlim([0,2*np.pi])
+        plt.xticks(fontsize= 16)
+        plt.yticks(fontsize= 16)
+        plt.text(0.7, 0.75,"t=".__add__(str(round(t,2))),fontsize=19 )
+        plt.legend(loc=2,fontsize=19,handlelength=3,frameon=False)
+        filename ='bla{0:.0f}.png'.format(int(j/1))
+        filenames.append(filename)
+        plt.savefig(filename,dpi=150)
+        plt.close()
+
+
+    t=t+dt
+
+with imageio.get_writer('transport.gif', mode='I') as writer:
+    for filename in filenames:
+        image = imageio.imread(filename)
+        writer.append_data(image)
+for filename in set(filenames):
+    os.remove(filename)</code></pre>
+      </div></p>
+    </div>
+  </div>
+  </div>
+
+
+<div class="ganzneu">
+<b>References</b>
+<br>
+[1] <a href="https://www.analysis.uni-hannover.de/fileadmin/analysis/Schrohe/Schrohe_Lehre/Partielle_Differentialgleichungen/pde2.pdf"> https://www.analysis.uni-hannover.de/fileadmin/analysis/Schrohe/Schrohe_Lehre/Partielle_Differentialgleichungen/pde2.pdf</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+</div>
+<div class="bottom2">
+\(\:\)
+<div>
+<div class="break"></div>
+
+</body>
+
+</html>
