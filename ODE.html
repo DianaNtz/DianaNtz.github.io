@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript" id="MathJax-script" async
+  src="docs/es5/tex-chtml.js"></script>
+
+<link rel="stylesheet" href="docs/monokai-sublime.min.css">
+<script src="docs/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<style>
+
+/* tiro-gurmukhi-italic - latin */
+@font-face {
+  font-family: 'Tiro Gurmukhi';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+       url('docs/tiro-gurmukhi-v3-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('docs/tiro-gurmukhi-v3-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* nanum-myeongjo-regular - latin */
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('docs/nanum-myeongjo-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('docs/fonts/nanum-myeongjo-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html {
+    background-image: url(docs/assets/img/backneuneu.jpg);
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    zoom: 100%;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+body h4{
+font-size:16.5px;
+}
+
+@media (max-width: 920px){
+html {
+zoom:40%;
+}
+}
+
+@media (max-width: 320px){
+html {
+zoom:30%;
+}
+}
+
+html, body { 
+height: 100%; width: 100%; margin: 0; 
+display:flex;
+align-items:center;
+flex-wrap: wrap;
+}
+
+.topneu{
+
+height:25px;
+
+}
+
+.top{
+width: 100%;
+height:45px;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:0px;
+position: absolute; 
+top: 0; 
+left: 0; 
+}
+
+.start-container{
+width: 450px;
+height:45px;
+margin:0px;
+background-color:#dadada;
+}
+
+.start-container a{
+color:black;
+font-size:16.5px;
+}
+
+.impressum-container{
+width: 450px;
+height:45px;
+background-color:#dadada;
+}
+
+.impressum-container a{
+color:black;
+font-size:16.5px;
+}
+.impressum-container a:hover{
+font-size:17.5px;
+color:black;
+}
+
+.start-container a:hover{
+font-size:17.5px;
+color:black;}
+
+.startbutton{
+background-color:white;
+width:110px;
+height:22px;
+margin-top:10.5px;
+margin-left:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid
+}
+.startbutton:hover{
+border: black 1.5px dashed;
+}
+
+.impressumbutton{
+float:right;
+background-color:white;
+margin-top:10.5px;
+margin-right:20px;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid
+}
+
+.button{
+float:right;
+background-color:white;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid;
+margin-right:25px;
+}
+
+
+
+.textforaccordionlabel{
+float:left;
+}
+
+.codebesch{
+float:left;
+font-size:16.5px;
+}
+
+
+
+.button:hover{
+border: black 1.5px dashed;
+font-size:17.5px;
+color:black;
+margin-right:25px;
+}
+
+.impressumbutton:hover{
+border: black 1.5px dashed;
+}
+
+
+a {
+text-decoration:none;
+color:black;
+}
+
+
+
+
+.bottom{
+width:100%;
+/*height:1635px;*/
+display:flex;
+justify-content:center;
+align-items:center;
+padding-bottom:0px;
+position:relative;
+
+}
+
+
+
+.box{
+width:900px;
+/*height:1590px; */
+background:white;
+display:inline-block;
+justify-content:space-between;
+font-size:16.5px; 
+padding:0px;
+margin-top:45px;
+position: relative;
+}
+
+.box a{
+text-decoration: underline;
+
+}
+
+
+.textbox{
+width:900px;
+/*height:550px;*/
+display: inline-block;
+}
+
+.codebox {
+width:850px;
+margin-left:25px;
+justify-content:center;
+align-items:center;
+background:blue;
+}
+
+
+
+.box h1{
+margin-top:20px;
+margin-left:20px;
+font-size:40px;
+display: inline-block;
+margin-bottom:10px;
+}
+
+.imgbox{
+margin-top:20px;
+margin-right:20px;
+width:250px;
+height:300px;
+background:#dadada;
+float:right;
+}
+
+
+.absatz1{
+margin-right:20px;
+margin-left:20px;
+}
+
+.accordiontext {
+  max-width: 860px;
+  margin-left:20px;
+  overflow: hidden;
+}
+
+.accordiontext__label {
+ height:20px;
+ margin-top:10px;
+}
+
+.accordiontext__content {
+  padding-top: 5px;
+  padding-bottom:2.5px;
+}
+
+
+
+.accordiontext__label {
+  display: block;
+  color: black;
+  font-weight: 500;
+  cursor: pointer; 
+  position: relative; 
+}
+
+.accordiontext__down{
+float:right;
+display:flex;
+justify-content:center;
+align-items:right;
+}
+
+.accordiontext__label:hover {
+  font-size:17.5px;
+}
+
+
+.accordiontext__content {
+  background: #ffffff; 
+  display: none;
+}
+
+.accordiontext__input {
+  display: none;
+}
+
+.accordiontext__input:checked ~ .accordiontext__content {
+  display: block;
+}
+
+#section1:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
+#section2:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
+#section3:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
+
+
+.accordionbox{
+width:900px;
+background:white;
+}
+
+/*.accordionboxneu{
+padding-bottom:5px;
+}*/
+
+.accordion {
+  max-width: 900px;
+  overflow: hidden;
+  font-size:16.5px;
+}
+
+
+/*.accordion__label {
+  padding:14px 20px;}*/
+
+.accordion__label {
+  padding-bottom:14px;
+padding-top:14px;}
+
+
+.accordion__label {
+  display: block;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
+  margin-bottom:25px;
+  margin-left:25px;
+}
+
+
+.accordion__content{
+  background: #ffffff;
+  display:none;
+}
+
+.accordion__content h2{
+  margin-left:10px;
+}
+
+
+.accordion__input{
+  display: none;
+}
+
+
+.accordion__input:checked~ .accordion__content {
+  display: block;
+}
+
+
+/*.downsymbole{
+transform: rotate(180deg);
+}*/
+
+
+
+
+.imgbox1{
+margin-bottom:0px;
+width:860px;
+
+}
+.imgbox2{
+padding-left:10px;
+margin-left:25px;
+padding-top:0.01em;
+display:flex;
+align-items:center;
+width:840px;
+/*height:85px;*/
+background:#dadada;
+}
+
+
+.imgbox1 img{
+width:840px;
+margin-left:10px;
+}
+
+.ganz{
+width:860px;
+}
+
+.ganz2{
+width:860px;
+margin-top:15px;
+}
+
+
+.ganzneu{
+height:60px;
+margin-top:10px;
+margin-right:20px;
+margin-left:20px;
+line-height:20px;
+padding-bottom:10px;}
+
+.head{
+width:900px;
+background-color:#dadada;
+display:flex;}
+
+
+</style>
+</head>
+
+<body>
+
+
+<div class="topneu">\(\:\)</div>
+<div class="bottom">
+<div class="top"><div class="head">
+<div class="start-container"><div class="startbutton"><a href="https://dianantz.github.io/index2.html">Overview</a></div></div>
+<div class="impressum-container"><div class="impressumbutton"><a href="https://github.com/DianaNtz">My GitHub</a></div></div>
+</div></div>
+<div class="box">
+<div class="textbox">
+<h1>Spectral Method ODE</h1>
+<br>
+
+<div class="absatz1">
+Let us have a look at the following initial value problem with linear operator L:
+$$L u(x)=f(x),\:\:\:\:\:\:\:\:\:x \in [x_0,x_1]\:\:\:\:\:\:\:\:\: u(x_0)=u_0\:\:\:\:\:\:\:\:\: u(x_1)=u_1$$
+the spectral grid with N points is given by:
+$$x=-c\cos{(j\pi/(N-1))}+d,\:\:\:\:\:\:\:\:\:c:=\dfrac{x_1-x_0}{2}\:\:\:\:d:=\dfrac{x_1+x_0}{2}$$
+The first derivative is given by the following matrix:
+$$D_{N-1,N-1}=(2(N-1)^2+1)/(6c),\:\:\:\:\:\:\:\:\:D_{0,0}=-(2(N-1)^2+1)/(6c)$$
+$$D_{i,j}=-((x[i]-d)/c)/(1-((x[i]-d)/c)^2)/(2c)\:\:\:\:\:\:\:\:\:\:for\:i=j$$
+$$D_{i,j}=c_i/c_j(-1)^{(i+j)}/(x[i]/c-x[j]/c)/c\:\:\:\:\:\:\:\:\:\:for\:i\neq j$$
+with \(c_i=2\:for\:i=\{0,N-1\}\) and \(c_i=1\) if \(i\neq \{0,N-1\}\). <br>
+<br>
+Now starting with \(D_{ij}\) any linear operator \(L\) can be created using matrix multiplication.
+</div>
+<div class="ganz">
+<div class="imgbox1">
+<img src="docs/assets/img/specrtal1d.png"></div>
+
+
+<div class="imgbox2">
+<h4>Figure 1:  shows the comparison of the analytical solution
+with the numerical calculated result for the operator \(L=\dfrac{d^2}{dx^2}\), \(f=\sin{(x)}\) in \(u\in [0,3 \pi]\) with \(u(0)=-2\) and  \(u(3 \pi)=2\).
+</h4></div>
+
+      </div>
+<div class="accordion">
+  <div>
+    <input type="checkbox" name="example_accordion" id="section1neu4" class="accordion__input">
+    <label for="section1neu4" class="accordion__label"><div class="codebesch"><a href="https://github.com/DianaNtz/ODE">ODE</a></div><div class="button">View Code</div></label>
+    <div class="accordion__content">
+
+        <p><div class="codebox">
+        <pre><code class="python">"""
+The code below was written by https://github.com/DianaNtz and
+is an implementation of a spectral ODE solver with dirichlet boundary condition.
+"""
+
+#import libraries
+import numpy as np
+import matplotlib.pyplot as plt
+
+#setting up the grid
+zmin=0
+zmax=3*np.pi
+N=64
+z=np.linspace(zmin,zmax,N)
+
+zz=np.zeros(N)
+c=(zmax-zmin)/2
+d=(zmax+zmin)/2
+for j in range(0,N):
+
+    zz[j]=-np.cos(j*np.pi/(N-1))*c+d
+#first spectral derivative
+Dz=np.zeros((N,N))
+Dz[0][0]=-(2*(N-1)**2+1)/6
+Dz[N-1][N-1]=(2*(N-1)**2+1)/6
+for i in range(0,N):
+    if(i==0 or i==N-1):
+        ci=2
+    else:
+        ci=1
+    for j in range(0,N):
+        if(j==0 or j==N-1):
+            cj=2
+        else:
+            cj=1
+        if(i==j and i!=0 and i!=N-1):
+           Dz[i][i]=-((zz[i]-d)/c)/(1-((zz[i]-d)/c)**2)*0.5
+        if(i!=j):
+          Dz[i][j]=ci/cj*(-1)**(i+j)/(zz[i]/c-zz[j]/c)
+
+Dz=Dz/c
+
+D2z=np.matmul(Dz,Dz)
+
+#dirichlet boundary condition
+b=np.sin(zz)
+b[0]=-2
+b[N-1]=2
+
+for j in range(0,N):
+        if(j==0):
+           D2z[0][j]=1
+        else:
+           D2z[0][j]=0
+
+        if(j==N-1):
+            D2z[N-1][j]=1
+        else:
+            D2z[N-1][j]=0
+
+#solving linear system
+un=np.linalg.solve(D2z,b)
+ua=-np.sin(zz)+4/(3*np.pi)*zz-2
+ax1 = plt.subplots(1, sharex=True, figsize=(10,6))
+plt.plot(zz,ua,color='black',linestyle='-',linewidth=3,label="$u_a(t)$")
+plt.plot(zz,un,color='green',linestyle='-.',linewidth=3,label="$u_n(t)$")
+plt.xlabel("t",fontsize=18)
+plt.ylabel(r' ',fontsize=18,labelpad=20).set_rotation(0)
+plt.xlim([zmin,zmax])
+plt.xticks(fontsize= 17)
+plt.yticks(fontsize= 17)
+plt.legend(loc=2,fontsize=19,handlelength=3)
+plt.savefig("spectral1d.png",dpi=200)
+plt.show()
+</code></pre>
+      </div></p>
+    </div>
+  </div>
+  </div>
+
+
+<div class="ganzneu">
+<b>References</b>
+<br>
+[1] <a href="https://www.sciencedirect.com/science/article/pii/S0307904X12005938"> https://www.sciencedirect.com/science/article/pii/S0307904X12005938</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+</div>
+<div class="bottom2">
+\(\:\)
+<div>
+<div class="break"></div>
+
+</body>
+
+</html>
