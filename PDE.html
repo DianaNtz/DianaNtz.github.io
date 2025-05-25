@@ -368,7 +368,7 @@ padding-bottom:5px;
 
 .right{
 /*! float:right; */
-width:420px;
+width:440px;
 /*! height:3900px; */
 margin-left:17.5px;
 display: inline-block;
@@ -378,7 +378,7 @@ vertical-align: bottom;
 .left{
 margin-left:20px;
 /*! float:left; */
-width:420px;
+width:400px;
 /*! height:3900px; */
 display: inline-block;
 vertical-align: top;
@@ -398,7 +398,7 @@ background:#dadada;
 height:500px;}
 
 .hallo img{
-width:380px;}
+width:350px;}
 
 .hallo h4{
 margin-left:10px;
@@ -407,12 +407,9 @@ margin-top:2.5px;
 }
 
 .imgbox1{
-width:420px;
+width:440px;
 float:right;
 
-}
-.imgbox1 img{
-width:420px;
 }
 
 .imgbox1a{
@@ -422,18 +419,19 @@ background:#dadada;
 /*! float:right; */
 display:inline-block;
 align-items:center;
-width:860px;
 }
 
 
 .imgbox1a h4{
-margin-left:15px;
+margin-left:10px;
 margin-right:10px;
 }
 
 
 
-
+.imgbox1 img{
+width:390px;
+}
 
 .imgbox2a{
 /*! height:345px; */
@@ -595,209 +593,174 @@ margin-right:20px;}
 </div></div>
 <div class="box">
 <div class="textbox">
-<h1>Heat Equation</h1>
+<h1>Spectral Method PDE</h1>
 <br>
-<div class="textundso">
-The heat equation is given by:
-$$\partial_tu-\Delta u=0\:\:\:\in\Omega \times (0,\infty),\:\:\:\: u(z,0)=f(z)\:\:\:\forall\: z\in\Omega\:\:\: and \:\:\:u(z,t)=0 \:\:\:\forall\: z\in\partial\Omega$$
-With the Separation of variables ansatz \(u(z,t)=F(z)G(t)\) one finds:
-$$\dfrac{\partial_t G}{G}=\dfrac{\Delta F}{F}=\lambda=const.\rightarrow \Delta f_j=\lambda_j f_j\:\:\:  f_j=0\:\forall\: z\in\partial\Omega\rightarrow f=\sum c_jf_j$$
-where \(c_j:=\langle f,f_j \rangle\) the solution of the heat equation now becomes:
-$$u(z,t)=\sum c_j f_j(z) e^{\lambda_j t}$$
-</div>
 
 <div class="absatz1">
-
 <div class="absatz1box">
 <div class="left">
-
-<div class="imgbox1">
-<img src="docs/assets/img/2Dheatnumerical.gif">
-</div>
-
-
+The Poisson equation is given by:
+$$\Delta u=f\:\:\:\in\Omega\:\:\: and \:\:\:u(z)=0 \:\:\:\forall\: z\in\partial\Omega$$
+Kronecker product of two matrix \(A\) and \(B\) is given by:
+$$A\otimes B=\begin{pmatrix}
+a_{11}B&...&a_{1n}B\\
+\vdots&\vdots&\vdots\\
+a_{m1}B&...&a_{mn}B\\
+\end{pmatrix}$$
+In two dimensions the spectral operator can be constructed with the Kronecker product as following:
+$$\Delta=I_y\otimes D_x+D_y\otimes I_x$$
+The function \(f\) can be written in:
+$$f=f(y)\otimes f(x)$$
+This is equivalent to write the two dimensional object as one dimensional in the following way:
+$$f_{j,i}\Rightarrow f_{i+N_x j}$$
 </div>
 
 <div class="right">
 <div class="imgbox1">
-<img src="docs/assets/img/2Dheatanalytical.gif">
+<img src="docs/assets/img/PDE.png">
 </div>
-
-</div>
-
-</div>
-  
-</div>
-
-<div class="textundso">
 <div class="imgbox1a">
 <h4>
-Figure 1: \(\Omega=[0,1]\times[0,1]\) and \(f(z)=f_j(z)=\sin{(\pi x)}\sin{(\pi y)}\) \(\rightarrow\) \(\lambda_j=-2\pi^2\) \(u(x,y,t)=\sin{(\pi x)}\sin{(\pi y)}e^{-2\pi^2 t}\)
+Figure 1: \(\Omega=[0,1]\times[0,1]\) and \(f=2\pi^2\sin{(\pi x)}\sin{(\pi y)}\)
+</h4>
+</div>
+
 </div>
 </div>
 
 
+
+
+   
+</div>
+ <div class="textundso">
+
+</div>
 <div class="ganzneu">
                                   <b>References</b>
                                   <br>
-                                  [1] <a href="https://www.analysis.uni-hannover.de/fileadmin/analysis/Schrohe/Schrohe_Lehre/Partielle_Differentialgleichungen/pde6.pdf" >https://www.analysis.uni-hannover.de/fileadmin/analysis/Schrohe/Schrohe_Lehre/Partielle_Differentialgleichungen/pde6.pdf</a>
-</div>
-
+                                  [1] <a href="https://www.sciencedirect.com/science/article/pii/S0307904X12005938" >https://www.sciencedirect.com/science/article/pii/S0307904X12005938</a>
+                                  </div>
 <div class="accordionboxneu">
 <div class="accordionbox">
 
 <div class="accordion">
   <div>
     <input type="checkbox" name="example_accordion" id="section1neu" class="accordion__input">
-    <label for="section1neu" class="accordion__label"><div class="codebesch"><a href="https://github.com/DianaNtz/Heat">To get the code go to my GitHub repository Heat</a></div><div class="button">View Code</div></label>
+    <label for="section1neu" class="accordion__label"><div class="codebesch"><a href="https://github.com/DianaNtz/Brill">To get the code go to my GitHub repository PDE</a></div><div class="button">View Code</div></label>
     <div class="accordion__content">
       
         <p><div class="codebox">
-        <pre><code class="python">"""The code below was written by @author: https://github.com/DianaNtz and is an
-implementation of the Runge Kutta method for the 2D heat equation"""
-
+        <pre><code class="python">"""The code below was written by @author: https://github.com/DianaNtz and
+solves the Poisson equation via spectral methods. """
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
-import os
-import imageio.v2 as imageio
-nfilenames = []
-afilenames = []
-#some initial values
-nx=30
-x0=0
-xfinal=1
-dx=(xfinal-x0)/(nx-1)
-x=np.linspace(x0,xfinal,nx)
 
-ny=30
-y0=0
-yfinal=1
-dy=(yfinal-y0)/(ny-1)
-y=np.linspace(y0,yfinal,ny)
+#create grid
+def Cheb_grid_and_D(xmin,xmax,Nx):
+     x=np.zeros(Nx)
+     cx=(xmax-xmin)/2
+     dx=(xmax+xmin)/2
+     for j in range(0,Nx):
+         x[j]=-np.cos(j*np.pi/(Nx-1))*cx+dx
+     Dx=np.zeros((Nx,Nx))
+     Dx[0][0]=-(2*(Nx-1)**2+1)/6
+     Dx[Nx-1][Nx-1]=(2*(Nx-1)**2+1)/6
+     for i in range(0,Nx):
+         if(i==0 or i==Nx-1):
+             ci=2
+         else:
+             ci=1
+         for j in range(0,Nx):
+             if(j==0 or j==Nx-1):
+                 cj=2
+             else:
+                 cj=1
+             if(i==j and i!=0 and i!=Nx-1):
+                Dx[i][i]=-((x[i]-dx)/cx)/(1-((x[i]-dx)/cx)**2)*0.5
+             if(i!=j):
+                Dx[i][j]=ci/cj*(-1)**(i+j)/(x[i]/cx-x[j]/cx)
 
-nt=450
-t0=0
-tfinal=0.17
-dt=(tfinal-t0)/(nt-1)
-t=0
-#finite difference derivatives
-def d2x(D):
-    Dxx=np.zeros((ny,nx), dtype='double')
-    for j in range(0,ny):
-        for i in range(0,nx):
-                 if(i==0):
-                     Dxx[j][0]=(D[j][2]-2*D[j][1]+D[j][0])/(dx**2)
-                 if(i==nx-1):
-                     Dxx[j][nx-1]=(D[j][nx-1]-2*D[j][nx-1-1]+D[j][nx-1-2])/(dx**2)
-                 if(i!=0 and i!=nx-1):
-                     Dxx[j][i]=(D[j][i+1]-2*D[j][i]+D[j][i-1])/(dx**2)
-    return Dxx
+     Dx=Dx/cx
+     return x,Dx,np.dot(Dx,Dx)
 
-def d2y(D):
-    Dyy=np.zeros((ny,nx), dtype='double')
-    for j in range(0,ny):
-        for i in range(0,nx):
-                 if(j==0):
-                     Dyy[j][0]=(D[2][i]-2*D[1][i]+D[0][i])/(dy**2)
-                 if(j==ny-1):
-                     Dyy[ny-1][i]=(D[ny-1][i]-2*D[ny-1-1][i]+D[ny-1-2][i])/(dy**2)
-                 if(j!=0 and j!=ny-1):
-                     Dyy[j][i]=(D[j+1][i]-2*D[j][i]+D[j-1][i])/(dy**2)
-    return Dyy
+#Initial values
+Nx=30
+Ny=40
+
+xmin=0
+xmax=1.0
+
+ymax=1.0
+ymin=0.0
 
 
+y,Dy,D2y=Cheb_grid_and_D(ymin,ymax,Ny)
+x,Dx,D2x=Cheb_grid_and_D(xmin,xmax,Nx)
 
-un=np.empty([ny,nx], dtype='double')
-ua0=np.empty([ny,nx], dtype='double')
-for j in range(0,ny):
-        for i in range(0,nx):
-            un[j][i]=np.sin(np.pi*x[i])*np.sin(np.pi*y[j])
-            ua0[j][i]=np.sin(np.pi*x[i])*np.sin(np.pi*y[j])
+d2x=np.kron(np.identity((Ny)),D2x)
+d2y=np.kron(D2y,np.identity((Nx)))
 
-Y,X= np.meshgrid(y, x)
-
-#Runge Kutta time integration loop
-for k in range(0,nt):
-    ua=ua0*np.e**(-2*np.pi**2*t)
+f=np.zeros(Ny*Nx)
 
 
-    k1=dt*(d2x(un)+d2y(un))
-    k2=dt*(d2x(un+0.5*k1)+d2y(un+0.5*k1))
-    k3=dt*(d2x(un+0.5*k2)+d2y(un+0.5*k2))
-    k4=dt*(d2x(un+k3)+d2y(un+k3))
+for j in range(0,Ny):
+          for i in range(0,Nx):
+                  f[i+j*Nx]=-2*np.pi**2*np.sin(np.pi*y[j])*np.sin(np.pi*x[i])
+#create Laplace operator
+L=d2y+d2x
+#setting boundaries
+bound=np.kron(np.identity((Ny)),np.identity((Nx)))
+b=f
+for j in range(0,Ny):
+        for i in range(0,Nx):
+            if(i==0):
+               b[i+j*Nx]=0
+            if(i==Nx-1):
+               b[i+j*Nx]=0
+            if(j==Ny-1):
+               b[i+j*Nx]=0
+            if(j==0):
+               b[i+j*Nx]=0
 
-    un=un+(k1+2*k2+2*k3+k4)/6
-    for j in range(0,ny):
-        un[j][0]=0
-        un[j][nx-1]=0
-    for i in range(0,nx):
-        un[0][i]=0
-        un[ny-1][i]=0
-    err=np.abs(ua-un)
-    if(k%5==0):
 
-        fig = plt.figure(figsize=(14,12))
-        axx = plt.axes(projection='3d')
-        axx.plot_surface(Y, X, un.T,cmap=cm.seismic,antialiased=False)
-        axx.contourf(Y, X, un.T,100, zdir='y', offset=x0,cmap=cm.binary)
-        axx.contourf(Y, X, un.T,100, zdir='x',offset=yfinal,cmap=cm.binary)
-        axx.view_init(azim=110,elev=15)
-        axx.set_xlabel('y', labelpad=30,fontsize=34)
-        axx.set_ylabel('x',labelpad=30,fontsize=34)
-        axx.set_ylim(x0,xfinal)
-        axx.set_xlim(y0,yfinal)
-        axx.set_zlabel('$u_n(x,y)$',labelpad=40,fontsize=34)
-        axx.set_zlim(0, 1)
-        axx.zaxis.set_tick_params(labelsize=21,pad=18)
-        axx.yaxis.set_tick_params(labelsize=21)
-        axx.xaxis.set_tick_params(labelsize=21)
-        plt.title("t=".__add__(str(round(t,2))),fontsize=34 )
-        fig.subplots_adjust(left=0, right=1, bottom=0, top=1)
-        nfilename ='nbla{0:.0f}.png'.format(int(k/5))
-        nfilenames.append(nfilename)
-        plt.savefig(nfilename,dpi=50)
-        plt.close()
 
-        fig = plt.figure(figsize=(14,12))
-        axx = plt.axes(projection='3d')
-        axx.plot_surface(Y, X, ua.T,cmap=cm.seismic,antialiased=False)
-        axx.contourf(Y, X, ua.T,100, zdir='y', offset=x0,cmap=cm.binary)
-        axx.contourf(Y, X, ua.T,100, zdir='x',offset=yfinal,cmap=cm.binary)
-        axx.view_init(azim=110,elev=15)
-        axx.set_xlabel('y', labelpad=30,fontsize=34)
-        axx.set_ylabel('x',labelpad=30,fontsize=34)
-        axx.set_ylim(x0,xfinal)
-        axx.set_xlim(y0,yfinal)
-        axx.set_zlabel('$u_a(x,y)$',labelpad=40,fontsize=34)
-        axx.set_zlim(0, 1)
-        axx.zaxis.set_tick_params(labelsize=21,pad=18)
-        axx.yaxis.set_tick_params(labelsize=21)
-        axx.xaxis.set_tick_params(labelsize=21)
-        plt.title("t=".__add__(str(round(t,2))),fontsize=34 )
-        fig.subplots_adjust(left=0, right=1, bottom=0, top=1)
-        afilename ='abla{0:.0f}.png'.format(int(k/5))
-        afilenames.append(afilename)
-        plt.savefig(afilename,dpi=50)
-        plt.close()
+for k in range(0,Ny*Nx):
+        if(k%Nx==0):
+           #z bei 0
+           L[k]=bound[k]
+        if(k<Nx ):
+           L[k]=bound[k]
+           #rho bei 0
+        if(k%Nx==Nx-1):
+           L[k]=bound[k]
+           #z bei Nz
+        if(k>=Ny*Nx-Nx):
+           L[k]=bound[k]
+           #rho bei Nrho
+#solve linear system
+solution=np.linalg.solve(L,b)
+print(np.linalg.matrix_rank(L,tol=0.000000000000001))
+print(Ny*Nx)
 
-        print(np.max(err))
+so=solution.reshape(Ny,Nx)
 
-    t=t+dt
-#creating animations
-with imageio.get_writer('2Dheatnumerical.gif', mode='I') as writer:
-    for filename in nfilenames:
-        image = imageio.imread(filename)
-        writer.append_data(image)
-for filename in set(nfilenames):
-    os.remove(filename)
-
-with imageio.get_writer('2Dheatanalytical.gif', mode='I') as writer:
-    for filename in afilenames:
-        image = imageio.imread(filename)
-        writer.append_data(image)
-for filename in set(afilenames):
-    os.remove(filename)
+#plotting results
+xx,yy= np.meshgrid(x, y)
+fig = plt.figure(figsize=(14,12))
+axx = plt.axes(projection='3d')
+axx.plot_surface(xx, yy, so,cmap=cm.inferno,antialiased=False)
+axx.view_init(azim=240,elev=25)
+axx.set_xlabel('x', labelpad=30,fontsize=34)
+axx.set_ylabel("y",labelpad=30,fontsize=34)
+axx.zaxis.set_tick_params(labelsize=21,pad=18)
+axx.yaxis.set_tick_params(labelsize=21)
+axx.xaxis.set_tick_params(labelsize=21)
+fig.subplots_adjust(left=0, right=1, bottom=0, top=1)
+filename ="PDE.png"
+plt.savefig(filename,dpi=50)
+plt.show()
 </pre></code>
       </div></p>
     </div>
