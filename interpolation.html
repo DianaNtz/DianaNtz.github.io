@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript" id="MathJax-script" async
+  src="docs/es5/tex-chtml.js"></script>
+
+<link rel="stylesheet" href="docs/monokai-sublime.min.css">
+<script src="docs/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<style>
+
+/* tiro-gurmukhi-italic - latin */
+@font-face {
+  font-family: 'Tiro Gurmukhi';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+       url('docs/tiro-gurmukhi-v3-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('docs/tiro-gurmukhi-v3-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* nanum-myeongjo-regular - latin */
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('docs/nanum-myeongjo-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('docs/fonts/nanum-myeongjo-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html {
+    background-image: url(docs/assets/img/backneuneu.jpg);
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    zoom: 100%;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+body h4{
+font-size:16.5px;
+}
+
+@media (max-width: 920px){
+html {
+zoom:40%;
+}
+}
+
+@media (max-width: 320px){
+html {
+zoom:30%;
+}
+}
+
+html, body { 
+height: 100%; width: 100%; margin: 0; 
+display:flex;
+align-items:center;
+flex-wrap: wrap;
+}
+
+.topneu{
+
+height:25px;
+
+}
+
+.top{
+width: 100%;
+height:45px;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:0px;
+position: absolute; 
+top: 0; 
+left: 0; 
+}
+
+.start-container{
+width: 450px;
+height:45px;
+margin:0px;
+background-color:#dadada;
+}
+
+.start-container a{
+color:black;
+font-size:16.5px;
+}
+
+.impressum-container{
+width: 450px;
+height:45px;
+background-color:#dadada;
+}
+
+.impressum-container a{
+color:black;
+font-size:16.5px;
+}
+.impressum-container a:hover{
+font-size:17.5px;
+color:black;
+}
+
+.start-container a:hover{
+font-size:17.5px;
+color:black;}
+
+.startbutton{
+background-color:white;
+width:110px;
+height:22px;
+margin-top:10.5px;
+margin-left:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid
+}
+.startbutton:hover{
+border: black 1.5px dashed;
+}
+
+.impressumbutton{
+float:right;
+background-color:white;
+margin-top:10.5px;
+margin-right:20px;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid
+}
+
+.button{
+float:right;
+background-color:white;
+width:110px;
+height:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+border: black 1.5px solid;
+margin-right:25px;
+}
+
+
+
+.textforaccordionlabel{
+float:left;
+}
+
+.codebesch{
+float:left;
+font-size:16.5px;
+}
+
+
+
+.button:hover{
+border: black 1.5px dashed;
+font-size:17.5px;
+color:black;
+margin-right:25px;
+}
+
+.impressumbutton:hover{
+border: black 1.5px dashed;
+}
+
+
+a {
+text-decoration:none;
+color:black;
+}
+
+
+
+
+.bottom{
+width:100%;
+/*height:1635px;*/
+display:flex;
+justify-content:center;
+align-items:center;
+padding-bottom:0px;
+position:relative;
+
+}
+
+
+
+.box{
+width:900px;
+/*height:1590px; */
+background:white;
+display:inline-block;
+justify-content:space-between;
+font-size:16.5px; 
+padding:0px;
+margin-top:45px;
+position: relative;
+}
+
+.box a{
+text-decoration: underline;
+
+}
+
+
+.textbox{
+width:900px;
+/*height:550px;*/
+display: inline-block;
+}
+
+.codebox {
+width:850px;
+margin-left:25px;
+justify-content:center;
+align-items:center;
+background:blue;
+}
+
+
+
+.box h1{
+margin-top:20px;
+margin-left:20px;
+font-size:40px;
+display: inline-block;
+margin-bottom:10px;
+}
+
+.imgbox{
+margin-top:20px;
+margin-right:20px;
+width:250px;
+height:300px;
+background:#dadada;
+float:right;
+}
+
+
+.absatz1{
+margin-right:20px;
+margin-left:20px;
+}
+
+.accordiontext {
+  max-width: 860px;
+  margin-left:20px;
+  overflow: hidden;
+}
+
+.accordiontext__label {
+ height:20px;
+ margin-top:10px;
+}
+
+.accordiontext__content {
+  padding-top: 5px;
+  padding-bottom:2.5px;
+}
+
+
+
+.accordiontext__label {
+  display: block;
+  color: black;
+  font-weight: 500;
+  cursor: pointer; 
+  position: relative; 
+}
+
+.accordiontext__down{
+float:right;
+display:flex;
+justify-content:center;
+align-items:right;
+}
+
+.accordiontext__label:hover {
+  font-size:17.5px;
+}
+
+
+.accordiontext__content {
+  background: #ffffff; 
+  display: none;
+}
+
+.accordiontext__input {
+  display: none;
+}
+
+.accordiontext__input:checked ~ .accordiontext__content {
+  display: block;
+}
+
+#section1:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
+#section2:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
+#section3:checked ~ * .accordiontext__down{
+  transform: scaleX(-1) rotate(0.5turn); 
+}
+
+
+
+.accordionbox{
+width:900px;
+background:white;
+}
+
+/*.accordionboxneu{
+padding-bottom:5px;
+}*/
+
+.accordion {
+  max-width: 900px;
+  overflow: hidden;
+  font-size:16.5px;
+}
+
+
+/*.accordion__label {
+  padding:14px 20px;}*/
+
+.accordion__label {
+  padding-bottom:14px;
+padding-top:14px;}
+
+
+.accordion__label {
+  display: block;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
+  margin-bottom:25px;
+  margin-left:25px;
+}
+
+
+.accordion__content{
+  background: #ffffff;
+  display:none;
+}
+
+.accordion__content h2{
+  margin-left:10px;
+}
+
+
+.accordion__input{
+  display: none;
+}
+
+
+.accordion__input:checked~ .accordion__content {
+  display: block;
+}
+
+
+/*.downsymbole{
+transform: rotate(180deg);
+}*/
+
+
+
+
+.imgbox1{
+margin-bottom:0px;
+width:860px;
+
+}
+.imgbox2{
+padding-left:10px;
+margin-left:25px;
+padding-top:0.01em;
+display:flex;
+align-items:center;
+width:840px;
+/*height:85px;*/
+background:#dadada;
+}
+
+
+.imgbox1 img{
+width:840px;
+margin-left:10px;
+}
+
+.ganz{
+width:860px;
+}
+
+.ganz2{
+width:860px;
+margin-top:15px;
+}
+
+
+.ganzneu{
+height:60px;
+margin-top:10px;
+margin-right:20px;
+margin-left:20px;
+line-height:20px;
+padding-bottom:10px;}
+
+.head{
+width:900px;
+background-color:#dadada;
+display:flex;}
+
+
+</style>
+</head>
+
+<body>
+
+
+<div class="topneu">\(\:\)</div>
+<div class="bottom">
+<div class="top"><div class="head">
+<div class="start-container"><div class="startbutton"><a href="https://dianantz.github.io/index3.html">Overview</a></div></div>
+<div class="impressum-container"><div class="impressumbutton"><a href="https://github.com/DianaNtz">My GitHub</a></div></div>
+</div></div>
+<div class="box">
+<div class="textbox">
+<h1>Barycentric Interpolation</h1>
+<br>
+
+<div class="absatz1">
+The Barycentric formula is given by:
+$$p(z)=\dfrac{\sum_{j=0}^{n}\dfrac{\omega_j}{z-z_j}f_j}{\sum_{j=0}^{n}\dfrac{\omega_j}{z-z_j}},\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\omega_j:=\dfrac{1}{\prod_{k\neq j}(z_j-z_k)}$$
+Following figure shows the results for a Barycentric interpolated function f.
+</div>
+<div class="ganz">
+<div class="imgbox1">
+<img src="docs/assets/img/interpolation.png"></div>
+
+
+<div class="imgbox2">
+<h4>Figure 1:  comparison of the interpolated \(p(z)\) and analytical values \(f(z)\) for \(f(z)=e^{-z^2}\).
+</h4></div>
+
+      </div>
+<div class="accordion">
+  <div>
+    <input type="checkbox" name="example_accordion" id="section1neu4" class="accordion__input">
+    <label for="section1neu4" class="accordion__label"><div class="codebesch"><a href="https://github.com/DianaNtz/Interpolation">Barycentric Interpolation</a></div><div class="button">View Code</div></label>
+    <div class="accordion__content">
+
+        <p><div class="codebox">
+        <pre><code class="python">"""The code below was written by @author: https://github.com/DianaNtz and is an
+implementation of Barycentric Lagrange Interpolation in 1D and 2D."""
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+#create grid
+zmin=0
+zmax=np.pi
+N=21
+
+def grid(xmin,xmax,Nx):
+     x=np.zeros(Nx)
+     cx=(xmax-xmin)/2
+     dx=(xmax+xmin)/2
+     for j in range(0,Nx):
+         x[j]=-np.cos(j*np.pi/(Nx-1))*cx+dx
+     return x
+#create test function 1D
+def f(z):
+    return np.exp(-z**2)
+
+zz=grid(zmin,zmax,N)
+fzz=f(zz)
+
+#1D Interpolation
+def omega(zz):
+    N=len(zz)
+    w=np.zeros(N)
+    for i in range(0,N):
+        zi=zz[i]
+        wi=1
+        for j in range(0,i):
+            wi*=zi-zz[j]
+        for j in range(i+1,N):
+            wi*=zi-zz[j]
+        w[i]=1/wi
+    return w
+w=omega(zz)
+
+def p(z,fzz):
+    result=np.zeros(len(z))
+    for i in range (0,len(z)):
+       C1=0
+       C2=0
+       for j in range (0,len(w)):
+          if(np.abs(z[i]-zz[j])<0.00001):
+              C1=1
+              C2=fzz[j]
+              break
+          else:
+             C1=C1+w[j]/(z[i]-zz[j])
+             C2=C2+w[j]/(z[i]-zz[j])*fzz[j]
+       result[i]=C2/C1
+    return result
+#interpolate test function into new grid
+z=np.linspace(zmin,zmax,2*N)
+
+ax1 = plt.subplots(1, sharex=True, figsize=(10,6))
+plt.plot(z,f(z),"-",label="f(z)")
+plt.plot(z,p(z,fzz),"o",label="p(z)")
+plt.xlabel("z",fontsize=18)
+plt.yticks(fontsize= 17)
+plt.xticks(fontsize= 17)
+plt.xlim(zmin,zmax)
+plt.ylim(np.min(f(z)),np.max(f(z))+0.5)
+plt.legend(loc=2,fontsize=19,handlelength=3)
+plt.savefig("interpolation.png",dpi=120)
+plt.show()
+
+#2D Interpolation
+def L(x0,x):
+     Lx=np.zeros(len(x))
+     ka=np.where(np.abs(x-x0)<=0.000001)
+     if(ka[0].size>0):
+        Lx[ka]=1
+        return Lx
+
+     wx=omega(x)
+     C1x=np.sum(wx/(x0-x))
+     C2x=wx/(x0-x)
+     Lx=C2x/C1x
+     return Lx
+
+def  interpolation2D(x0,y0,x,y,f):
+
+     Lx=L(x0,x)
+     Ly=L(y0,y)
+     C=0
+     L0=np.kron(Lx,Ly)
+     C=np.dot(L0,f)
+     return C
+#create grid
+Nx=60
+Ny=30
+xmin=0
+xmax=1
+ymin=0
+ymax=np.pi
+
+x=grid(xmin,xmax,Nx)
+y=grid(ymin,ymax,Ny)
+#create 2D test function
+def fx(x):
+    return np.exp(-x**2)
+def fy(y):
+    return np.exp(-(y-0.5)**2)
+
+fxx=fx(x)
+fyy=fy(y)
+f=np.kron(fxx,fyy) #f[i+j*Ny] j x, i y
+
+x0,y0=0.5,0.6
+#compare interpolated with analytical result
+print(interpolation2D(x0,y0,x,y,f))
+print(fx(x0)*fy(y0))
+</code></pre>
+      </div></p>
+    </div>
+  </div>
+  </div>
+
+
+<div class="ganzneu">
+<b>References</b>
+<br>
+[1] <a href="https://people.maths.ox.ac.uk/trefethen/barycentric.pdf"> https://people.maths.ox.ac.uk/trefethen/barycentric.pdf</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+</div>
+<div class="bottom2">
+\(\:\)
+<div>
+<div class="break"></div>
+
+</body>
+
+</html>
